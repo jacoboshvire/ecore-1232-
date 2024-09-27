@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --gradient: linear-gradient(#222222, #000000);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222222;
+    --foreground: #ffffff;
+    --gradient: linear-gradient(#222222, #000000);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-image: var(--gradient);
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  height: 100vh;
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
