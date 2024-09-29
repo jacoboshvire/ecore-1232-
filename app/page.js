@@ -108,6 +108,7 @@ export default function Home() {
           <div className="image">
             <Image
               src={Profile}
+              alt="profile"
               width={233}
               height={233}
             />
