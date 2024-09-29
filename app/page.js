@@ -1,6 +1,8 @@
 import Image from "next/image";
 import "./page.css";
 import Link from "next/link";
+import Wave from './image/Wave.png'
+import Profile from './image/Group_4.png'
 
 export default function Home() {
   return (
@@ -51,8 +53,64 @@ export default function Home() {
       <div className="main_container">
         <div className="inside_container">
           <div className="writeUp">
-
-
+            <Image className="wave"
+              src={Wave}
+              alt="wave"
+              width={60}
+              height={60}
+            />
+            {/* writeUp */}
+            <p className="text_writeup">
+              Hi, I’m <stong className="myName">Jacob i’m a software developer</stong>  who has good taste in aesthetics.
+            </p>
+            {/* skills Path */}
+            <div className="skills">
+              <span>
+                <p>
+                  software dev
+                </p>
+                <svg viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.94141 10.3721L0 8.17969V7.33984L4.94141 4.86914V6.31934L1.90918 7.70117L4.94141 8.93164V10.3721Z" />
+                  <path d="M9.80957 4L7.14844 11.3389H5.45898L8.12012 4H9.80957Z" />
+                  <path d="M10.2832 8.93164L13.3154 7.70117L10.2832 6.31934V4.86914L15.2246 7.33984V8.17969L10.2832 10.3721V8.93164Z" />
+                </svg>
+              </span>
+              {/* 2nd skills */}
+              <span>
+                <p>
+                  ui/ux designer
+                </p>
+                <svg width="15" height="19" className="uidesign" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3.75" y="10.0369" width="3.08824" height="2.5" rx="1.25" transform="rotate(90 3.75 10.0369)" />
+                  <rect x="10.625" y="9.26465" width="3.08824" height="2.5" rx="1.25" transform="rotate(-90 10.625 9.26465)" />
+                  <path d="M11.25 8.49276L10.3125 9.65085C10.3052 9.65982 10.3016 9.66431 10.2987 9.66786C9.49846 10.6472 8.00154 10.6472 7.2013 9.66786C7.1984 9.66431 7.19476 9.65982 7.1875 9.65085V9.65085C7.18024 9.64188 7.1766 9.63739 7.1737 9.63384C6.37346 8.65452 4.87654 8.65452 4.0763 9.63384C4.0734 9.63739 4.06976 9.64188 4.0625 9.65085L3.125 10.8089" />
+                </svg>
+              </span>
+              {/* 3rd skills */}
+              <span>
+                <p>
+                  Graphic designer
+                </p>
+                <svg width="17" height="17" className="uidesign" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2.5" y="10" width="10" height="2.5" rx="1.25" />
+                  <path d="M3.40949 7.61424L5 10H10L11.5905 7.61424C12.0259 6.96118 12.2436 6.63465 12.2083 6.27888C12.1731 5.92311 11.8956 5.64561 11.3406 5.09062L7.5 1.25L3.65938 5.09062C3.10439 5.64561 2.82689 5.92311 2.79166 6.27888C2.75643 6.63465 2.97412 6.96118 3.40949 7.61424Z" />
+                  <circle cx="7.5" cy="6.875" r="1.375" />
+                  <path d="M7.5 1.25V5.625" />
+                </svg>
+              </span>
+            </div>
+            <div className="about">
+              <Link href={"#"}>
+                About me
+              </Link>
+            </div>
+          </div>
+          <div className="image">
+            <Image
+              src={Profile}
+              width={233}
+              height={233}
+            />
           </div>
         </div>
       </div>

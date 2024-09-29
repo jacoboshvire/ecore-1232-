@@ -2,6 +2,10 @@
 
 svg {
     fill: black;
+    /* stroke: black; */
+}
+
+nav svg {
     width: 30px;
     height: 30px;
 }
@@ -35,7 +39,7 @@ a {
     flex-direction: row;
     position: relative;
     align-items: center;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 19px;
 }
 
@@ -45,6 +49,7 @@ a h3 {
 
 * {
     font-family: "Poppins", sans-serif;
+    transition: .1s;
 }
 
 .menuPath {
@@ -70,9 +75,140 @@ a h3 {
     border-radius: 30px;
 }
 
+.main_container {
+    width: 100%;
+    max-width: 1187px;
+    background-color: #ffffff;
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
+    padding: 87px;
+    margin-top: 5%;
+    border-radius: 30px;
+    transform-origin: center;
+    transform: scale(1);
+}
+
+.main_container:hover {
+    background-color: #222222;
+    color: white;
+    transform: scale(1.01);
+}
+
+.main_container:hover .skills span {
+    background-color: #2D313D;
+    color: white;
+}
+
+.inside_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text_writeup {
+    font-weight: 500;
+    font-size: 28px;
+    width: 80%;
+
+}
+
+.writeUp .myName {
+    font-weight: bolder;
+}
+
+.writeUp {
+    width: 60%;
+
+}
+
+.skills {
+    margin-top: 25px;
+    display: flex;
+}
+
+.skills span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 181px;
+    height: 42px;
+    background-color: #CCD2E3;
+    border-radius: 10px;
+    margin-right: 25px;
+}
+
+.skills span p {
+    font-weight: 600;
+    font-size: 15px;
+    margin-right: 8px;
+}
+
+.skills span svg {
+    width: 17px;
+    height: 18px;
+}
+
+.main_container:hover .wave {
+    animation: wave 500ms infinite ease-in-out;
+    transform-origin: top 100%, left 50%;
+}
+
+@keyframes wave {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.main_container:hover .skills span svg {
+    fill: white;
+}
+
+.main_container:hover .skills span .uidesign {
+    fill: none;
+    stroke: white;
+}
+
+.uidesign {
+    stroke: black;
+    fill: none;
+}
+
+.about a {
+    margin-top: 25px;
+    font-size: .85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 181px;
+    height: 42px;
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    transform-origin: center;
+    transform: scale(1);
+    transition: 500ms;
+}
+
+.about a:hover {
+    transform: scale(1.1);
+    font-weight: 700;
+}
+
+.main_container:hover .about a {
+    background-color: white;
+    color: #000000;
+}
+
 @media (prefers-color-scheme: dark) {
     svg {
         fill: white;
+        /* stroke: white; */
     }
 
     .menu div {
@@ -80,15 +216,46 @@ a h3 {
     }
 
     .main_container {
-        background-color: #ffffff;
+        background-color: #222222;
+        box-shadow: 0 0 50px rgba(0, 0, 0, 0.329);
     }
-}
 
-.main_container {
-    width: 100%;
-    max-width: 1187px;
-    background-color: #222222;
-    padding: 87px;
-    margin-top: 33px;
-    border-radius: 40px;
+    .skills span {
+        background-color: #2D313D;
+    }
+
+    .uidesign {
+        stroke: white;
+        fill: none;
+    }
+
+    .about a {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .main_container:hover {
+        background-color: rgb(216, 216, 216);
+        color: #000000;
+    }
+
+    .main_container:hover .skills span {
+        background-color: #CCD2E3;
+        color: black;
+    }
+
+    .main_container:hover .skills span svg {
+        fill: black;
+    }
+
+    .main_container:hover .skills span .uidesign {
+        fill: none;
+        stroke: black;
+    }
+
+    .main_container:hover .about a {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
 }

@@ -7,14 +7,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --gradient: linear-gradient(#222222, #000000);
+  --gradient: linear-gradient(#F5F5F5, #F5F5F5, #8F8F8F);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #222222;
     --foreground: #ffffff;
-    --gradient: linear-gradient(#222222, #000000);
+    --gradient: linear-gradient(#222222, #222222, #000000);
   }
 }
 
@@ -23,8 +23,8 @@ body {
   background: var(--background);
   background-image: var(--gradient);
   background-repeat: no-repeat;
-  /* background-size: contain; */
-  height: 100vh;
+  height: inherit;
+  padding-bottom: 30px;
 }
 
 
