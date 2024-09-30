@@ -379,7 +379,7 @@ footer .links a {
     .main_container {
         box-shadow: none;
         border-radius: 0px;
-        background-color: none;
+        background-color: #222222;
     }
 
     footer {
