@@ -373,7 +373,7 @@ footer .links a {
 
 @media (max-width:400px) {
     .nav2 {
-        max-width: 310px;
+        max-width: 250px;
     }
 
     .main_container {
@@ -383,7 +383,7 @@ footer .links a {
     }
 
     footer {
-        max-width: 300px;
+        max-width: 250px;
     }
 
     .main_container .skills span {
