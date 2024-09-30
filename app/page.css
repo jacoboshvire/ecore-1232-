@@ -379,7 +379,7 @@ footer .links a {
     .main_container {
         box-shadow: none;
         border-radius: 0px;
-        background-color: #222222;
+        background-color: none;
     }
 
     footer {
@@ -444,5 +444,13 @@ footer .links a {
         background-color: #000000;
         color: #ffffff;
     }
+
+    @media (max-width:400px) {
+
+        .main_container {
+            background-color: none;
+        }
+    }
+
 
 }
