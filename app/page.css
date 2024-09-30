@@ -403,7 +403,7 @@ footer .links a {
     }
 
     .main_container {
-        background-color: #161616;
+        background-color: #222222;
         box-shadow: 0 0 50px rgba(0, 0, 0, 0.329);
     }
 
@@ -446,7 +446,6 @@ footer .links a {
     }
 
     @media (max-width:400px) {
-
         .main_container {
             background-color: none;
         }
