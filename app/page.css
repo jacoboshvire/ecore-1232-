@@ -80,7 +80,7 @@ a h3 {
     max-width: 1187px;
     background-color: #ffffff;
     box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
-    padding: 87px;
+    padding: 60px;
     margin-top: 5%;
     border-radius: 30px;
     transform-origin: center;
@@ -149,6 +149,27 @@ a h3 {
 .main_container:hover .wave {
     animation: wave 500ms infinite ease-in-out;
     transform-origin: top 100%, left 50%;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1187px;
+    margin-top: 5%;
+}
+
+footer p {
+    font-weight: 500;
+}
+
+footer .links {
+    display: flex;
+}
+
+footer .links a {
+    margin-left: 40px;
 }
 
 @keyframes wave {
@@ -235,12 +256,12 @@ a h3 {
     }
 
     .main_container:hover {
-        background-color: rgb(216, 216, 216);
+        background-color: rgb(224, 224, 224);
         color: #000000;
     }
 
     .main_container:hover .skills span {
-        background-color: #CCD2E3;
+        background-color: #9099b3;
         color: black;
     }
 
