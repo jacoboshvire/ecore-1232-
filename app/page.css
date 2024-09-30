@@ -383,7 +383,11 @@ footer .links a {
     }
 
     footer {
-        max-width: 310px;
+        max-width: 300px;
+    }
+
+    .main_container .skills span {
+        width: 100%;
     }
 }
 
