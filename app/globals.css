@@ -13,7 +13,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #222222;
-    --foreground: #ffffff;
+    --foreground: #F5F5F5;
     --gradient: linear-gradient(#222222, #222222, #000000);
   }
 }
@@ -23,11 +23,23 @@ body {
   background: var(--background);
   background-image: var(--gradient);
   background-repeat: no-repeat;
-  height: inherit;
+  background-size: cover;
   padding-bottom: 30px;
+  /* position: relative; */
+
 }
 
+@media (height>=800px) {
+  body {
+    height: 100vh;
+  }
+}
 
+@media (min-width<=1187px) or (orientation: portrait) {
+  body {
+    background-image: none;
+  }
+}
 
 @layer utilities {
   .text-balance {
