@@ -29,6 +29,16 @@ nav {
     margin-top: 42px;
 }
 
+
+.port a {
+    transform: scale(1);
+    transform-origin: flex start;
+}
+
+.hide a {
+    transform: scale(0);
+}
+
 li {
     list-style: none;
 
@@ -41,6 +51,8 @@ a {
     align-items: center;
     font-weight: 600;
     font-size: 19px;
+    transition: 500ms;
+    transition-timing-function: ease-in-out;
 }
 
 a h3 {
@@ -49,7 +61,7 @@ a h3 {
 
 * {
     font-family: "Poppins", sans-serif;
-    transition: .1s;
+    transition: 500ms;
 }
 
 .menuPath {
@@ -76,6 +88,8 @@ a h3 {
 }
 
 .main_container {
+    position: relative;
+    clip-path: padding-box;
     width: 100%;
     max-width: 1187px;
     background-color: var(--main);
@@ -107,7 +121,13 @@ a h3 {
     font-weight: 500;
     font-size: 28px;
     width: 80%;
+    transform: scale(1);
+    transform-origin: center;
+}
 
+.removeText {
+    transform: scale(0);
+    display: none;
 }
 
 .writeUp .myName {
@@ -122,6 +142,14 @@ a h3 {
 .skills {
     margin-top: 25px;
     display: flex;
+    transform: scale(1);
+    transform-origin: center;
+    /* display: block; */
+}
+
+.removeSkills {
+    transform: scale(0);
+    display: none;
 }
 
 .skills span {
@@ -175,6 +203,51 @@ footer .links a {
 
 .nav2 {
     display: none;
+}
+
+.newwave {
+    position: absolute;
+    z-index: 5;
+    bottom: -30%;
+    right: -5%;
+}
+
+.image {
+    transform: scale(1);
+    transform-origin: center;
+}
+
+.removeImg {
+    transform: scale(0);
+}
+
+.menubox {
+    display: none;
+}
+
+.removebox {
+    display: flex;
+    flex-direction: column;
+}
+
+.menuTitle h1 {
+    font-weight: 800;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.linkMenu a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+.linkMenu a svg {
+    margin-right: 12px;
+}
+
+.main_container:hover svg {
+    fill: white;
 }
 
 @keyframes wave {
@@ -233,10 +306,67 @@ footer .links a {
     color: #000000;
 }
 
+.menu:hover {
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    position: relative;
+}
 
+.menu:hover div:nth-child(1) {
+    transform-origin: center;
+    transform: rotate(45deg);
+    width: 28.28px;
+    transition: 1s;
+    position: absolute;
+    top: 50%;
+}
 
+.menu:hover div:nth-child(3) {
+    transform-origin: center;
+    transform: rotate(-45deg);
+    width: 28.28px;
+    transition: 1s;
+    bottom: 50%;
+}
 
+.menu:hover div:nth-child(2) {
+    width: 0;
+    transition: 1s;
+}
 
+.newmenu {
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    position: relative;
+}
+
+.newmenu div {
+    height: 3px;
+}
+
+.newmenu div:nth-child(1) {
+    transform-origin: center;
+    transform: rotate(45deg);
+    width: 28.28px;
+    transition: 1s;
+    position: absolute;
+    top: 50%;
+}
+
+.newmenu div:nth-child(3) {
+    transform-origin: center;
+    transform: rotate(-45deg);
+    width: 28.28px;
+    transition: 1s;
+    bottom: 50%;
+}
+
+.newmenu div:nth-child(2) {
+    width: 0;
+    transition: 1s;
+}
 
 @media (max-width:1187px) {
     nav {
@@ -427,6 +557,10 @@ footer .links a {
     .main_container:hover .skills span {
         background-color: #9099b3;
         color: black;
+    }
+
+    .main_container:hover svg {
+        fill: #000000;
     }
 
     .main_container:hover .skills span svg {
