@@ -4,10 +4,35 @@ import Wave from './image/Wave.png';
 import Profile from './image/Group_4.png';
 import React from 'react';
 import Link from "next/link";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion'
 import "./page.css";
 
 function Nav() {
+    const cursorSize = 20 / 2;
+    const mouse = {
+        x: useMotionValue(0),
+        y: useMotionValue(0)
+    }
+
+
+    const operation = { daming: 20, stiffness: 20, mass: 0.5 }
+    const smoothmouse = {
+        x: useSpring(mouse.X, operation),
+        y: useSpring(mouse.y, operation)
+    }
+
+    const mouseMove = (e) => {
+        const { clientX, clientY } = e;
+        mouse.x.set(clientX - cursorSize);
+        mouse.y.set(clientY - cursorSize);
+    }
+
+    useEffect(() => {
+        window.addEventListener("mousemove", mouseMove)
+        return () => (window.removeEventListener("mousemove", mouseMove))
+    })
+
     var [menu, setMenu] = useState(false);
 
     const toggleMenu = () => {
@@ -16,6 +41,10 @@ function Nav() {
 
     return (
         <>
+            <motion.div className="cursor"
+                style={{ left: mouse.x, top: mouse.y }}
+                transition={{ delay: 0, }}
+            />
             <nav>
                 <li>
                     <a href="tel:+2348127187633">
