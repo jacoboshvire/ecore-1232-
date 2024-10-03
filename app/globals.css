@@ -13,6 +13,11 @@
 
 }
 
+::selection {
+  background-color: var(--foreground);
+  color: var(--background);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #222222;
