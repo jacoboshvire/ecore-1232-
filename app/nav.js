@@ -10,28 +10,72 @@ import "./page.css";
 
 function Nav() {
     const cursorSize = 20 / 2;
-    const mouse = {
-        x: useMotionValue(0),
-        y: useMotionValue(0)
-    }
+    const newCursorSize = 100 / 2;
+    // const mouse = {
+    //     x: useMotionValue(0),
+    //     y: useMotionValue(0)
+    // }
+
+    const [mousePosition, setMousePosition] = useState({
+        x: 0,
+        y: 0
+    })
+    const [varientsmouse, setVarientsmouse] = useState("default")
 
 
-    const operation = { daming: 20, stiffness: 20, mass: 0.5 }
-    const smoothmouse = {
-        x: useSpring(mouse.X, operation),
-        y: useSpring(mouse.y, operation)
-    }
-
-    const mouseMove = (e) => {
-        const { clientX, clientY } = e;
-        mouse.x.set(clientX - cursorSize);
-        mouse.y.set(clientY - cursorSize);
-    }
+    // const operation = { daming: 20, stiffness: 20, mass: 0.5 }
+    // const smoothmouse = {
+    //     x: useSpring(mouse.X, operation),
+    //     y: useSpring(mouse.y, operation)
+    // }
 
     useEffect(() => {
+        const mouseMove = (e) => {
+            setMousePosition({
+                x: e.clientX,
+                y: e.clientY
+
+            })
+        }
+
         window.addEventListener("mousemove", mouseMove)
         return () => (window.removeEventListener("mousemove", mouseMove))
     })
+
+    const variants = {
+        default: {
+            x: mousePosition.x - cursorSize,
+            y: mousePosition.y - cursorSize
+
+        },
+
+        text: {
+            height: "100px",
+            width: "100px",
+            backgroundColor: "none",
+            mixBlendMode: "difference",
+            x: mousePosition.x - newCursorSize,
+            y: mousePosition.y - newCursorSize
+        },
+
+        changeColor: {
+            backgroundColor: "white",
+            border: "none",
+            height: "200px",
+            width: "200px",
+            mixBlendMode: "difference",
+            x: mousePosition.x - newCursorSize * 2,
+            y: mousePosition.y - newCursorSize * 2
+        }
+    }
+
+
+
+    const textEnter = () => setVarientsmouse("text")
+    const textLeave = () => setVarientsmouse("default")
+    const Change = () => setVarientsmouse("changeColor")
+
+
 
     var [menu, setMenu] = useState(false);
 
@@ -42,12 +86,12 @@ function Nav() {
     return (
         <>
             <motion.div className="cursor"
-                style={{ left: mouse.x, top: mouse.y }}
-                transition={{ delay: 0, }}
+                variants={variants}
+                animate={varientsmouse}
             />
             <nav>
                 <li>
-                    <a href="tel:+2348127187633">
+                    <a href="tel:+2348127187633" onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 fillRule="evenodd"
@@ -62,7 +106,7 @@ function Nav() {
                 </li>
                 {/* 2nd link */}
                 <li className={menu ? "port hide" : "port"}>
-                    <Link href={"#"} >
+                    <Link href={"#"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
                             <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
                         </svg>
@@ -71,10 +115,10 @@ function Nav() {
                         </h3>
                     </Link>
                 </li>
-                <div className="menuPath">
+                <div className="menuPath"  >
                     {/* 3rd link */}
                     <li>
-                        <a href="mailto:jacoshevire@gmail.com" >
+                        <a href="mailto:jacoshevire@gmail.com" onMouseEnter={textEnter} onMouseLeave={textLeave}>
                             <svg viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fillRule="evenodd" clipRule="evenodd" d="M15.8977 19.6881L8.77543 17.314L8.77542 17.314L8.77541 17.314C6.42221 16.5296 5.24561 16.1374 5.24561 15.4167C5.24561 14.6959 6.42221 14.3037 8.77543 13.5193L27.0386 7.43157C28.6944 6.87964 29.5223 6.60368 29.9593 7.04069C30.3963 7.47771 30.1203 8.3056 29.5684 9.96139L23.4807 28.2246C22.6963 30.5778 22.3041 31.7544 21.5833 31.7544C20.8626 31.7544 20.4704 30.5778 19.686 28.2246L17.3119 21.1023L23.8321 14.5821C24.2226 14.1916 24.2226 13.5584 23.8321 13.1679C23.4416 12.7774 22.8084 12.7774 22.4179 13.1679L15.8977 19.6881Z" />
                             </svg>
@@ -84,7 +128,7 @@ function Nav() {
                         </a>
                     </li>
                     {/* burger menu */}
-                    <div onClick={toggleMenu} className={menu ? "menu newmenu" : "menu"}>
+                    <div onClick={toggleMenu} className={menu ? "menu newmenu" : "menu"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <div></div>
                         <div></div>
                         <div></div>
@@ -126,7 +170,7 @@ function Nav() {
                             height={menu ? 500 : 60}
                         />
                         {/* writeUp */}
-                        <p className={menu ? "text_writeup removeText" : "text_writeup"}>
+                        <p className={menu ? "text_writeup removeText" : "text_writeup"} onMouseEnter={Change} onMouseLeave={textLeave}>
                             Hi, I’m <stong className="myName">Jacob i’m a software developer</stong>  who has good taste in aesthetics.
                         </p>
                         {/* skills Path */}
@@ -165,7 +209,7 @@ function Nav() {
                                 </svg>
                             </span>
                         </div>
-                        <div className={menu ? "removeMenu" : "removeMenu menubox"}>
+                        <div className={menu ? "removeMenu" : "removeMenu menubox"} onMouseEnter={Change} onMouseLeave={textLeave}>
                             <div className="menuTitle">
                                 <h1>
                                     Menu
@@ -193,7 +237,7 @@ function Nav() {
                             </div>
 
                         </div>
-                        <div className="about">
+                        <div className="about" onMouseEnter={textEnter} onMouseLeave={textLeave}>
                             <Link href={"#"}>
                                 About me
                             </Link>
