@@ -417,6 +417,11 @@ footer .links a {
 }
 
 @media (max-width:700px) {
+    .removeImg {
+        width: 0;
+        height: 0;
+    }
+
     nav {
         display: none;
         background-color: #CCD2E3;
