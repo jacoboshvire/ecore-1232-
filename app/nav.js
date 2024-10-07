@@ -168,6 +168,7 @@ function Nav() {
                             alt="wave"
                             width={menu ? 500 : 60}
                             height={menu ? 500 : 60}
+                            loading="lazy"
                         />
                         {/* writeUp */}
                         <p className={menu ? "text_writeup removeText" : "text_writeup"} onMouseEnter={Change} onMouseLeave={textLeave}>
@@ -250,6 +251,7 @@ function Nav() {
                             alt="profile"
                             width={233}
                             height={233}
+                            loading="lazy"
                         />
                     </div>
                 </div>
