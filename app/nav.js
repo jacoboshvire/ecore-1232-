@@ -4,11 +4,15 @@ import Wave from './image/Wave.png';
 import Profile from './image/Group_4.png';
 import React from 'react';
 import Link from "next/link";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 import "./page.css";
 
 function Nav() {
+
+    const pathname = usePathname()
+
     const cursorSize = 20 / 2;
     const newCursorSize = 100 / 2;
     // const mouse = {
@@ -137,11 +141,12 @@ function Nav() {
             </nav>
             <div className="nav2">
                 <li>
-                    <Link href={"#"}>
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                            <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
+                    <a href="tel:+2348127187633">
+                        <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M50 27.5C50 20.4777 50 16.9665 48.3147 14.4443C47.5851 13.3524 46.6476 12.4149 45.5557 11.6853C43.0335 10 39.5223 10 32.5 10H27.5C20.4777 10 16.9665 10 14.4443 11.6853C13.3524 12.4149 12.4149 13.3524 11.6853 14.4443C10 16.9665 10 20.4777 10 27.5C10 34.5223 10 38.0335 11.6853 40.5557C12.4149 41.6476 13.3524 42.5851 14.4443 43.3147C16.6477 44.7869 19.6057 44.9731 25 44.9966V45L27.7639 50.5279C28.6852 52.3705 31.3148 52.3705 32.2361 50.5279L35 45V44.9966C40.3943 44.9731 43.3523 44.7869 45.5557 43.3147C46.6476 42.5851 47.5851 41.6476 48.3147 40.5557C50 38.0335 50 34.5223 50 27.5ZM22.5 21.5C21.9477 21.5 21.5 21.9477 21.5 22.5C21.5 23.0523 21.9477 23.5 22.5 23.5H37.5C38.0523 23.5 38.5 23.0523 38.5 22.5C38.5 21.9477 38.0523 21.5 37.5 21.5H22.5ZM22.5 31.5C21.9477 31.5 21.5 31.9477 21.5 32.5C21.5 33.0523 21.9477 33.5 22.5 33.5H30C30.5523 33.5 31 33.0523 31 32.5C31 31.9477 30.5523 31.5 30 31.5H22.5Z" />
                         </svg>
-                    </Link>
+
+                    </a>
                 </li>
                 <div className="inside_nav2">
                     <li>
@@ -239,7 +244,7 @@ function Nav() {
 
                         </div>
                         <div className="about" onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                            <Link href={"#"}>
+                            <Link href={"/About"}>
                                 About me
                             </Link>
                         </div>
