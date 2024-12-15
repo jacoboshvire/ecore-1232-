@@ -4,7 +4,7 @@ import Image from 'next/image';
 //this are for next js link and navigation
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Wave from '../image/wave.png'
+import Wave from '../image/Wave.png'
 import '../page.css';
 import './about.css';
 //this is for helping loop through my image
