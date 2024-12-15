@@ -430,7 +430,7 @@ export default function About() {
                                 <div className="tools_skills">
                                     {
                                         SvgImage.map((svgimages, index) => (
-                                            <div className="key_skills" key={index}>
+                                            <div className="key_skills" key={svgimages.id}>
                                                 <Image
                                                     width={'20px'}
                                                     height={'20px'}
