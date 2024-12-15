@@ -10,7 +10,8 @@
   --gradient: linear-gradient(#F5F5F5, #F5F5F5, #8F8F8F);
   --main: #ffffff;
   --shadow: 0 0 50px rgba(151, 151, 151, 0.329);
-
+  --subcolour: #CCD2E3;
+  --border: #E6E6E6;
 }
 
 ::selection {
@@ -25,6 +26,8 @@
     --gradient: linear-gradient(#222222, #222222, #000000);
     --main: #161616;
     --shadow: 0 0 50px rgba(0, 0, 0, 0.329);
+    --subcolour: #2D313D;
+    --border: #3636369a;
   }
 }
 

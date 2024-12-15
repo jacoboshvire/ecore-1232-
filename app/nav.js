@@ -177,7 +177,7 @@ function Nav() {
                         />
                         {/* writeUp */}
                         <p className={menu ? "text_writeup removeText" : "text_writeup"} onMouseEnter={Change} onMouseLeave={textLeave}>
-                            Hi, I’m <stong className="myName">Jacob i’m a software developer</stong>  who has good taste in aesthetics.
+                            Hi, I’m <strong className="myName">Jacob i’m a software developer</strong>  who has good taste in aesthetics.
                         </p>
                         {/* skills Path */}
                         <div className={menu ? "skills removeSkills" : "skills"}>

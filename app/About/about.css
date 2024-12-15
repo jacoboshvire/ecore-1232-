@@ -1,0 +1,256 @@
+.aboutpage {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.main_null {
+    display: none;
+}
+
+.mainframe_1st {
+    display: flex;
+    max-width: 1187px;
+    width: 100%;
+    margin-top: 65px;
+}
+
+.about_1st {
+    width: 70%;
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    /* display: flex; */
+    padding: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    border-radius: 30px;
+}
+
+.title_about1st {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.title_about1st h2 {
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.title_about1st a {
+    font-size: 17px;
+    font-weight: 500;
+    color: #979797;
+}
+
+.about1st_text {
+    margin-top: 29px;
+}
+
+.about1st_text p {
+    width: 60%;
+}
+
+.abouts_1st a {
+    margin-top: 25px;
+    font-size: .85em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 181px;
+    height: 42px;
+    background-color: #F5F5F5;
+    color: black;
+    border-radius: 10px;
+    transform-origin: center;
+    transform: scale(1);
+    transition: 500ms;
+}
+
+.pic_1st {
+    background-clip: border-box;
+    width: 28%;
+    margin-left: 2%;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+.pic_1st img {
+    border-radius: 30px;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.control {
+    width: 40px;
+    height: 40px;
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    right: 4%;
+    bottom: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control2 {
+    width: 40px;
+    height: 40px;
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 10;
+    left: 4%;
+    bottom: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainframe_2nd {
+    display: flex;
+    margin-top: 1.5%;
+    width: 100%;
+    max-width: 1187px;
+}
+
+.graph_2nd {
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    width: 50%;
+    padding: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    border-radius: 30px;
+}
+
+.graph_2nd_title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.graph_2nd_title h3 {
+    font-weight: 1000;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.graph_2nd_title svg {
+    width: 20px;
+    height: 20px;
+}
+
+.graph_2nd .graph {
+    padding: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: #0a0a0a;
+    border-radius: 25px;
+    margin-top: 10%;
+    background-clip: border-box;
+    height: 100%;
+    width: 100%;
+}
+
+.mainGraph {
+    width: 100%;
+    height: 90%;
+}
+
+.tools_2nd {
+    margin-left: 2%;
+    width: 48%;
+}
+
+.tools_2nd .ListOfSkill {
+    width: 100%;
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    padding: 10%;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    border-radius: 30px;
+}
+
+.title_tools_2nd {
+    display: flex;
+    align-items: center;
+
+}
+
+.title_tools_2nd h3 {
+    font-weight: 1000;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.inside_skills {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.inside_skills svg {
+    width: 24px;
+    margin-left: 2%;
+}
+
+.skillsInside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: var(--border) 1px solid;
+    padding-top: 7%;
+    padding-bottom: 7%;
+}
+
+.skillsInside .tools_skills {
+    display: flex;
+    align-items: center;
+    background-color: var(--subcolour);
+    padding: 2%;
+    border-radius: 20px;
+}
+
+.skillsInside .tools_skills img {
+    width: 30px;
+    height: 30px;
+
+}
+
+.skillsInside .tools_skills .key_skills {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.skillsvg {
+    stroke: var(--forforeground);
+    stroke-width: 1px;
+    /* fill: none; */
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+    .abouts_1st a {
+        background-color: #1f1f1f;
+        color: white;
+    }
+}
