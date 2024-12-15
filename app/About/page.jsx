@@ -138,25 +138,6 @@ export default function About() {
 
 
 
-    // const ref = useRef();
-    // const [onClient, setOnClient] = useState();
-
-    // useEffect(() => {
-    //     setOnClient(true);
-    // }, []);
-
-    // useEffect(() => {
-    //     ref.current = new Image(25, 25);
-    //     ref.current.src = "https://i.stack.imgur.com/gXQrT.png";
-    // }, []);
-
-    // function Image() {
-    //     const pointImage = new Image;
-    // }
-    // let pointImg = Image
-    // Image.src = Wave
-
-
     const options = {
         animations: {
             tension: 0.2,
@@ -187,19 +168,7 @@ export default function About() {
                 beginAtZero: true,
                 display: true
             }
-        },
-        // elements: {
-        //     point: {
-        //         pointStyle: [
-        //             // {
-        //             //     src: Wave,
-        //             //     height: 25,
-        //             //     width: 25,
-        //             // },
-        //             "triangle", "circle", "circle", "circle"
-        //         ]
-        //     }
-        // }
+        }
 
     }
 
@@ -288,7 +257,6 @@ export default function About() {
                             alt="wave"
                             width={menu ? 500 : 60}
                             height={menu ? 500 : 60}
-                            loading="lazy"
                         />
                         <div className={menu ? "removeMenu" : "removeMenu menubox"} onMouseEnter={Change} onMouseLeave={textLeave}>
                             <div className="menuTitle">
