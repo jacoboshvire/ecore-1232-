@@ -40,6 +40,29 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { GoogleMap, GoogleMapWrapper } from '@react-google-maps/api';
+import 'dotenv/config';
+require('dotenv').config()
+
+// const googleMap = process.env.API_KEY;
+
+
+// const containerStyle = {
+//     width: '400px',
+//     height: '400px',
+// }
+
+// const center = {
+//     lat: 6.5244,
+//     lng: 3.3792,
+// }
+
+// function MyComponent() {
+//     const { isLoaded } = useJsApiLoader({
+//         id: 'google-map-script',
+//         googleMapsApiKey: googleMap,
+//     })
+// }
 
 export default function About() {
     // cursor animations using framer motion and js eventlistener
@@ -171,6 +194,8 @@ export default function About() {
         }
 
     }
+
+
 
     return (
         <div className="aboutpage">
@@ -429,8 +454,8 @@ export default function About() {
                                 <div className="tools_skills">
                                     <div className="key_skills">
                                         <Image
-                                            alt='figma'
                                             src={Figma}
+                                            alt='figmas'
                                             width={'100%'}
                                             height={'auto'}
                                         />
@@ -472,6 +497,19 @@ export default function About() {
                             </span>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div className="googleMaps">
+                <div className="mapsMap">
+                    <div className='mainMap'><iframe width="600" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Lagos,%20Nigeria+(jacobShevy)&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/">gps trackers</a></iframe></div>
+                </div>
+                <div className="details">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.9999 2.66663C13.1709 2.66663 10.4578 3.79043 8.45745 5.79082C6.45706 7.79121 5.33325 10.5043 5.33325 13.3333C5.33325 20.5333 14.7333 28.6666 15.1333 29.0133C15.3748 29.2199 15.6821 29.3334 15.9999 29.3334C16.3177 29.3334 16.6251 29.2199 16.8666 29.0133C17.3333 28.6666 26.6666 20.5333 26.6666 13.3333C26.6666 10.5043 25.5428 7.79121 23.5424 5.79082C21.542 3.79043 18.8289 2.66663 15.9999 2.66663ZM15.9999 26.2C13.1599 23.5333 7.99992 17.7866 7.99992 13.3333C7.99992 11.2116 8.84277 9.17673 10.3431 7.67644C11.8434 6.17615 13.8782 5.33329 15.9999 5.33329C18.1216 5.33329 20.1565 6.17615 21.6568 7.67644C23.1571 9.17673 23.9999 11.2116 23.9999 13.3333C23.9999 17.7866 18.8399 23.5466 15.9999 26.2ZM15.9999 7.99996C14.9451 7.99996 13.9139 8.31275 13.0369 8.89879C12.1598 9.48482 11.4762 10.3178 11.0726 11.2923C10.6689 12.2669 10.5633 13.3392 10.7691 14.3738C10.9749 15.4083 11.4828 16.3586 12.2287 17.1045C12.9746 17.8504 13.9249 18.3584 14.9594 18.5641C15.994 18.7699 17.0664 18.6643 18.0409 18.2607C19.0154 17.857 19.8484 17.1734 20.4344 16.2963C21.0205 15.4193 21.3333 14.3881 21.3333 13.3333C21.3333 11.9188 20.7713 10.5623 19.7712 9.56206C18.771 8.56186 17.4144 7.99996 15.9999 7.99996ZM15.9999 16C15.4725 16 14.9569 15.8436 14.5184 15.5505C14.0799 15.2575 13.7381 14.8411 13.5362 14.3538C13.3344 13.8665 13.2816 13.3303 13.3845 12.8131C13.4874 12.2958 13.7414 11.8206 14.1143 11.4477C14.4872 11.0747 14.9624 10.8208 15.4797 10.7179C15.997 10.615 16.5331 10.6678 17.0204 10.8696C17.5077 11.0714 17.9242 11.4132 18.2172 11.8518C18.5102 12.2903 18.6666 12.8059 18.6666 13.3333C18.6666 14.0405 18.3856 14.7188 17.8855 15.2189C17.3854 15.719 16.7072 16 15.9999 16Z" />
+                    </svg>
+                    <h2>
+                        Lagos State, Nigeria
+                    </h2>
                 </div>
             </div>
             <Footer />

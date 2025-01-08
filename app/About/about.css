@@ -135,8 +135,8 @@
     box-shadow: var(--shadow);
     width: 50%;
     padding: 5%;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
+    padding-top: 6%;
+    padding-bottom: 6%;
     border-radius: 30px;
 }
 
@@ -144,12 +144,15 @@
     display: flex;
     align-items: center;
     width: 100%;
+    /* padding-top: 10%;
+    padding-bottom: 10%; */
 }
 
 .graph_2nd_title h3 {
     font-weight: 1000;
     margin-right: 10px;
     font-size: 20px;
+    /* margin-top: 10%; */
 }
 
 .graph_2nd_title svg {
@@ -246,6 +249,24 @@
     /* fill: none; */
 }
 
+.googleMaps {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+    width: 100%;
+    max-width: 1187px;
+    background-color: var(--subcolour);
+    padding: 25px;
+    border-radius: 30px;
+}
+
+
+.googleMaps .mapsMap .mainMap iframe {
+    border-radius: 15px;
+}
+
+/* .googleMaps  */
 
 
 @media (prefers-color-scheme: dark) {
