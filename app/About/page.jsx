@@ -134,9 +134,14 @@ export default function About() {
 
     // menu animation for showing the toggle burger menu
     var [menu, setMenu] = useState(false);
+    var [details, setDetails] = useState(false)
 
     const toggleMenu = () => {
         setMenu((menu) => (!menu))
+    }
+
+    const toggleDetails = () => {
+        setDetails((details) => (!details))
     }
 
     // next navigation function
@@ -319,6 +324,9 @@ export default function About() {
                     </div>
                 </div>
             </div>
+            <div className={details ? "detailsAbout" : "removeDetailsAbout detailsAbout"}>
+
+            </div>
             <div className='mainframe_1st'>
                 <motion.div className='about_1st'>
                     <div className='title_about1st'>
@@ -326,7 +334,7 @@ export default function About() {
                             About
                         </h2>
 
-                        <Link href={"#"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                        <Link onClick={toggleDetails} href={"#"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                             see all
                         </Link>
                     </div>
