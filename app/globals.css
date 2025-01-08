@@ -11,6 +11,7 @@
   --main: #ffffff;
   --shadow: 0 0 50px rgba(151, 151, 151, 0.329);
   --subcolour: #CCD2E3;
+  --subhover: #2D313D;
   --border: #E6E6E6;
 }
 
@@ -27,6 +28,7 @@
     --main: #161616;
     --shadow: 0 0 50px rgba(0, 0, 0, 0.329);
     --subcolour: #2D313D;
+    --subhover: #CCD2E3;
     --border: #3636369a;
   }
 }

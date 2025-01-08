@@ -168,7 +168,7 @@
     border-radius: 25px;
     margin-top: 10%;
     background-clip: border-box;
-    height: 100%;
+    height: 310px;
     width: 100%;
 }
 
@@ -259,6 +259,68 @@
     background-color: var(--subcolour);
     padding: 25px;
     border-radius: 30px;
+    box-shadow: var(--shadow);
+    transform-origin: center;
+    transition: 500ms ease-in-out;
+}
+
+.googleMaps:hover {
+    transform: scale(0);
+    animation: strake 1s forwards ease-in-out;
+}
+
+@keyframes strake {
+    0% {
+        transform: rotate(2deg) scale(1.1);
+        background-color: var(--subhover);
+        color: var(--subhover);
+    }
+
+    25% {
+        transform: rotate(0) scale(1.1);
+        background-color: var(--subhover);
+        color: var(--subhover);
+    }
+
+    50% {
+        transform: rotate(-2deg) scale(1.1);
+
+    }
+
+    100% {
+        transform: rotate(0deg) scale(1);
+    }
+}
+
+.googleMaps:hover svg {
+    animation: strakes 1s forwards ease-in-out;
+}
+
+.googleMaps:hover .details h2 {
+    animation: strakes 1s forwards ease-in-out;
+}
+
+@keyframes strakes {
+    0% {
+        fill: var(--background);
+        color: var(--background);
+    }
+
+    25% {
+        fill: var(--background);
+        color: var(--background);
+    }
+
+    50% {
+        fill: var(--subhover);
+        color: var(--subhover);
+
+    }
+
+    100% {
+        fill: var(--subhover);
+        color: var(--subhover);
+    }
 }
 
 
@@ -266,7 +328,14 @@
     border-radius: 15px;
 }
 
-/* .googleMaps  */
+.googleMaps .details {
+    margin-right: 10%;
+}
+
+.googleMaps .details h2 {
+    font-weight: 900;
+    font-size: 22px;
+}
 
 
 @media (prefers-color-scheme: dark) {
