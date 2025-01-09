@@ -422,6 +422,48 @@
     }
 }
 
+@media (max-width:700px) {
+    .mainframe_1st {
+        display: block;
+        align-items: center;
+        margin: auto;
+        max-width: 400px;
+        margin-right: 2%;
+        margin-left: 2%;
+        margin-top: 50px;
+    }
+
+    .about1st_text p {
+        width: 100%;
+    }
+
+    .mainframe_2nd {
+        max-width: 400px;
+    }
+
+    .skillsInside {
+        display: block;
+    }
+
+    .skillsInside .tools_skills {
+        padding: 20px;
+    }
+
+    .inside_skills {
+        width: 100%;
+        margin-bottom: 5%;
+    }
+
+
+    .graph_2nd_title {
+        margin-top: 5%;
+    }
+
+    .googleMaps {
+        max-width: 400px;
+    }
+}
+
 
 @media (prefers-color-scheme: dark) {
     .abouts_1st a {
