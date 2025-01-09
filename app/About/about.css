@@ -464,6 +464,27 @@
     }
 }
 
+@media (max-width: 400px) {
+    .about_1st {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .graph_2nd {
+        background: none;
+        box-shadow: none;
+    }
+
+    .tools_2nd .ListOfSkill {
+        background: none;
+        box-shadow: none;
+    }
+
+    .googleMaps {
+        border-radius: 0;
+    }
+}
+
 
 @media (prefers-color-scheme: dark) {
     .abouts_1st a {
