@@ -355,7 +355,7 @@
     margin-right: 10%;
 }
 
-.googleMaps .details h2 {
+.googleMaps .details h2 a {
     font-weight: 900;
     font-size: 22px;
 }
