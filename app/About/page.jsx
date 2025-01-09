@@ -340,7 +340,7 @@ export default function About() {
                     </div>
                     <div className='about1st_text'>
                         <p>
-                            Hey, my name is Oshevire Ejiro Jacob and I use Jack as my nickname across social medias. I’m a graphic designer, UX/UI designer & front-end web developer from France. I’m also passionate about pop music and make portraits and universes around what I listen to and I’m always curious to learn more when it comes to new technologies and creative coding.
+                            Hello, I’m Oshevire Ejiro Jacob, also known as Jacoshevire or jacobShevy on social media. I’m a graphic designer, UX/UI designer, and software developer from Nigeria. I’m also deeply passionate about AI and MI, and I create innovative solutions with the potential to positively impact the world.
                         </p>
                         <div className='link_1st'>
                             <div className="abouts_1st" >
