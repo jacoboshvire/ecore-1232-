@@ -394,6 +394,7 @@ footer .links a {
     display: flex;
     justify-content: right;
     margin-top: 5%;
+    align-items: center;
 }
 
 .listen {
@@ -406,14 +407,44 @@ footer .links a {
     padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 5px;
-    padding-left: 10px;
+    padding-left: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.listen h3 {
+.listen a {
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.listen h5 {
     margin-right: 20px;
+}
+
+.darkbtn {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2D313D;
+    box-shadow: var(--shadow);
+    border-radius: 50px;
+    margin-left: 50px;
+}
+
+.lightbtn {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    border-radius: 50px;
+    margin-left: 50px;
+    /* padding: 30px; */
 }
 
 @media (orientation: portrait) {
@@ -461,11 +492,23 @@ footer .links a {
 @media (max-width:700px) {
     .darkbtnStuff {
         max-width: 400px;
+        flex-direction: column-reverse;
+        align-items: normal;
+    }
+
+    .darkbtn {
+        margin-left: 0px;
+    }
+
+    .lightbtn {
+        margin-left: 0px;
+        /* padding: 30px; */
     }
 
     .listen {
-        /* width: 50px; */
+        width: max-content;
         height: 25px;
+        margin-top: 2%;
     }
 
     .removeImg {
@@ -584,7 +627,7 @@ footer .links a {
 @media (max-width:400px) {
     .darkbtnStuff {
         max-width: 700px;
-        margin-left: 5%;
+        padding-left: 5%;
     }
 
     .listen {
