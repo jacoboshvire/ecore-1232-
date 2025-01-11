@@ -423,6 +423,16 @@ footer .links a {
 }
 
 @media (max-width:1187px) {
+    .darkbtnStuff {
+        max-width: 700px;
+        justify-content: left;
+    }
+
+    .listen {
+        /* width: 50px; */
+        height: 25px;
+    }
+
     nav {
         max-width: 700px;
     }
@@ -449,6 +459,15 @@ footer .links a {
 }
 
 @media (max-width:700px) {
+    .darkbtnStuff {
+        max-width: 400px;
+    }
+
+    .listen {
+        /* width: 50px; */
+        height: 25px;
+    }
+
     .removeImg {
         width: 0;
         height: 0;
@@ -563,6 +582,16 @@ footer .links a {
 
 
 @media (max-width:400px) {
+    .darkbtnStuff {
+        max-width: 700px;
+        margin-left: 5%;
+    }
+
+    .listen {
+        /* width: 50px; */
+        height: 20px;
+    }
+
     .nav2 {
         /* max-width: 310px; */
         padding-left: 3%;
