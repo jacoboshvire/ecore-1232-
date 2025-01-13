@@ -8,6 +8,7 @@ import { useState, useEffect, useContext } from 'react';
 import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import "./page.css";
+import Stuff from './Stuff.js'
 
 function Nav() {
 
@@ -261,6 +262,7 @@ function Nav() {
                     </div>
                 </div>
             </div>
+            <Stuff onMouseEnter={Change} onMouseLeave={textLeave} />
         </>
     )
 }

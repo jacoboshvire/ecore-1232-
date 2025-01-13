@@ -340,7 +340,7 @@ export default function About() {
                         </Link>
                     </div>
                     <div className='about1st_text'>
-                        <p>
+                        <p onMouseEnter={Change} onMouseLeave={textLeave}>
                             Hello, I’m Oshevire Ejiro Jacob, also known as Jacoshevire or jacobShevy on social media. I’m a graphic designer, UX/UI designer, and software developer from Nigeria. I’m also deeply passionate about AI and MI, and I create innovative solutions with the potential to positively impact the world.
                         </p>
                         <div className='link_1st'>
@@ -523,7 +523,7 @@ export default function About() {
                     </h2>
                 </div>
             </div>
-            <Stuff />
+            <Stuff onMouseEnter={textEnter} onMouseLeave={textLeave} />
             <Footer />
         </div>
 
