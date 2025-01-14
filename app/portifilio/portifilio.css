@@ -22,3 +22,55 @@
 .newwave {
     transform: scale(1);
 }
+
+.portNav {
+    display: flex;
+    max-width: 1187px;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    padding: 2.5%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-radius: 30px;
+    align-items: center;
+}
+
+.portNavTitle {
+    font-weight: 900;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.portNavTitle svg {
+    width: 36px;
+    height: 36px;
+    margin-right: 3%;
+}
+
+.otherPortLink {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.otherPortLink li {
+    margin-left: 5%;
+}
+
+.otherPortLink li a {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.otherPortLink li a svg {
+    margin-left: 15px;
+}
+
+.mainPortArea {
+    height: 60vh;
+}

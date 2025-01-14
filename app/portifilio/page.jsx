@@ -10,6 +10,7 @@ import Image from 'next/image';
 import Wave from '../image/Wave.png'
 //this are for next js link and navigation
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'
 
 
 export default function Portifilio() {
@@ -87,6 +88,7 @@ export default function Portifilio() {
     const toggleMenu = () => {
         setMenu((menu) => (!menu))
     }
+
     return (
         <div className='mainport'>
             <motion.div className="cursor"
@@ -110,7 +112,7 @@ export default function Portifilio() {
                 </li>
                 {/* 2nd link */}
                 <li className={menu ? "port hide" : "port"}>
-                    <Link href={"#"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                    <Link href={"/portilifio"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
                             <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
                         </svg>
@@ -208,6 +210,61 @@ export default function Portifilio() {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* the portifilio nav bar */}
+            <div className="portNav">
+                {/* title */}
+                <div className="portNavTitle">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                        <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
+                    </svg>
+                    <h1>
+                        Portifilio
+                    </h1>
+                </div>
+                <div className="otherPortLink">
+                    <li>
+                        <Link href={"#"}>
+                            <p>
+                                software development
+                            </p>
+                            <svg width='20' height='24' viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.94141 10.3721L0 8.17969V7.33984L4.94141 4.86914V6.31934L1.90918 7.70117L4.94141 8.93164V10.3721Z" />
+                                <path d="M9.80957 4L7.14844 11.3389H5.45898L8.12012 4H9.80957Z" />
+                                <path d="M10.2832 8.93164L13.3154 7.70117L10.2832 6.31934V4.86914L15.2246 7.33984V8.17969L10.2832 10.3721V8.93164Z" />
+                            </svg>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"#"}>
+                            <p>
+                                UI and UX design
+                            </p>
+                            <svg width="20" height="24" className="uidesign" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3.75" y="10.0369" width="3.08824" height="2.5" rx="1.25" transform="rotate(90 3.75 10.0369)" />
+                                <rect x="10.625" y="9.26465" width="3.08824" height="2.5" rx="1.25" transform="rotate(-90 10.625 9.26465)" />
+                                <path d="M11.25 8.49276L10.3125 9.65085C10.3052 9.65982 10.3016 9.66431 10.2987 9.66786C9.49846 10.6472 8.00154 10.6472 7.2013 9.66786C7.1984 9.66431 7.19476 9.65982 7.1875 9.65085V9.65085C7.18024 9.64188 7.1766 9.63739 7.1737 9.63384C6.37346 8.65452 4.87654 8.65452 4.0763 9.63384C4.0734 9.63739 4.06976 9.64188 4.0625 9.65085L3.125 10.8089" />
+                            </svg>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={"#"}>
+                            <p>
+                                Graphics Design
+                            </p>
+                            <svg width="22" height="22" className="uidesign" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2.5" y="10" width="10" height="2.5" rx="1.25" />
+                                <path d="M3.40949 7.61424L5 10H10L11.5905 7.61424C12.0259 6.96118 12.2436 6.63465 12.2083 6.27888C12.1731 5.92311 11.8956 5.64561 11.3406 5.09062L7.5 1.25L3.65938 5.09062C3.10439 5.64561 2.82689 5.92311 2.79166 6.27888C2.75643 6.63465 2.97412 6.96118 3.40949 7.61424Z" />
+                                <circle cx="7.5" cy="6.875" r="1.375" />
+                                <path d="M7.5 1.25V5.625" />
+                            </svg>
+                        </Link>
+                    </li>
+                </div>
+            </div>
+            <div className="mainPortArea">
+
             </div>
             <Stuff />
             <Footer />
