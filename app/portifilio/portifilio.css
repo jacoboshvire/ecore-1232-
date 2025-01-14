@@ -80,19 +80,19 @@
 
 @keyframes lianime {
     0% {
-        transform: rotate(2deg) scale(2);
+        transform: rotate(2deg) scale(1.05);
     }
 
     25% {
-        transform: rotate(0) scale(2);
+        transform: rotate(0) scale(1.05);
     }
 
     50% {
-        transform: rotate(-2deg) scale(2);
+        transform: rotate(-2deg) scale(1.05);
     }
 
     100% {
-        transform: rotate(0) scale(1.5);
+        transform: rotate(0) scale(1.04);
     }
 }
 
