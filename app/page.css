@@ -463,10 +463,10 @@ footer .links a {
         justify-content: left;
     }
 
-    .listen {
-        /* width: 50px; */
+    /* .listen {
+        width: 50px;
         height: 25px;
-    }
+    } */
 
     nav {
         max-width: 700px;
@@ -511,7 +511,6 @@ footer .links a {
 
     .listen {
         width: max-content;
-        height: 25px;
         margin-top: 5%;
     }
 
@@ -634,10 +633,6 @@ footer .links a {
         padding-left: 5%;
     }
 
-    .listen {
-        /* width: 50px; */
-        height: 20px;
-    }
 
     .nav2 {
         /* max-width: 310px; */

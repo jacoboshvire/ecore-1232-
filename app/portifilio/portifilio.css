@@ -69,11 +69,31 @@
     padding: 2%;
     border-radius: 20px;
     transition: 500ms;
+    transform: scale(1);
+    transform-origin: center;
 }
 
 .otherPortLink li:hover {
     background-color: var(--subcolour);
+    animation: lianime 500ms forwards ease-in-out;
+}
 
+@keyframes lianime {
+    0% {
+        transform: rotate(2deg) scale(2);
+    }
+
+    25% {
+        transform: rotate(0) scale(2);
+    }
+
+    50% {
+        transform: rotate(-2deg) scale(2);
+    }
+
+    100% {
+        transform: rotate(0) scale(1.5);
+    }
 }
 
 .otherPortLink li a {
