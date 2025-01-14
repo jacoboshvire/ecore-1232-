@@ -440,7 +440,7 @@ footer .links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--main);
+    background-color: black;
     box-shadow: var(--shadow);
     border-radius: 50px;
     margin-left: 50px;
@@ -508,7 +508,7 @@ footer .links a {
     .listen {
         width: max-content;
         height: 25px;
-        margin-top: 2%;
+        margin-top: 5%;
     }
 
     .removeImg {
