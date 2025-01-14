@@ -224,7 +224,7 @@ export default function Portifilio() {
                     </h1>
                 </div>
                 <div className="otherPortLink">
-                    <li>
+                    <li onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <Link href={"#"}>
                             <p>
                                 software development
@@ -236,7 +236,7 @@ export default function Portifilio() {
                             </svg>
                         </Link>
                     </li>
-                    <li>
+                    <li onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <Link href={"#"}>
                             <p>
                                 UI and UX design
@@ -248,7 +248,7 @@ export default function Portifilio() {
                             </svg>
                         </Link>
                     </li>
-                    <li>
+                    <li onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <Link href={"#"}>
                             <p>
                                 Graphics Design
