@@ -227,7 +227,7 @@ export default function Portifilio() {
                     <li onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <Link href={"#"}>
                             <p>
-                                software development
+                                Software development
                             </p>
                             <svg width='20' height='24' viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4.94141 10.3721L0 8.17969V7.33984L4.94141 4.86914V6.31934L1.90918 7.70117L4.94141 8.93164V10.3721Z" />
