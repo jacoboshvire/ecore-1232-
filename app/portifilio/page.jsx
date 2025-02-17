@@ -15,18 +15,21 @@ import { usePathname } from 'next/navigation'
 
 export default function Portifilio() {
     // variable for Portfiliopost()
-    let [Portfilios, setPortfilios] = useState([]);
+    let [portfilios, setPortfilios] = useState([]);
 
     //fatch api
+    let url = "https://jacob-shevy-api.onrender.com/api/portifilio"
     async function Portfiliopost() {
-        let response = await fetch("https://jacob-shevy-api.onrender.com/api/portifilio")
+
+        let response = await fetch(url)
         let data = await response.json();
         return data;
     }
 
     useEffect(() => {
-        Portfiliopost().then(() => {
-            setPortfilios(data);
+        Portfiliopost().then((data) => {
+            setPortfilios(data.Portfilio);
+            console.log(data.Portfilio)
         })
     }, [])
 
@@ -280,7 +283,26 @@ export default function Portifilio() {
                 </div>
             </div>
             <div className="mainPortArea">
+                <div className="lenghtofpost">
+                    {
+                        `Total number of works so far is  "${portfilios.length}"`
+                    }
+                </div>
 
+                {
+                    portfilios.map((portfilio) => {
+                        return (
+                            <div className="portfiliocard" key={portfilio._id}>
+                                <Image className="postimage"
+                                    src={portfilio.image}
+                                    alt={portfilio.name}
+                                    width={100}
+                                    height={100}
+                                />
+                            </div>
+                        )
+                    })
+                }
             </div>
             <Stuff />
             <Footer />
