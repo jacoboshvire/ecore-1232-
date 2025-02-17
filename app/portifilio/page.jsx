@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion';
 import Image from 'next/image';
 import Wave from '../image/Wave.png'
-import Blur from '../image/Rectangle 79.png'
+import Pointingleft from '../image/PointingLeft.png'
 //this are for next js link and navigation
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
@@ -17,6 +17,7 @@ import { usePathname } from 'next/navigation'
 export default function Portifilio() {
     // variable for Portfiliopost()
     let [portfilios, setPortfilios] = useState([]);
+
 
     //fatch api
     let url = "https://jacob-shevy-api.onrender.com/api/portifilio"
@@ -33,6 +34,7 @@ export default function Portifilio() {
             console.log(data.Portfilio)
         })
     }, [])
+
 
     // cursor animations using framer motion and js eventlistener
     const cursorSize = 20 / 2;
@@ -286,10 +288,18 @@ export default function Portifilio() {
             <div className="mainPortArea">
                 <div className="backarea">
                     <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                        <svg width="24" height="24" className="uidesign" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {/* <svg width="24" height="24" className="uidesign" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 12H21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M2.28481 11.7966L7.73501 7.90356C8.2645 7.52535 9 7.90385 9 8.55455V15.4454C9 16.0961 8.2645 16.4746 7.73501 16.0964L2.28481 12.2034C2.14522 12.1037 2.14522 11.8963 2.28481 11.7966Z" className="nfr" />
-                        </svg>
+                        </svg> */}
+
+                        <Image
+                            src={Pointingleft}
+                            alt="pointingleft"
+                            width={"50"}
+                        // height={'50'}
+
+                        />
 
 
                         <p className="portback">
