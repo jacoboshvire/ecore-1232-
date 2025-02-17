@@ -8,6 +8,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion';
 import Image from 'next/image';
 import Wave from '../image/Wave.png'
+import Blur from '../image/Rectangle 79.png'
 //this are for next js link and navigation
 import Link from 'next/link';
 import { usePathname } from 'next/navigation'
@@ -286,7 +287,7 @@ export default function Portifilio() {
                 <div className="backarea">
                     <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <svg width="24" height="24" className="uidesign" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 12H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M7 12H21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             <path d="M2.28481 11.7966L7.73501 7.90356C8.2645 7.52535 9 7.90385 9 8.55455V15.4454C9 16.0961 8.2645 16.4746 7.73501 16.0964L2.28481 12.2034C2.14522 12.1037 2.14522 11.8963 2.28481 11.7966Z" className="nfr" />
                         </svg>
 
@@ -313,7 +314,10 @@ export default function Portifilio() {
                                         alt={portfilio.name}
                                         width={portfilio.imagewidth}
                                         height={portfilio.imageheight}
-                                        loading="lazy"
+                                        // loading="lazy" 
+                                        placeholder="blur"
+                                        blurDataURL="../image/Rectangle 79.png"
+                                        priority
                                     />
 
                                     <div className="namePost">
