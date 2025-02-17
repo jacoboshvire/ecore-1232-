@@ -316,7 +316,7 @@ export default function Portifilio() {
                                         height={portfilio.imageheight}
                                         // loading="lazy" 
                                         placeholder="blur"
-                                        blurDataURL="../image/Rectangle 79.png"
+                                        blurDataURL="https://res.cloudinary.com/dr0yyqvj6/image/upload/v1739834351/Rectangle_79_1_sqdraa.png"
                                         priority
                                     />
 
