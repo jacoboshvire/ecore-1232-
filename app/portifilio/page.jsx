@@ -284,25 +284,38 @@ export default function Portifilio() {
             </div>
             <div className="mainPortArea">
                 <div className="lenghtofpost">
+                    <p>
+                        Total number of works so far is <b>" {portfilios.length} "</b>
+                    </p>
+                </div>
+                <div className="postArea">
+
                     {
-                        `Total number of works so far is  "${portfilios.length}"`
+                        portfilios.map((portfilio) => {
+                            return (
+                                <div className="portfiliocard" key={portfilio._id}>
+                                    <Image className="postimage"
+                                        src={portfilio.image}
+                                        alt={portfilio.name}
+                                        width={portfilio.imagewidth}
+                                        height={portfilio.imageheight}
+                                    />
+
+                                    <div className="namePost">
+                                        <h2>
+                                            {portfilio.name}
+                                        </h2>
+                                        <Link href={"#"} className="postlink">
+                                            learn more
+                                        </Link>
+                                    </div>
+
+
+                                </div>
+                            )
+                        })
                     }
                 </div>
-
-                {
-                    portfilios.map((portfilio) => {
-                        return (
-                            <div className="portfiliocard" key={portfilio._id}>
-                                <Image className="postimage"
-                                    src={portfilio.image}
-                                    alt={portfilio.name}
-                                    width={100}
-                                    height={100}
-                                />
-                            </div>
-                        )
-                    })
-                }
             </div>
             <Stuff />
             <Footer />
