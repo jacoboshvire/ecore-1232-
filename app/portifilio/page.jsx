@@ -14,6 +14,22 @@ import { usePathname } from 'next/navigation'
 
 
 export default function Portifilio() {
+    // variable for Portfiliopost()
+    let [Portfilios, setPortfilios] = useState([]);
+
+    //fatch api
+    async function Portfiliopost() {
+        let response = await fetch("https://jacob-shevy-api.onrender.com/api/portifilio")
+        let data = await response.json();
+        return data;
+    }
+
+    useEffect(() => {
+        Portfiliopost().then(() => {
+            setPortfilios(data);
+        })
+    }, [])
+
     // cursor animations using framer motion and js eventlistener
     const cursorSize = 20 / 2;
     const newCursorSize = 100 / 2;
