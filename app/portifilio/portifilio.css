@@ -116,10 +116,18 @@
 
 .lenghtofpost {
     margin: 2.5% 0 3% 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nfr {
-    fill: var(--foreground);
+    fill: var(--main);
+}
+
+.uidesignti {
+    stroke: var(--main);
+    fill: var(--main);
+    margin-left: 12px;
 }
 
 .portback {
@@ -144,6 +152,30 @@
     padding: 2%;
     padding-bottom: 3.5%;
     margin-bottom: 3%;
+    transform-origin: center;
+    transform: scale(1);
+}
+
+.mainPortArea .listArea {
+    width: 100%;
+}
+
+.mainPortArea .listpost {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3%;
+    padding: 2%;
+    background-color: var(--main);
+    border-radius: 30px;
+}
+
+.portfiliocard:hover {
+    transform: scale(1.07);
+}
+
+.listpost:hover {
+    transform: scale(1.07);
 }
 
 .mainPortArea .portfiliocard:nth-child(odd) {
@@ -156,6 +188,32 @@
     border-radius: 15px;
 }
 
+.mainPortArea .portfiliocard .postInfo p {
+    display: none;
+}
+
+.mainPortArea .listpost .postInfo {
+    width: 50%;
+}
+
+.mainPortArea .listpost .postInfo p {
+    margin-top: 10%;
+}
+
+.mainPortArea .listpost img {
+    width: 40%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.portfiliocard:hover img {
+    animation: lianime 500ms forwards ease-in-out;
+}
+
+.listpost:hover img {
+    animation: lianime 500ms forwards ease-in-out;
+}
+
 .mainPortArea .portfiliocard .namePost {
     height: 20%;
     padding-top: 3.5%;
@@ -165,7 +223,20 @@
     align-items: center;
 }
 
+.mainPortArea .listpost .namePost {
+    padding-top: 3.5%;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .mainPortArea .portfiliocard .namePost h2 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.mainPortArea .listpost .namePost h2 {
     font-weight: 700;
     font-size: 18px;
 }
@@ -179,8 +250,39 @@
     padding-right: 15px;
     padding-left: 15px;
     border-radius: 10px;
+    transform: scale(1);
+    transform-origin: center;
+}
+
+.postlink:hover {
+    transform: scale(1.07);
 }
 
 .main_container {
     margin-bottom: 25px;
+}
+
+.sort {
+    display: flex;
+}
+
+.sort .sortbtn1 {
+    padding: 10px;
+    background-color: var(--subcolour);
+    border-radius: 5px;
+}
+
+.sort .sortbtn2 {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: var(--subcolour);
+    border-radius: 5px;
+}
+
+.bgn {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: var(--subclick);
+    border-radius: 5px;
+    cursor: not-allowed;
 }

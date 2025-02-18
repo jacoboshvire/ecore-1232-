@@ -12,6 +12,7 @@
   --shadow: 0 0 50px rgba(151, 151, 151, 0.329);
   --subcolour: #CCD2E3;
   --subhover: #2D313D;
+  --subclick: #919dc2;
   --border: #E6E6E6;
 }
 
@@ -30,6 +31,7 @@
     --subcolour: #2D313D;
     --subhover: #CCD2E3;
     --border: #3636369a;
+    --subclick: #1f2638;
   }
 }
 

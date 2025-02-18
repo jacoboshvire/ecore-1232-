@@ -5,7 +5,7 @@ import Stuff from '../Stuff.js'
 import "../page.css"
 import { useState, useEffect, useRef } from 'react';
 //import for the animation "i'm using framer motion for all my animation"
-import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useVelocity, useInView, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import Wave from '../image/Wave.png'
 import Pointingleft from '../image/PointingLeft.png'
@@ -106,9 +106,18 @@ export default function Portifilio() {
     // menu animation for showing the toggle burger menu
     var [menu, setMenu] = useState(false);
     var [details, setDetails] = useState(false)
+    let [sort, setSort] = useState(true)
 
     const toggleMenu = () => {
         setMenu((menu) => (!menu))
+    }
+
+    const togglelist = () => {
+        setSort(true)
+    }
+
+    const toggleNotlist = () => {
+        return setSort(false)
     }
 
     return (
@@ -235,7 +244,12 @@ export default function Portifilio() {
             </div>
 
             {/* the portifilio nav bar */}
-            <div className="portNav">
+            <motion.div className="portNav"
+                whileDrag={{
+                    position: "fixed"
+                }}
+
+            >
                 {/* title */}
                 <div className="portNavTitle">
                     <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
@@ -284,14 +298,10 @@ export default function Portifilio() {
                         </Link>
                     </li>
                 </div>
-            </div>
+            </motion.div>
             <div className="mainPortArea">
                 <div className="backarea">
                     <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                        {/* <svg width="24" height="24" className="uidesign" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 12H21" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M2.28481 11.7966L7.73501 7.90356C8.2645 7.52535 9 7.90385 9 8.55455V15.4454C9 16.0961 8.2645 16.4746 7.73501 16.0964L2.28481 12.2034C2.14522 12.1037 2.14522 11.8963 2.28481 11.7966Z" className="nfr" />
-                        </svg> */}
 
                         <Image
                             src={Pointingleft}
@@ -301,9 +311,8 @@ export default function Portifilio() {
 
                         />
 
-
                         <p className="portback">
-                            software
+                            software development
                         </p>
                     </Link>
 
@@ -312,13 +321,51 @@ export default function Portifilio() {
                     <p>
                         Total number of works so far is <b>" {portfilios.length} "</b>
                     </p>
+
+                    <div className="sort">
+                        <div className={!sort ? "sortbtn1" : "bgn"} onClick={togglelist} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="uidesign">
+                                <rect x="4" y="4" width="6" height="6" rx="1" strokeLinejoin="round" />
+                                <rect x="4" y="14" width="6" height="6" rx="1" strokeLinejoin="round" />
+                                <rect x="14" y="14" width="6" height="6" rx="1" strokeLinejoin="round" />
+                                <rect x="14" y="4" width="6" height="6" rx="1" strokeLinejoin="round" />
+                            </svg>
+
+                        </div>
+
+                        <div className={sort ? "sortbtn2" : "bgn"} onClick={toggleNotlist} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="uidesign">
+                                <path d="M5 7H13" strokeWidth="2" strokeLinecap="round" />
+                                <path d="M5 12H11" strokeWidth="2" strokeLinecap="round" />
+                                <path d="M5 17H9" strokeWidth="2" strokeLinecap="round" />
+                                <path d="M19 18L22 15M19 18L16 15M19 18L19 6" strokeWidth="2" />
+                            </svg>
+                            <p>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div className="postArea">
+                <div className={sort ? "postArea" : "listArea"}>
 
                     {
                         portfilios.map((portfilio) => {
                             return (
-                                <div className="portfiliocard" key={portfilio._id} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                                <motion.div className={sort ? "portfiliocard" : "listpost"} key={portfilio._id} onMouseEnter={textEnter} onMouseLeave={textLeave}
+
+                                    initial={{
+                                        opacity: 0
+                                    }}
+
+                                    whileInView={{
+                                        opacity: 1
+                                    }}
+
+                                    whileHover={{
+                                        scale: 1.05
+                                    }}
+
+                                >
+
                                     <Image className="postimage"
                                         src={portfilio.image}
                                         alt={portfilio.name}
@@ -331,16 +378,32 @@ export default function Portifilio() {
                                     />
 
                                     <div className="namePost">
-                                        <h2>
-                                            {portfilio.name}
-                                        </h2>
+                                        <div className="postInfo">
+                                            <h2>
+                                                {portfilio.name}
+                                            </h2>
+                                            <p>
+                                                {
+                                                    ` ${portfilio.description.substring(0, 100)}  `
+                                                }
+
+                                                <b>
+                                                    read more
+                                                </b>
+                                            </p>
+                                        </div>
                                         <Link href={"#"} className="postlink">
-                                            learn more
+                                            <p>learn more</p>
+                                            <svg width="24" className="uidesignti" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M17 12H3" strokeLinecap="round" strokeLinejoin="round" />
+                                                <path d="M21.6427 11.7856L18.2116 9.72696C17.6784 9.40703 17 9.79112 17 10.413V13.587C17 14.2089 17.6784 14.593 18.2116 14.273L21.6427 12.2144C21.8045 12.1173 21.8045 11.8827 21.6427 11.7856Z" fill="nfr" />
+                                            </svg>
+
                                         </Link>
                                     </div>
 
 
-                                </div>
+                                </motion.div>
                             )
                         })
                     }
