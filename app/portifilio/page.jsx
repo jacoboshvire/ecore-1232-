@@ -14,9 +14,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 
 
-export default function Portifilio({
-    Softwaredev
-}) {
+export default function Portifilio() {
     // variable for Portfiliopost()
     let [portfilios, setPortfilios] = useState([]);
 
