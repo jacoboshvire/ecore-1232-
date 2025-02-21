@@ -4,7 +4,7 @@ import Link from 'next/link'
 import "./page.css";
 
 function Stuff() {
-    const darkmode = ""
+    const darkmode = window.matchMedia("(prefers-color-scheme: dark)").matches
     const [turnDark, setTurnDark] = useState(false)
     // const [prefersDarkMode, setPrefersDarkMode] = useState(darkmode);
     const darkToggle = () => {
@@ -18,9 +18,6 @@ function Stuff() {
         }
     }
 
-    useEffect(() => {
-
-    })
 
 
     return (
