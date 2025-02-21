@@ -33,7 +33,7 @@ export default function Portifilio({
     useEffect(() => {
         Portfiliopost().then((data) => {
             setPortfilios(data.Portfilio);
-            console.log(data.Portfilio)
+            // console.log(data.Portfilio)
         })
     }, [])
 
