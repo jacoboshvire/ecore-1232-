@@ -347,7 +347,6 @@ export default function Portifilio({
                         </div>
                     </div>
                 </div>
-                {Softwaredev}
                 <div className={sort ? "postArea" : "listArea"}>
 
                     {
