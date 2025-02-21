@@ -1,5 +1,7 @@
+
 import localFont from "next/font/local";
 import "./globals.css";
+import { useContext } from 'react'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,6 +18,8 @@ export const metadata = {
   title: "Oshevire Ejiro jacob",
   description: "hey!!!😁 guys i'm jacob this is my site",
 };
+
+
 
 export default function RootLayout({ children }) {
   return (

@@ -28,8 +28,6 @@
     max-width: 1187px;
     justify-content: space-between;
     width: 100%;
-    background-color: var(--main);
-    box-shadow: var(--shadow);
     padding: 2.5%;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
@@ -37,6 +35,21 @@
     align-items: center;
     transform-origin: center;
     transform: scale(1);
+}
+
+body .portNav {
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+}
+
+.light .portNav {
+    background-color: #ffffff;
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
+}
+
+.dark .portNav {
+    background-color: #161616;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.329);
 }
 
 .portNav:hover {
@@ -74,8 +87,19 @@
 }
 
 .otherPortLink li:hover {
-    background-color: var(--subcolour);
     animation: lianime 500ms forwards ease-in-out;
+}
+
+body .otherPortLink li:hover {
+    background-color: var(--subcolour);
+}
+
+.light .otherPortLink li:hover {
+    background-color: #CCD2E3;
+}
+
+.dark .otherPortLink li:hover {
+    background-color: #2D313D;
 }
 
 @keyframes lianime {
@@ -120,13 +144,33 @@
     justify-content: space-between;
 }
 
-.nfr {
+body .nfr {
     fill: var(--main);
 }
 
-.uidesignti {
+.light .nfr {
+    fill: #ffffff;
+}
+
+.dark .nfr {
+    fill: #161616;
+}
+
+body .uidesignti {
     stroke: var(--main);
     fill: var(--main);
+    margin-left: 12px;
+}
+
+.light .uidesignti {
+    stroke: #ffffff;
+    fill: #ffffff;
+    margin-left: 12px;
+}
+
+.dark .uidesignti {
+    stroke-width: #161616;
+    fill: #161616;
     margin-left: 12px;
 }
 
@@ -142,9 +186,7 @@
 
 .mainPortArea .portfiliocard {
     width: 48.5%;
-    /* height: 350px; */
     flex-grow: inherit;
-    background-color: var(--main);
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -154,6 +196,18 @@
     margin-bottom: 3%;
     transform-origin: center;
     transform: scale(1);
+}
+
+body .mainPortArea .portfiliocard {
+    background-color: var(--main);
+}
+
+.light .mainPortArea .portfiliocard {
+    background-color: #ffffff;
+}
+
+.dark .mainPortArea .portfiliocard {
+    background-color: #161616;
 }
 
 .mainPortArea .listArea {
@@ -166,8 +220,19 @@
     align-items: center;
     margin-bottom: 3%;
     padding: 2%;
-    background-color: var(--main);
     border-radius: 30px;
+}
+
+body .mainPortArea .listpost {
+    background-color: var(--main);
+}
+
+.light .mainPortArea .listpost {
+    background-color: #ffffff;
+}
+
+.dark .mainPortArea .listpost {
+    background-color: #161616;
 }
 
 .portfiliocard:hover {
@@ -243,8 +308,6 @@
 
 .postlink {
     font-size: 14px;
-    background-color: var(--foreground);
-    color: var(--main);
     font-weight: 500;
     padding: 12px;
     padding-right: 15px;
@@ -252,6 +315,21 @@
     border-radius: 10px;
     transform: scale(1);
     transform-origin: center;
+}
+
+body .postlink {
+    background-color: var(--foreground);
+    color: var(--main);
+}
+
+.light .postlink {
+    background-color: #171717;
+    color: #ffffff;
+}
+
+.dark .postlink {
+    background-color: #F5F5F5;
+    color: #161616;
 }
 
 .postlink:hover {
@@ -268,21 +346,54 @@
 
 .sort .sortbtn1 {
     padding: 10px;
-    background-color: var(--subcolour);
     border-radius: 5px;
+}
+
+body .sort .sortbtn1 {
+    background-color: var(--subcolour);
+}
+
+.light .sort .sortbtn1 {
+    background-color: #CCD2E3;
+}
+
+.dark .sort .sortbtn1 {
+    background-color: #2D313D;
 }
 
 .sort .sortbtn2 {
     padding: 10px;
     margin-left: 10px;
-    background-color: var(--subcolour);
     border-radius: 5px;
+}
+
+body .sort .sortbtn2 {
+    background-color: var(--subcolour);
+}
+
+.light .sort .sortbtn2 {
+    background-color: #CCD2E3;
+}
+
+.dark .sort .sortbtn2 {
+    background-color: #2D313D;
 }
 
 .bgn {
     padding: 10px;
     margin-left: 10px;
-    background-color: var(--subclick);
     border-radius: 5px;
     cursor: not-allowed;
+}
+
+body .bgn {
+    background-color: var(--subclick);
+}
+
+.dark .bgn {
+    background-color: #1f2638;
+}
+
+.light .bgn {
+    background-color: #919dc2;
 }

@@ -9,6 +9,7 @@ import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import "./page.css";
 import Stuff from './Stuff.js'
+import { ThemeProvider } from "next-themes";
 
 function Nav() {
 

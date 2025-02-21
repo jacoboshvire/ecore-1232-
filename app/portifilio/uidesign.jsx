@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function uidesign() {
+function uidesign() {
     return (
         <div>
-
+            uidesign
         </div>
     )
 }
+
+export default uidesign

@@ -3,8 +3,6 @@
 .cursor {
     height: 40px;
     width: 40px;
-    background-color: var(--foreground);
-    border: 1px solid var(--foreground);
     border-radius: 50%;
     position: fixed;
     z-index: 5;
@@ -16,9 +14,32 @@
     left: 0;
 }
 
-svg {
-    fill: black;
+body .cursor {
+    background-color: var(--foreground);
+    border: 1px solid var(--foreground);
+}
+
+.dark .cursor {
+    background-color: #F5F5F5;
+    border: 1px solid #F5F5F5;
+}
+
+.light .cursor {
+    background-color: #171717;
+    border: 1px solid #171717;
+}
+
+body svg {
+    fill: var(--foreground);
     /* stroke: black; */
+}
+
+.dark svg {
+    fill: #F5F5F5;
+}
+
+.light svg {
+    fill: #000;
 }
 
 nav svg {
@@ -101,8 +122,19 @@ a h3 {
 .menu div {
     width: 100%;
     height: 2px;
-    background-color: #000000;
     border-radius: 30px;
+}
+
+body .menu div {
+    background-color: var(--foreground);
+}
+
+.light .menu div {
+    background-color: #171717;
+}
+
+.dark .menu div {
+    background-color: #F5F5F5;
 }
 
 .main_container {
@@ -110,8 +142,6 @@ a h3 {
     clip-path: padding-box;
     width: 100%;
     max-width: 1187px;
-    background-color: var(--main);
-    box-shadow: var(--shadow);
     padding: 60px;
     margin-top: 5%;
     border-radius: 30px;
@@ -119,15 +149,53 @@ a h3 {
     transform: scale(1);
 }
 
-.main_container:hover {
+body .main_container {
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+}
+
+.dark .main_container {
+    background-color: #161616;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.329);
+}
+
+.light .main_container {
+    background-color: #ffffff;
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
+}
+
+body .main_container:hover {
     background-color: #222222;
     color: white;
     transform: scale(1.01);
 }
 
-.main_container:hover .skills span {
+.light .main_container:hover {
+    background-color: #222222;
+    color: white;
+    transform: scale(1.01);
+}
+
+.dark .main_container:hover {
+    background-color: rgb(224, 224, 224);
+    color: #000000;
+}
+
+
+
+body .main_container:hover .skills span {
     background-color: #2D313D;
     color: white;
+}
+
+.light .main_container:hover .skills span {
+    background-color: #2D313D;
+    color: white;
+}
+
+.dark .main_container:hover .skills span {
+    background-color: #9099b3;
+    color: black;
 }
 
 .inside_container {
@@ -176,9 +244,20 @@ a h3 {
     justify-content: center;
     width: 181px;
     height: 42px;
-    background-color: #CCD2E3;
     border-radius: 10px;
     margin-right: 25px;
+}
+
+body .skills span {
+    background-color: var(--subcolour);
+}
+
+.light .skills span {
+    background-color: #CCD2E3;
+}
+
+.dark .skills span {
+    background-color: #2D313D;
 }
 
 .skills span p {
@@ -266,8 +345,16 @@ footer .links a {
     align-items: center;
 }
 
-.main_container:hover svg {
+body .main_container:hover svg {
+    fill: whe
+}
+
+.dark .main_container:hover svg {
     fill: white;
+}
+
+.light .main_container:hover svg {
+    fill: black;
 }
 
 @keyframes wave {
@@ -286,17 +373,45 @@ footer .links a {
 
 
 
-.main_container:hover .skills span svg {
+body .main_container:hover .skills span svg {
     fill: white;
 }
 
-.main_container:hover .skills span .uidesign {
-    fill: none;
-    stroke: white;
+.light .main_container:hover .skills span svg {
+    fill: white;
 }
 
-.uidesign {
-    stroke: black;
+.dark .main_container:hover .skills span svg {
+    fill: black;
+}
+
+body .main_container:hover .skills span .uidesign {
+    fill: none;
+    stroke: var(--main);
+}
+
+.light .main_container:hover .skills span .uidesign {
+    stroke: #ffffff;
+    fill: none;
+}
+
+.dark .main_container:hover .skills span .uidesign {
+    stroke: #000;
+    fill: none;
+}
+
+body .uidesign {
+    stroke: var(--foreground);
+    fill: none;
+}
+
+.dark .uidesign {
+    stroke: white;
+    fill: none;
+}
+
+.light .uidesign {
+    stroke: #000;
     fill: none;
 }
 
@@ -308,12 +423,25 @@ footer .links a {
     justify-content: center;
     width: 181px;
     height: 42px;
-    background-color: #000000;
-    color: white;
     border-radius: 10px;
     transform-origin: center;
     transform: scale(1);
     transition: 500ms;
+}
+
+body .about a {
+    background-color: var(--foreground);
+    color: var(--main);
+}
+
+.light .about a {
+    background-color: #171717;
+    color: #ffffff;
+}
+
+.dark .about a {
+    background-color: #ffffff;
+    color: #000;
 }
 
 .about a:hover {
@@ -321,9 +449,19 @@ footer .links a {
     font-weight: 700;
 }
 
-.main_container:hover .about a {
-    background-color: white;
-    color: #000000;
+body .main_container:hover .about a {
+    background-color: var(--main);
+    color: var(--foreground);
+}
+
+.light .main_container:hover .about a {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.dark .main_container:hover .about a {
+    background-color: #000;
+    color: #ffffff;
 }
 
 .menu:hover {
@@ -400,9 +538,7 @@ footer .links a {
 .listen {
     /* width: 50px; */
     height: 50px;
-    color: var(--main);
-    background-color: var(--foreground);
-    box-shadow: var(--shadow);
+
     border-radius: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -411,6 +547,24 @@ footer .links a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+body .listen {
+    color: var(--main);
+    background-color: var(--foreground);
+    box-shadow: var(--shadow);
+}
+
+.light .listen {
+    color: #000;
+    background-color: #F5F5F5;
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
+}
+
+.dark .listen {
+    color: #ffffff;
+    background-color: #171717;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.329);
 }
 
 .listen a {
@@ -658,58 +812,31 @@ footer .links a {
 
 
 @media (prefers-color-scheme: dark) {
-    svg {
-        fill: white;
-        /* stroke: white; */
-    }
 
-    .menu div {
+    /* .menu div {
         background-color: #ffffff;
-    }
+    } */
 
     .skills span {
         background-color: #2D313D;
     }
 
-    .uidesign {
-        stroke: white;
-        fill: none;
-    }
-
-    .about a {
-        background-color: #ffffff;
-        color: #000000;
-    }
-
-    .main_container:hover {
+    body .main_container:hover {
         background-color: rgb(224, 224, 224);
         color: #000000;
     }
 
-    .main_container:hover .skills span {
+    body .main_container:hover .skills span {
         background-color: #9099b3;
         color: black;
     }
 
-    .main_container:hover svg {
+    body .main_container:hover svg {
         fill: #000000;
     }
 
-    .main_container:hover .skills span svg {
+    body .main_container:hover .skills span svg {
         fill: black;
     }
-
-    .main_container:hover .skills span .uidesign {
-        fill: none;
-        stroke: black;
-    }
-
-    .main_container:hover .about a {
-        background-color: #000000;
-        color: #ffffff;
-    }
-
-
-
 
 }

@@ -3,7 +3,7 @@ import "./portifilio.css"
 import Footer from '../Footer.js'
 import Stuff from '../Stuff.js'
 import "../page.css"
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense, Children } from 'react';
 //import for the animation "i'm using framer motion for all my animation"
 import { motion, useMotionValue, useSpring, useVelocity, useInView, useScroll } from 'framer-motion';
 import Image from 'next/image';
@@ -14,7 +14,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation'
 
 
-export default function Portifilio() {
+export default function Portifilio({
+    Softwaredev
+}) {
     // variable for Portfiliopost()
     let [portfilios, setPortfilios] = useState([]);
 
@@ -245,7 +247,7 @@ export default function Portifilio() {
 
             {/* the portifilio nav bar */}
             <motion.div className="portNav"
-                whileDrag={{
+                while={{
                     position: "fixed"
                 }}
 
@@ -345,6 +347,7 @@ export default function Portifilio() {
                         </div>
                     </div>
                 </div>
+                {Softwaredev}
                 <div className={sort ? "postArea" : "listArea"}>
 
                     {
