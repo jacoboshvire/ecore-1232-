@@ -51,7 +51,7 @@ export default function Graphics() {
         <>
             <div className="lenghtofpost">
                 <p>
-                    Total number of graphics designs so far is <b>" {graphicpost.length} "</b>
+                    Total number of graphics designs so far is    <b className='bigtext'>" {graphicpost.length} "</b>
                 </p>
 
                 <div className="sort" >

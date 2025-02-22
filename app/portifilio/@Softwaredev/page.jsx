@@ -42,7 +42,7 @@ export default function Softwaredev() {
         <>
             <div className="lenghtofpost">
                 <p>
-                    Total number of software development jobs so far is <b>" {portfilios.length} "</b>
+                    Total number of software development jobs so far is   <b className='bigtext'>" {portfilios.length} "</b>
                 </p>
 
                 <div className="sort" >

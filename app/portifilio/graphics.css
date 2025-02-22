@@ -7,8 +7,9 @@
 
 .graphicsArea .graphicscard {
     width: 30.333%;
-    margin-right: 3%;
-    margin-top: 3%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    margin-top: 2%;
     padding: 2%;
     background-color: var(--main);
     border-radius: 30px;

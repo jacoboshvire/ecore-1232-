@@ -154,6 +154,11 @@ body .otherPortLink li:hover {
     margin: 2.5% 0 3% 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.lenghtofpost .bigtext {
+    font-size: 1.1em;
 }
 
 body .nfr {
