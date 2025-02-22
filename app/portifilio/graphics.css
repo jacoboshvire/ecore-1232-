@@ -1,0 +1,49 @@
+.graphicsArea {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1187px;
+    width: 100%;
+}
+
+.graphicsArea .graphicscard {
+    width: 30.333%;
+    margin-right: 3%;
+    margin-top: 3%;
+    padding: 2%;
+    background-color: var(--main);
+    border-radius: 30px;
+}
+
+/* .graphicsArea .graphicscard :nth-last-child(1) {
+    margin-right: 0;
+} */
+
+body .graphicsArea .graphicscard img {
+    background-color: var(--img);
+    border-radius: 15px;
+}
+
+.dark .graphicsArea .graphicscard img {
+    background-color: #000000;
+}
+
+.ligth .graphicsArea .graphicscard img {
+    background-color: #313131;
+}
+
+.graphicsArea .postInfo p {
+    display: none;
+}
+
+.graphicsArea .namePost {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.graphicsArea .namePost .postInfo h2 {
+    font-weight: 700;
+    font-size: 1.1em;
+}

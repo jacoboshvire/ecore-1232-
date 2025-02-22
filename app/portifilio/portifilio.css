@@ -263,6 +263,15 @@ body .mainPortArea .listpost {
     width: 100%;
     height: auto;
     border-radius: 15px;
+    background-color: var(--img);
+}
+
+.dark .mainPortArea .portfiliocard img {
+    background-color: #000000;
+}
+
+.ligth .mainPortArea .portfiliocard img {
+    background-color: #313131;
 }
 
 .mainPortArea .portfiliocard .postInfo p {
@@ -281,6 +290,15 @@ body .mainPortArea .listpost {
     width: 40%;
     height: auto;
     border-radius: 15px;
+    background-color: var(--img);
+}
+
+.dark .mainPortArea .listpost img {
+    background-color: #000000;
+}
+
+.ligth .mainPortArea .listpost img {
+    background-color: #313131;
 }
 
 .portfiliocard:hover img {

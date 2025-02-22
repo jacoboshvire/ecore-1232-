@@ -16,6 +16,7 @@
   --subhover: #2D313D;
   --subclick: #919dc2;
   --border: #E6E6E6;
+  --img: #313131;
 }
 
 ::selection {
@@ -36,6 +37,7 @@
     --subhover: #CCD2E3;
     --border: #3636369a;
     --subclick: #1f2638;
+    --img: #000000;
   }
 }
 
