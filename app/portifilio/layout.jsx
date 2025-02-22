@@ -15,7 +15,7 @@ import Link from 'next/link';
 
 
 export default function Layout({
-    children, graphics, softwaredev, uidesign
+    children, Graphics, Softwaredev, Uidesign
 }) {
 
     // cursor animations using framer motion and js eventlistener
@@ -333,9 +333,9 @@ export default function Layout({
                 </div>
 
                 <div>
-                    {software ? softwaredev : ""}
-                    {graphic ? graphics : ""}
-                    {uidesigns ? uidesign : ""}
+                    {software ? Softwaredev : ""}
+                    {graphic ? Graphics : ""}
+                    {uidesigns ? Uidesign : ""}
                 </div>
 
             </div>
