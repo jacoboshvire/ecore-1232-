@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef, Suspense, Children } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import "../../page.css"
 import "../portifilio.css"
 import { motion, useMotionValue, useSpring, useVelocity, useInView, useScroll } from 'framer-motion';
