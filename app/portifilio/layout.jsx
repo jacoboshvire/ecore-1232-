@@ -82,6 +82,7 @@ export default function Layout({
     const [uidesigns, setUidesign] = useState(false)
     const [graphic, setGraphics] = useState(false)
 
+
     const changesoftware = () => {
         setSoftware(true)
         setUidesign(false)
@@ -333,9 +334,9 @@ export default function Layout({
                 </div>
 
                 <div>
-                    {software ? Softwaredev : ""}
-                    {graphic ? Graphics : ""}
-                    {uidesigns ? Uidesign : ""}
+                    {software && Softwaredev}
+                    {graphic && Graphics}
+                    {uidesigns && Uidesign}
                 </div>
 
             </div>

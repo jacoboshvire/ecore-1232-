@@ -14,7 +14,7 @@ export default function Default() {
 
     //fatch api
     let url = "https://jacob-shevy-api.onrender.com/api/portifilio"
-    async function Portfiliopost() {
+    async function portfiliopost() {
 
         let response = await fetch(url)
         let data = await response.json();
@@ -22,7 +22,7 @@ export default function Default() {
     }
 
     useEffect(() => {
-        Portfiliopost().then((data) => {
+        portfiliopost().then((data) => {
             setPortfilios(data.Portfilio);
             // console.log(data.Portfilio)
         })

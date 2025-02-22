@@ -7,14 +7,14 @@ import { motion, useMotionValue, useSpring, useVelocity, useInView, useScroll } 
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function softwaredev() {
+export default function Softwaredev() {
 
     // variable for Portfiliopost()
     let [portfilios, setPortfilios] = useState([]);
 
     //fatch api
     let url = "https://jacob-shevy-api.onrender.com/api/portifilio"
-    async function Portfiliopost() {
+    async function portfiliopost() {
 
         let response = await fetch(url)
         let data = await response.json();
@@ -22,7 +22,7 @@ export default function softwaredev() {
     }
 
     useEffect(() => {
-        Portfiliopost().then((data) => {
+        portfiliopost().then((data) => {
             setPortfilios(data.Portfilio);
             // console.log(data.Portfilio)
         })

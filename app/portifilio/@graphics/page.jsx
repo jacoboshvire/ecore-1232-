@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default async function graphics() {
+export default async function Graphics() {
     return (
         <div>
             <h1>
