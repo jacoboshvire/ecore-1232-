@@ -90,8 +90,20 @@ body .portNav {
     animation: lianime 500ms forwards ease-in-out;
 }
 
-body .otherPortLink li:hover {
+body .postinglinnk {
     background-color: var(--subcolour);
+}
+
+.light .postinglinnk {
+    background-color: #CCD2E3;
+}
+
+.dark .postinglinnk {
+    background-color: var(--subcolour);
+}
+
+body .otherPortLink li:hover {
+    background-color: #2D313D;
 }
 
 .light .otherPortLink li:hover {

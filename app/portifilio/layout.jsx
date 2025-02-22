@@ -18,8 +18,6 @@ export default function Layout({
     children, graphics, softwaredev, uidesign
 }) {
 
-
-
     // cursor animations using framer motion and js eventlistener
     const cursorSize = 20 / 2;
     const newCursorSize = 100 / 2;
@@ -78,6 +76,32 @@ export default function Layout({
             y: mousePosition.y - newCursorSize * 2
         }
     }
+
+    // logic for the parallel route
+    const [software, setSoftware] = useState(true)
+    const [uidesigns, setUidesign] = useState(false)
+    const [graphic, setGraphics] = useState(false)
+
+    const changesoftware = () => {
+        setSoftware(true)
+        setUidesign(false)
+        setGraphics(false)
+    }
+
+
+    const changesUidesign = () => {
+        setSoftware(false)
+        setUidesign(true)
+        setGraphics(false)
+    }
+
+
+    const changegrahics = () => {
+        setSoftware(false)
+        setUidesign(false)
+        setGraphics(true)
+    }
+
 
 
     // directing my variable to there functions
@@ -238,8 +262,8 @@ export default function Layout({
                     </h1>
                 </div>
                 <div className="otherPortLink">
-                    <li onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                        <Link href={"#"}>
+                    <li onMouseEnter={textEnter} onMouseLeave={textLeave} onClick={changesoftware} className={software ? "postinglinnk" : ""}>
+                        <Link href={"#"} >
                             <p>
                                 Software development
                             </p>
@@ -250,8 +274,8 @@ export default function Layout({
                             </svg>
                         </Link>
                     </li>
-                    <li onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                        <Link href={"#"}>
+                    <li onMouseEnter={textEnter} onMouseLeave={textLeave} onClick={changesUidesign} className={uidesigns ? "postinglinnk" : ""}>
+                        <Link href={"#"} >
                             <p>
                                 UI and UX design
                             </p>
@@ -262,8 +286,8 @@ export default function Layout({
                             </svg>
                         </Link>
                     </li>
-                    <li onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                        <Link href={"#"}>
+                    <li onMouseEnter={textEnter} onMouseLeave={textLeave} className={graphic ? "postinglinnk" : ""}>
+                        <Link href={"#"} onClick={changegrahics} >
                             <p>
                                 Graphics Design
                             </p>
@@ -288,16 +312,30 @@ export default function Layout({
                         // height={'50'}
 
                         />
+                        {
+                            software ?
+                                (<p className="portback">
+                                    software development
+                                </p>) : uidesigns ? (
+                                    <p className="portback">
+                                        ui/ux designs
+                                    </p>
+                                ) :
+                                    <p className="portback">
+                                        graphics designs
+                                    </p>
+                        }
 
-                        <p className="portback">
-                            software development
-                        </p>
+
+
                     </Link>
 
                 </div>
 
                 <div>
-                    {softwaredev}
+                    {software ? softwaredev : ""}
+                    {graphic ? graphics : ""}
+                    {uidesigns ? uidesign : ""}
                 </div>
 
             </div>
