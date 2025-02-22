@@ -59,9 +59,6 @@ function Stuff() {
                             <path d="M10.572 29.4277L15.2861 24.7136" stroke="#FFD600" strokeWidth="2" />
                         </svg>
                     </div>
-
-
-
             }
         </div>
     )
