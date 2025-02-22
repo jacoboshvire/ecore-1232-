@@ -217,14 +217,17 @@ body .uidesignti {
 
 body .mainPortArea .portfiliocard {
     background-color: var(--main);
+    box-shadow: var(--shadow);
 }
 
 .light .mainPortArea .portfiliocard {
     background-color: #ffffff;
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
 }
 
 .dark .mainPortArea .portfiliocard {
     background-color: #161616;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.329);
 }
 
 .mainPortArea .listArea {
