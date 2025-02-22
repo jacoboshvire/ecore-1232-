@@ -148,6 +148,22 @@ body .otherPortLink li:hover {
 
 .backarea {
     margin-top: 5%;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+}
+
+body .backarea a {
+    font-weight: 500;
+    color: var(--subhover);
+}
+
+.light .backarea a {
+    color: #2D313D;
+}
+
+.dark .backarea a {
+    color: #b8c5e9;
 }
 
 .lenghtofpost {
@@ -193,6 +209,9 @@ body .uidesignti {
 
 .portback {
     margin-left: 1.5%;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
 }
 
 .mainPortArea .postArea {
@@ -434,4 +453,77 @@ body .bgn {
 
 .light .bgn {
     background-color: #919dc2;
+}
+
+@media (max-width:1187px) {
+    .portNav {
+        max-width: 700px;
+        padding: 2.5%;
+        display: block;
+    }
+
+
+    .portNavTitle {
+        margin-bottom: 3%;
+    }
+
+    .otherPortLink li a p {
+        font-size: 13px;
+    }
+
+    .otherPortLink {
+        width: 100%;
+    }
+
+    .otherPortLink li {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .mainPortArea {
+        max-width: 700px;
+    }
+
+    .mainPortArea .portfiliocard {
+        padding: 3%;
+        padding-bottom: 4.5%;
+    }
+
+    .mainPortArea .portfiliocard .namePost {
+        padding-top: 15%;
+    }
+
+    .mainPortArea .listpost img {
+        width: 30%;
+    }
+
+    .mainPortArea .listpost .namePost {
+        padding-top: 1%;
+        padding-left: 10%;
+        width: 70%;
+    }
+
+    .mainPortArea .listpost .postInfo p {
+        margin-top: 3%;
+    }
+
+    .mainPortArea .listpost {
+        border-radius: 0px;
+        padding-bottom: 5%;
+    }
+
+    body .mainPortArea .listpost {
+        background: none;
+        border-bottom: 1px solid var(--foreground);
+    }
+
+    .light .mainPortArea .listpost {
+        background: none;
+        border-bottom: 1px solid #000000;
+    }
+
+    .dark .mainPortArea .listpost {
+        background: none;
+        border-bottom: 1px solid #ffffff;
+    }
 }

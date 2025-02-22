@@ -145,7 +145,7 @@ export default function Layout({
                     </a>
                 </li>
                 {/* 2nd link */}
-                <li className={menu ? "port hide" : "port"}>
+                <li className={menu ? "ports hide" : "ports"}>
                     <Link href={"/portifilio"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
                             <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
@@ -304,32 +304,27 @@ export default function Layout({
             </motion.div>
             <div className="mainPortArea">
                 <div className="backarea">
-                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                    <Image
+                        src={Pointingleft}
+                        alt="pointingleft"
+                        width={"50"}
+                    // height={'50'}
 
-                        <Image
-                            src={Pointingleft}
-                            alt="pointingleft"
-                            width={"50"}
-                        // height={'50'}
+                    />
 
-                        />
-                        {
-                            software ?
-                                (<p className="portback">
-                                    software development
-                                </p>) : uidesigns ? (
-                                    <p className="portback">
-                                        ui/ux designs
-                                    </p>
-                                ) :
-                                    <p className="portback">
-                                        graphics designs
-                                    </p>
-                        }
-
-
-
-                    </Link>
+                    {
+                        software ?
+                            (<p className="portback">
+                                <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; <span> / &ensp;software development</span>
+                            </p>) : uidesigns ? (
+                                <p className="portback">
+                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; <span> / &ensp;ui/ux designs</span>
+                                </p>
+                            ) :
+                                <p className="portback">
+                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp;<span> / &ensp;graphics designs</span>
+                                </p>
+                    }
 
                 </div>
 

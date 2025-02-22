@@ -32,7 +32,8 @@ export default function Graphics() {
     useEffect(() => {
         graphicspost().then((data) => {
             setGraphicpost(data.graphics);
-            console.log(data.graphics)
+        }).catch(e => {
+            setGraphicpost("error");
         })
     }, [])
 
@@ -116,7 +117,7 @@ export default function Graphics() {
                                         </h2>
                                         <p>
                                             {
-                                                ` ${graphics.description.substring(0, 100)}  `
+                                                ` ${graphics.description.substring(0, 50)}  `
                                             }
 
                                             <b>

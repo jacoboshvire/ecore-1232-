@@ -62,3 +62,20 @@ body .graphicsArea .graphicscard img {
     font-weight: 700;
     font-size: 1.1em;
 }
+
+
+@media (max-width: 1187px) {
+    .graphicsArea .graphicscard {
+        width: 47%;
+        padding: 3%;
+        padding-bottom: 5%;
+    }
+
+    .graphicsArea .graphicscard:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .graphicsArea .graphicscard:nth-child(odd) {
+        margin-right: 3%;
+    }
+}

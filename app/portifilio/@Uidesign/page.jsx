@@ -25,6 +25,8 @@ export default function Uidesign() {
         portfiliopost().then((data) => {
             setPortfilios(data.Uidesign);
             // console.log(data.Portfilio)
+        }).catch(e => {
+            setPortfilios("error");
         })
     }, [])
 
@@ -107,7 +109,7 @@ export default function Uidesign() {
                                         </h2>
                                         <p>
                                             {
-                                                ` ${portfilio.description.substring(0, 100)}  `
+                                                ` ${portfilio.description.substring(0, 50)}  `
                                             }
 
                                             <b>

@@ -61,15 +61,62 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     max-width: 1187px;
     margin-top: 42px;
+    /* margin-bottom: 40px; */
 }
 
 
 .port a {
     transform: scale(1);
     transform-origin: flex start;
+}
+
+.port:hover a {
+    transform: scale(1.02);
+}
+
+body .ports {
+    padding: 10px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-bottom: 1px solid var(--foreground);
+
+}
+
+.light .ports {
+    border-bottom: 1px solid #000000;
+}
+
+.dark .ports {
+    border-bottom: 1px solid #F5F5F5;
+}
+
+.ports a {
+    transform: scale(1);
+    transform-origin: flex start;
+}
+
+body .ports:hover a {
+    transform: scale(1.02);
+}
+
+body .ports:hover {
+    background-color: var(--subcolour);
+    border-radius: 10px;
+    border: 1px solid var(--subcolour);
+}
+
+.light .ports:hover {
+    background-color: #9099b3;
+    border-bottom: 1px solid #9099b3;
+}
+
+.dark .ports:hover {
+    background-color: #2D313D;
+    border-bottom: 1px solid #2D313D;
 }
 
 .hide a {
