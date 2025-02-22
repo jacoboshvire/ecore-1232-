@@ -3,7 +3,7 @@ import "./portifilio.css"
 import Footer from '../Footer.js'
 import Stuff from '../Stuff.js'
 import "../page.css"
-import { useState, useEffect, useRef, Suspense, Children } from 'react';
+import { useState, useEffect } from 'react';
 //import for the animation "i'm using framer motion for all my animation"
 import { motion, useMotionValue, useSpring, useVelocity, useInView, useScroll } from 'framer-motion';
 import Image from 'next/image';
