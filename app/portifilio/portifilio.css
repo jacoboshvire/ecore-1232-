@@ -488,6 +488,64 @@ body .bgn {
     margin: 5%;
 }
 
+.menus {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 22px;
+}
+
+.menus div {
+    width: 100%;
+    height: 2px;
+    border-radius: 30px;
+    display: none;
+}
+
+body .menus div {
+    background-color: var(--foreground);
+}
+
+.light .menus div {
+    background-color: #171717;
+}
+
+.dark .menus div {
+    background-color: #F5F5F5;
+}
+
+.menus:hover {
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    position: relative;
+}
+
+.menus:hover div:nth-child(1) {
+    transform-origin: center;
+    transform: rotate(45deg);
+    width: 28.28px;
+    transition: 1s;
+    position: absolute;
+    top: 50%;
+}
+
+.menus:hover div:nth-child(3) {
+    transform-origin: center;
+    transform: rotate(-45deg);
+    width: 28.28px;
+    transition: 1s;
+    bottom: 50%;
+}
+
+.menus:hover div:nth-child(2) {
+    width: 0;
+    transition: 1s;
+}
+
 @keyframes svgrotate {
     0% {
         transform: rotate(0deg);
@@ -520,6 +578,22 @@ body .bgn {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.newPortlink {
+    padding: 3.5% 0 3.5% 0;
+}
+
+.newPortlink li {
+    margin-bottom: 3.5%;
+    padding: 3% 0 3% 0;
+}
+
+.newPortlink li a {
+    padding: 3% 6% 3% 6%;
+    border-radius: 5px;
+    display: inline;
+    font-weight: 500;
 }
 
 @media (max-width:1187px) {
@@ -592,5 +666,121 @@ body .bgn {
     .dark .mainPortArea .listpost {
         background: none;
         border-bottom: 1px solid #ffffff;
+    }
+}
+
+@media (max-width:700px) {
+    .otherPortLink {
+        display: none;
+    }
+
+    .menus div {
+        display: block;
+    }
+
+    .portNav {
+        max-width: 380px;
+        padding: 5%;
+        border-radius: 15px;
+        transition: 500ms;
+    }
+
+    .portNavTitle {
+        margin-bottom: 0%;
+    }
+
+    .mainPortArea {
+        max-width: 380px;
+    }
+
+    .lenghtofpost {
+        margin: 2.5% 0 5% 0;
+        display: block;
+    }
+
+    .lenghtofpost p {
+        margin-bottom: 5%;
+        font-size: 13px;
+        width: 80%;
+    }
+
+    .bgn:nth-child(1) {
+        padding: 10px;
+        margin-left: 0px;
+    }
+
+    .mainPortArea .portfiliocard:nth-child(odd) {
+        margin-right: 0%;
+        margin-bottom: 7%;
+    }
+
+    .mainPortArea .portfiliocard {
+        width: 100%;
+        border-radius: 15px;
+        padding: 5%;
+    }
+
+    .mainPortArea .portfiliocard img {
+        border-radius: 7.5px;
+    }
+
+    .mainPortArea .listpost .postInfo p {
+        font-size: 10px;
+        font-weight: 300;
+    }
+
+    .mainPortArea .listpost .namePost h2 {
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+    .mainPortArea .listpost .postlink {
+        font-size: 12px;
+        padding: 3%;
+        padding-right: 5%;
+        padding-left: 5%;
+        border-radius: 7.5px;
+        transform: scale(1);
+        transform-origin: center;
+        width: 40%;
+    }
+
+    .mainPortArea .listpost img {
+        border-radius: 5px;
+    }
+
+    .mainPortArea .listpost .postInfo {
+        padding-bottom: 10%;
+        padding-top: 10%;
+    }
+
+    .newDiv {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .portNavTitle h2 {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:400px) {
+    .portNav {
+        margin: 0 2% 0 2%;
+        width: 90%;
+    }
+
+    .mainPortArea {
+        width: 90%;
+    }
+
+    .portback {
+        font-size: 10px;
+    }
+
+    .portback a {
+        font-size: 10px;
     }
 }

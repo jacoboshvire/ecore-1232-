@@ -79,3 +79,21 @@ body .graphicsArea .graphicscard img {
         margin-right: 3%;
     }
 }
+
+@media (max-width: 700px) {
+    .graphicsArea .graphicscard {
+        width: 100%;
+        padding: 5%;
+        padding-bottom: 10%;
+        margin-bottom: 5%;
+        border-radius: 15px;
+    }
+
+    body .graphicsArea .graphicscard img {
+        border-radius: 7.5px;
+    }
+
+    .graphicsArea .graphicscard:nth-child(odd) {
+        margin-right: 0%;
+    }
+}
