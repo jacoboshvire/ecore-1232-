@@ -104,7 +104,7 @@ body .postinglinnk {
 }
 
 body .otherPortLink li:hover {
-    background-color: #2D313D;
+    background-color: var(--subcolour);
 }
 
 .light .otherPortLink li:hover {
@@ -584,11 +584,19 @@ body .menus div {
 
 .newPortlink {
     padding: 3.5% 0 3.5% 0;
+    margin-top: 5%;
+    display: none;
 }
 
 .newPortlink li {
     margin-bottom: 3.5%;
     padding: 3% 0 3% 0;
+
+}
+
+.newPortlink li:hover {
+    animation: lianime 500ms forwards ease-in-out;
+    transform-origin: center;
 }
 
 .newPortlink li a {
@@ -705,6 +713,11 @@ body .menus div {
 }
 
 @media (max-width:700px) {
+    .newPortlink {
+        padding: 3.5% 0 3.5% 0;
+        display: block;
+    }
+
     .otherPortLink {
         display: none;
     }
