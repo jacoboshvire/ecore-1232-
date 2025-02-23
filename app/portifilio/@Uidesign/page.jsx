@@ -144,7 +144,6 @@ export default function Uidesign() {
                                     </radialGradient>
                                 </defs>
                             </svg>
-
                             <h2>
                                 You are offline or you have bad network connection
                                 Please check your connection or change your location.
