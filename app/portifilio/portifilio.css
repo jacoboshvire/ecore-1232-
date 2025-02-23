@@ -455,6 +455,73 @@ body .bgn {
     background-color: #919dc2;
 }
 
+.error {
+    width: 100%;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error h2 {
+    width: 50%;
+    margin: 5%;
+    text-align: center;
+}
+
+.error svg {
+    margin-top: 5%;
+}
+
+.loadingPage {
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingPage svg {
+    animation: svgrotate 5s infinite ease-in-out;
+    transform-origin: center;
+    margin: 5%;
+}
+
+@keyframes svgrotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(30deg);
+    }
+
+    50% {
+        transform: rotate(60deg);
+    }
+
+    60% {
+        transform: rotate(90deg);
+    }
+
+    70% {
+        transform: rotate(120deg);
+    }
+
+    80% {
+        transform: rotate(180deg);
+    }
+
+    90% {
+        transform: rotate(260deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @media (max-width:1187px) {
     .portNav {
         max-width: 700px;
