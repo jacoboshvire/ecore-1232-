@@ -59,6 +59,7 @@ body .portNav {
 .portNavTitle {
     font-weight: 900;
     font-size: 26px;
+    width: 100%;
     display: flex;
     align-items: center;
     margin-right: 10%;
@@ -496,6 +497,7 @@ body .bgn {
     justify-content: space-between;
     align-items: center;
     margin-left: 22px;
+    display: none;
 }
 
 .menus div {
@@ -596,6 +598,39 @@ body .menus div {
     font-weight: 500;
 }
 
+.newmenu2 {
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+    position: relative;
+}
+
+.newmenu2 div {
+    height: 3px;
+}
+
+.newmenu2 div:nth-child(1) {
+    transform-origin: center;
+    transform: rotate(45deg);
+    width: 28.28px;
+    transition: 1s;
+    position: absolute;
+    top: 50%;
+}
+
+.newmenu2 div:nth-child(3) {
+    transform-origin: center;
+    transform: rotate(-45deg);
+    width: 28.28px;
+    transition: 1s;
+    bottom: 50%;
+}
+
+.newmenu2 div:nth-child(2) {
+    width: 0;
+    transition: 1s;
+}
+
 @media (max-width:1187px) {
     .portNav {
         max-width: 700px;
@@ -673,6 +708,17 @@ body .menus div {
     .otherPortLink {
         display: none;
     }
+
+    .menus {
+        display: inline;
+        display: flex;
+    }
+
+    /* 
+    .newmenu {
+        display: inline;
+        display: flex;
+    } */
 
     .menus div {
         display: block;

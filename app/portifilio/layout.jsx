@@ -268,7 +268,7 @@ export default function Layout({
                         </h1>
                     </div>
                     <div className="mini_portMenu">
-                        <div onClick={toggleMenus} className={menus ? "menus newmenu" : "menus"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                        <div onClick={toggleMenus} className={menus ? "menus newmenu2" : "menus"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                             <div></div>
                             <div></div>
                             <div></div>
