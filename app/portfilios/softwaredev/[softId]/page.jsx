@@ -119,18 +119,8 @@ export default function page({ params }) {
             setPortfilios(data.foundPortfilio);
             console.log(data.foundPortfilio.tools)
 
+            setWriteUp(data.foundPortfilio.description)
             setPhoto(data.foundPortfilio.image)
-            const changeLink = (url) => {
-                return `<a href=${url} target="_blank" rel="noopener noreferrer" className="textLink">${url}</a>`
-            }
-
-
-            const linkRegex = /(https?\:\/\/)?(www\.)?[^\s]+\.[^\s]+/g;
-
-            setWriteUp(data.foundPortfilio.description.replace(/[\t]/g, "&nbsp;" + "&nbsp;" + "&nbsp; ")
-                .replace(/[\n]/g, "<br />")
-                .replace(linkRegex, changeLink))
-
 
         }).catch(e => {
             setError(true);
@@ -141,7 +131,22 @@ export default function page({ params }) {
     console.log(portfilios.tools)
 
 
-    let txt = writeUp
+
+    const changeLink = (url) => {
+        return `<a href=${url} target="_blank" rel="noopener noreferrer" className="textLink">${url}</a>`
+    }
+
+    const changeTab = () => {
+        return "<br />"
+    }
+
+    const tab = /[\n]/g
+
+    const linkRegex = /(https?\:\/\/)?(www\.)?[^\s]+\.[^\s]+/g;
+
+    let txt = JSON.stringify(writeUp).replace(/[\t]/g, "&nbsp;" + "&nbsp;" + "&nbsp; ")
+        .replace(tab, changeTab)
+        .replace(linkRegex, changeLink)
 
     // let newTools = portfilios.tools.forEach(tool => {
     //     return `<h1> ${tool[tool]} <h1/>`
@@ -395,8 +400,16 @@ export default function page({ params }) {
                                             <circle cx="10.5" cy="66.5" r="6.5" />
                                             <circle cx="10.5" cy="66.5" r="10" className='uidesign' />
                                         </svg>
-
-
+                                    </div>
+                                    <div className="toolsList">
+                                        <p>
+                                            {portfilios.tools}
+                                        </p>
+                                        <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
+                                            <path d="M11 0L11 61.5" />
+                                            <circle cx="10.5" cy="66.5" r="6.5" />
+                                            <circle cx="10.5" cy="66.5" r="10" className='uidesign' />
+                                        </svg>
                                     </div>
                                 </div>
                             </div>
