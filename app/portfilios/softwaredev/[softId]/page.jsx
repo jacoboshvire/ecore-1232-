@@ -117,19 +117,19 @@ export default function page({ params }) {
 
         portfiliopost().then((data) => {
             setPortfilios(data.foundPortfilio);
+            console.log(data.foundPortfilio.tools)
 
             setPhoto(data.foundPortfilio.image)
             const changeLink = (url) => {
-                return `<a href=${url} target="_blank" rel="noopener noreferrer">${url}</a>`
+                return `<a href=${url} target="_blank" rel="noopener noreferrer" className="textLink">${url}</a>`
             }
 
 
             const linkRegex = /(https?\:\/\/)?(www\.)?[^\s]+\.[^\s]+/g;
 
             setWriteUp(data.foundPortfilio.description.replace(/[\t]/g, "&nbsp;" + "&nbsp;" + "&nbsp; ")
-                .replace(/[\n]/g, <br></br>)
+                .replace(/[\n]/g, "<br />")
                 .replace(linkRegex, changeLink))
-
 
 
         }).catch(e => {
@@ -138,19 +138,16 @@ export default function page({ params }) {
     }, [])
     let date = new Date(portfilios.date);
     let dateMDY = `${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`;
-    console.log(writeUp)
+    console.log(portfilios.tools)
 
 
-    // 
-    // 
-    //
-    // // .replace(/,/g, "")
-    // writeUp == String
-    // let newWrite = writeUp
-    // newWrite.replace(/[\r\n]/g, <br/> )
+    let txt = writeUp
 
+    // let newTools = portfilios.tools.forEach(tool => {
+    //     return `<h1> ${tool[tool]} <h1/>`
+    // });
 
-
+    // let newTools = JSON.parse(portfilios.tools)
     return (
         <div className='softwaredev'>
             <motion.div className="cursor"
@@ -365,8 +362,8 @@ export default function page({ params }) {
                                     </div>
 
                                     <div className="moreAbtPro">
-                                        <p className='writesoftware'>
-                                            {writeUp}
+                                        <p className='writesoftware' dangerouslySetInnerHTML={{ __html: txt }}>
+
                                         </p>
                                     </div>
                                     <div className="moreAbtLinksoftware">
@@ -381,6 +378,25 @@ export default function page({ params }) {
                                             </svg>
 
                                         </Link>
+                                    </div>
+                                </div>
+                                <div className="softwaretools">
+                                    <div className="toolsTitle">
+                                        <h1>
+                                            Tools Use
+                                        </h1>
+                                    </div >
+                                    <div className="toolsList">
+                                        <p>
+                                            {portfilios.tools}
+                                        </p>
+                                        <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
+                                            <path d="M11 0L11 61.5" />
+                                            <circle cx="10.5" cy="66.5" r="6.5" />
+                                            <circle cx="10.5" cy="66.5" r="10" className='uidesign' />
+                                        </svg>
+
+
                                     </div>
                                 </div>
                             </div>

@@ -129,7 +129,11 @@ body .softwareNameDate {
 .softwareAboutTools {
     margin: 3% 0 3% 0;
     z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: ; */
 }
+
 
 .softwareAbout {
     width: 67%;
@@ -169,4 +173,42 @@ body .softwareAbout .moreAbtLinksoftware a {
     align-items: center;
     width: max-content;
     font-size: 15px;
+}
+
+body .writesoftware a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--subhover);
+}
+
+body .softwaretools {
+    background-color: var(--subcolour);
+    padding: 5% 3%;
+    width: 30%;
+    height: max-content;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    border-radius: 30px;
+}
+
+.softwaretools h1 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 3%;
+
+}
+
+.softwaretools .toolsList {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+body .toolSvg {
+    fill: var(--foreground);
+    stroke: var(--foreground);
+    margin-left: 3%;
 }
