@@ -28,11 +28,11 @@
   :root {
     --background: #222222;
     --foreground: #F5F5F5;
-    --gradient: linear-gradient(#222222, #222222, #000000);
+    --gradient: linear-gradient(#3f3f3f, #3f3f3f, #000000);
     --main: #161616;
     --black: #ffffff;
     --pdf: #1f1f1f;
-    --shadow: 0 0 50px rgba(0, 0, 0, 0.329);
+    --shadow: 0 0 50px rgba(0, 0, 0, 0.178);
     --subcolour: #2D313D;
     --subhover: #CCD2E3;
     --border: #3636369a;

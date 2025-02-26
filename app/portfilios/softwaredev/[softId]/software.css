@@ -1,0 +1,172 @@
+.softwaredev {
+    width: 100%;
+    max-width: 1187px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.softwareMain {
+    width: 100%;
+}
+
+.titleLink {
+    width: 100%;
+    margin: 3% 0 3% 0;
+}
+
+.softwareTitle {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.softwareTitle h1 {
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.softwareTitle svg {
+    margin-right: 20px;
+    width: 34px;
+    height: 34px;
+}
+
+.listPath {
+    display: flex;
+    align-items: center;
+    margin: 3% 0 3% 0;
+}
+
+.listPath img {
+    margin-right: 2%;
+}
+
+.linkInSoftware {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+body .linkInSoftware a {
+    color: var(--subhover);
+}
+
+.light .linkInSoftware a {
+    color: #2D313D;
+}
+
+.dark .linkInSoftware a {
+    color: #CCD2E3;
+}
+
+.linkInSoftware span {
+    font-size: 25px;
+}
+
+body .linkInSoftware .Mainpage {
+    color: var(--foregound);
+    font-weight: 800;
+    cursor: not-allowed;
+}
+
+body .softwareNameDate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3% 5% 3% 5%;
+    background-color: var(--main);
+    box-shadow: var(--shadow);
+    margin-top: 3%;
+    border-radius: 30px;
+}
+
+.dark .softwareNameDate {
+    background-color: #161616;
+}
+
+.light .softwareNameDate {
+    background-color: #ffffff;
+}
+
+.softwareImage img {
+    width: 100%;
+    height: auto;
+    border-radius: 30px;
+}
+
+.softwareName {
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.softwareDate {
+    display: flex;
+    align-items: center;
+}
+
+.softwareDate svg {
+    margin-right: 12px;
+}
+
+.softwareDate b {
+    font-size: 18px;
+}
+
+.softwareDate span {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.softwareDate p {
+    display: flex;
+    align-items: center;
+}
+
+.softwareAboutTools {
+    margin: 3% 0 3% 0;
+    z-index: 2;
+}
+
+.softwareAbout {
+    width: 67%;
+    padding: 5%;
+    background-color: var(--main);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+}
+
+.softwareAbout .asTitle {
+    margin-bottom: 3%;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.softwareAbout .moreAbtPro {
+    width: 70%;
+    margin-bottom: 3%;
+}
+
+body .web {
+    stroke: var(--background);
+    fill: none;
+}
+
+.softwareAbout .moreAbtLinksoftware {
+    width: 100%;
+    margin-top: 7%;
+}
+
+body .softwareAbout .moreAbtLinksoftware a {
+    background-color: var(--foreground);
+    color: var(--background);
+    border-radius: 10px;
+    padding: 2% 5% 2% 5%;
+    display: flex;
+    align-items: center;
+    width: max-content;
+    font-size: 15px;
+}

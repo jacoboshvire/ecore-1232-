@@ -1,22 +1,21 @@
-"use client";
-import "./portifilio.css"
-import Footer from '../Footer.js'
-import Stuff from '../Stuff.js'
-import "../page.css"
-import { useState, useEffect } from 'react';
+"use client"
+import { useState, useEffect } from 'react'
+import * as React from 'react'
+import "./software.css"
+import "../../../page.css"
+import "../../../About/about.css"
+import Wave from '../../../image/Wave.png'
 //import for the animation "i'm using framer motion for all my animation"
-import { motion, useMotionValue, useSpring, useVelocity, useInView, useScroll } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion'
 import Image from 'next/image';
-import Wave from '../image/Wave.png'
-import Pointingleft from '../image/PointingLeft.png'
 //this are for next js link and navigation
 import Link from 'next/link';
-// import { usePathname } from 'next/navigation'
+import Footer from '../../../Footer.js';
+import Stuff from '../../../Stuff.js'
+import Pointingleft from '../../../image/PointingLeft.png'
 
 
-export default function Layout({
-    children, Graphics, Softwaredev, Uidesign
-}) {
+export default function page({ params }) {
 
     // cursor animations using framer motion and js eventlistener
     const cursorSize = 20 / 2;
@@ -77,33 +76,6 @@ export default function Layout({
         }
     }
 
-    // logic for the parallel route
-    const [software, setSoftware] = useState(true)
-    const [uidesigns, setUidesign] = useState(false)
-    const [graphic, setGraphics] = useState(false)
-
-
-    const changesoftware = () => {
-        setSoftware(true)
-        setUidesign(false)
-        setGraphics(false)
-    }
-
-
-    const changesUidesign = () => {
-        setSoftware(false)
-        setUidesign(true)
-        setGraphics(false)
-    }
-
-
-    const changegrahics = () => {
-        setSoftware(false)
-        setUidesign(false)
-        setGraphics(true)
-    }
-
-
 
     // directing my variable to there functions
     const textEnter = () => setVarientsmouse("text")
@@ -114,21 +86,73 @@ export default function Layout({
 
     // menu animation for showing the toggle burger menu
     var [menu, setMenu] = useState(false);
-    const [menus, setMenus] = useState(false);
-
+    var [details, setDetails] = useState(false)
 
     const toggleMenu = () => {
         setMenu((menu) => (!menu))
     }
 
-    const toggleMenus = () => {
-        setMenus((menus) => (!menus))
+    const toggleDetails = () => {
+        setDetails((details) => (!details))
     }
+
+
+    const { softId } = React.use(params)
+    // variable for Portfiliopost()
+    let [portfilios, setPortfilios] = useState([]);
+    let [photo, setPhoto] = useState(null)
+    let [writeUp, setWriteUp] = useState([])
+    let [error, setError] = useState(false)
+
+    //fatch api
+
+    async function portfiliopost() {
+        let url = `https://jacob-shevy-api.onrender.com/api/portifilio/${softId}`
+        let response = await fetch(url)
+        let data = await response.json();
+        return data;
+    }
+
+    useEffect(() => {
+
+        portfiliopost().then((data) => {
+            setPortfilios(data.foundPortfilio);
+
+            setPhoto(data.foundPortfilio.image)
+            const changeLink = (url) => {
+                return `<a href=${url} target="_blank" rel="noopener noreferrer">${url}</a>`
+            }
+
+
+            const linkRegex = /(https?\:\/\/)?(www\.)?[^\s]+\.[^\s]+/g;
+
+            setWriteUp(data.foundPortfilio.description.replace(/[\t]/g, "&nbsp;" + "&nbsp;" + "&nbsp; ")
+                .replace(/[\n]/g, <br></br>)
+                .replace(linkRegex, changeLink))
+
+
+
+        }).catch(e => {
+            setError(true);
+        })
+    }, [])
+    let date = new Date(portfilios.date);
+    let dateMDY = `${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`;
+    console.log(writeUp)
+
+
+    // 
+    // 
+    //
+    // // .replace(/,/g, "")
+    // writeUp == String
+    // let newWrite = writeUp
+    // newWrite.replace(/[\r\n]/g, <br/> )
 
 
 
     return (
-        <div className='mainport'>
+        <div className='softwaredev'>
             <motion.div className="cursor"
                 variants={variants}
                 animate={varientsmouse}
@@ -149,7 +173,7 @@ export default function Layout({
                     </a>
                 </li>
                 {/* 2nd link */}
-                <li className={menu ? "ports hide" : "ports"}>
+                <li className={menu ? "port hide" : "port"}>
                     <Link href={"/portifilio"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                         <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
                             <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
@@ -230,7 +254,7 @@ export default function Layout({
                                         Home
                                     </h5>
                                 </Link>
-                                <Link href={"#"}>
+                                <Link href={"/portifilio"}>
                                     <svg width="30px" height="30px" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
                                         <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
                                     </svg>
@@ -241,8 +265,8 @@ export default function Layout({
                             </div>
 
                         </div>
-                        <div className={!menu ? "about newabout" : "about"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                            <Link href={"/About"} >
+                        <div className="about" onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                            <Link href={"/About"}>
                                 About me
                             </Link>
                         </div>
@@ -250,127 +274,125 @@ export default function Layout({
                 </div>
             </div>
 
-            {/* the portifilio nav bar */}
-            <motion.div className="portNav"
-                while={{
-                    position: "fixed"
-                }}
 
-            >
-                {/* title */}
-                <div className="newDiv">
-                    <div className="portNavTitle">
-                        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                            <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
+
+            {/* main area
+            -------------------------------------------------- */}
+            {
+                error ?
+                    <div className="error">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 0L40.9156 26.03L45.221 0.342205L42.7313 26.269L50.3528 1.36297L44.5002 26.743L55.3073 3.04482L46.192 27.4438L60 5.35898L47.778 28.3594L64.3505 8.26587L49.2308 29.4742L68.2843 11.7157L50.5258 30.7692L71.7341 15.6495L51.6406 32.222L74.641 20L52.5562 33.808L76.9552 24.6927L53.257 35.4998L78.637 29.6472L53.731 37.2687L79.6578 34.779L53.97 39.0844L80 40L53.97 40.9156L79.6578 45.221L53.731 42.7313L78.637 50.3528L53.257 44.5002L76.9552 55.3073L52.5562 46.192L74.641 60L51.6406 47.778L71.7341 64.3505L50.5258 49.2308L68.2843 68.2843L49.2308 50.5258L64.3505 71.7341L47.778 51.6406L60 74.641L46.192 52.5562L55.3073 76.9552L44.5002 53.257L50.3528 78.637L42.7313 53.731L45.221 79.6578L40.9156 53.97L40 80L39.0844 53.97L34.779 79.6578L37.2687 53.731L29.6472 78.637L35.4998 53.257L24.6927 76.9552L33.808 52.5562L20 74.641L32.222 51.6406L15.6495 71.7341L30.7692 50.5258L11.7157 68.2843L29.4742 49.2308L8.26587 64.3505L28.3594 47.778L5.35898 60L27.4438 46.192L3.04482 55.3073L26.743 44.5002L1.36297 50.3528L26.269 42.7313L0.342205 45.221L26.03 40.9156L0 40L26.03 39.0844L0.342205 34.779L26.269 37.2687L1.36297 29.6472L26.743 35.4998L3.04482 24.6927L27.4438 33.808L5.35898 20L28.3594 32.222L8.26587 15.6495L29.4742 30.7692L11.7157 11.7157L30.7692 29.4742L15.6495 8.26587L32.222 28.3594L20 5.35898L33.808 27.4438L24.6927 3.04482L35.4998 26.743L29.6472 1.36297L37.2687 26.269L34.779 0.342205L39.0844 26.03L40 0Z" />
+                            <defs>
+                                <radialGradient id="paint0_radial_500_6090" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(40 38.5) rotate(81.3843) scale(50.065)">
+                                    <stop stopColor="white" />
+                                    <stop offset="1" stopColor="#FFF9F9" stopOpacity="0" />
+                                </radialGradient>
+                            </defs>
                         </svg>
-                        <h1>
-                            Portfilio
-                        </h1>
+                        <h2>
+                            You are offline or you have bad network connection
+                            Please check your connection or change your location.
+                        </h2>
                     </div>
-                    <div className="mini_portMenu">
-                        <div onClick={toggleMenus} className={menus ? "menus newmenu2" : "menus"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                    :
+                    <div className="softwareMain">
+                        <div className="titleLink">
+                            <div className="softwareTitle">
+                                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                    <path className="portIcon" fillRule="evenodd" clipRule="evenodd" d="M8.91912 7.25244C8.33334 7.83823 8.33334 8.78104 8.33334 10.6667V31C8.33334 32.8856 8.33334 33.8284 8.91912 34.4142C9.50491 35 10.4477 35 12.3333 35H27.6667C29.5523 35 30.4951 35 31.0809 34.4142C31.6667 33.8284 31.6667 32.8856 31.6667 31V10.6667C31.6667 8.78104 31.6667 7.83823 31.0809 7.25244C30.4951 6.66666 29.5523 6.66666 27.6667 6.66666H12.3333C10.4477 6.66666 9.50491 6.66666 8.91912 7.25244ZM15 14C14.4477 14 14 14.4477 14 15C14 15.5523 14.4477 16 15 16H25C25.5523 16 26 15.5523 26 15C26 14.4477 25.5523 14 25 14H15ZM15 20.6667C14.4477 20.6667 14 21.1144 14 21.6667C14 22.2189 14.4477 22.6667 15 22.6667H25C25.5523 22.6667 26 22.2189 26 21.6667C26 21.1144 25.5523 20.6667 25 20.6667H15ZM15 27.3333C14.4477 27.3333 14 27.781 14 28.3333C14 28.8856 14.4477 29.3333 15 29.3333H21.6667C22.219 29.3333 22.6667 28.8856 22.6667 28.3333C22.6667 27.781 22.219 27.3333 21.6667 27.3333H15Z" />
+                                </svg>
+                                <h1>
+                                    Portfilio
+                                </h1>
+                            </div>
+                            <div className="softwareLinks">
+                                <div className="listPath">
+                                    <Image
+                                        src={Pointingleft}
+                                        alt="pointingleft"
+                                        width={"50"}
+                                    // height={'50'}
+
+                                    />
+
+                                    <div className="linkInSoftware" >
+                                        <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link>
+                                        <span>&ensp;|&ensp;</span>
+                                        <Link href={"/portifilio"} onMouseEnter={textEnter} onMouseLeave={textLeave}>portfilio</Link>
+                                        <span>&ensp;|&ensp;</span>
+                                        <Link href={"#"} className='Mainpage'>{portfilios.name}</Link>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div className="softwareImage">
+                                {
+                                    !portfilios.image ? "" :
+                                        <Image
+                                            src={portfilios.image}
+                                            alt={portfilios.name}
+                                            height={portfilios.imageheight}
+                                            width={portfilios.imagewidth}
+                                        />
+                                }
+                            </div>
+                            <div className="softwareNameDate">
+                                <div className="softwareName">
+                                    <h1>
+                                        {portfilios.name}
+                                    </h1>
+                                </div>
+                                <div className="softwareDate">
+                                    <svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className='uidesign'>
+                                        <circle cx="15" cy="16.25" r="8.75" stroke="white" strokeWidth="3" />
+                                        <path d="M6.25 6.25L3.75 8.75" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M23.75 6.25L26.25 8.75" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M11.25 13.75L14.8093 16.1229C14.9172 16.1948 15.0622 16.1723 15.1432 16.071L17.5 13.125" strokeWidth="3" strokeLinecap="round" />
+                                    </svg>
+
+                                    <p>
+                                        <b>posted</b> <span>&ensp;|&ensp;</span>  {dateMDY}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="softwareAboutTools">
+                                <div className="softwareAbout">
+                                    <div className="asTitle">
+                                        <h2>
+                                            About Project
+                                        </h2>
+                                    </div>
+
+                                    <div className="moreAbtPro">
+                                        <p className='writesoftware'>
+                                            {writeUp}
+                                        </p>
+                                    </div>
+                                    <div className="moreAbtLinksoftware">
+                                        <Link href={`${portfilios.Link}`}>
+                                            <p>visit site &ensp; </p>
+                                            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className='web'>
+                                                <circle cx="12" cy="12" r="8" transform="rotate(-90 12 12)" />
+                                                <path d="M6.78485 5.79249C7.46088 6.52528 8.00912 7.44557 8.39144 8.48941C8.77376 9.53325 8.981 10.6756 8.99875 11.837C9.01651 12.9984 8.84434 14.1511 8.49423 15.2148C8.14412 16.2785 7.62447 17.2279 6.97139 17.9968" />
+                                                <path d="M17.3235 5.6778C16.608 6.41743 16.0274 7.36335 15.6251 8.44467C15.2227 9.52599 15.0091 10.7147 15.0003 11.9217C14.9914 13.1287 15.1875 14.3228 15.5739 15.4144C15.9603 16.506 16.5269 17.4669 17.2314 18.2251" />
+                                                <path d="M4 12L20 12" />
+                                                <path d="M12 4L12 20" />
+                                            </svg>
+
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="otherPortLink">
-                    <li onMouseEnter={textEnter} onMouseLeave={textLeave} onClick={changesoftware} className={software ? "postinglinnk" : ""}>
-                        <Link href={"#"} >
-                            <p>
-                                Software development
-                            </p>
-                            <svg width='20' height='24' viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M4.94141 10.3721L0 8.17969V7.33984L4.94141 4.86914V6.31934L1.90918 7.70117L4.94141 8.93164V10.3721Z" />
-                                <path d="M9.80957 4L7.14844 11.3389H5.45898L8.12012 4H9.80957Z" />
-                                <path d="M10.2832 8.93164L13.3154 7.70117L10.2832 6.31934V4.86914L15.2246 7.33984V8.17969L10.2832 10.3721V8.93164Z" />
-                            </svg>
-                        </Link>
-                    </li>
-                    <li onMouseEnter={textEnter} onMouseLeave={textLeave} onClick={changesUidesign} className={uidesigns ? "postinglinnk" : ""}>
-                        <Link href={"#"} >
-                            <p>
-                                UI and UX design
-                            </p>
-                            <svg width="20" height="24" className="uidesign" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="3.75" y="10.0369" width="3.08824" height="2.5" rx="1.25" transform="rotate(90 3.75 10.0369)" />
-                                <rect x="10.625" y="9.26465" width="3.08824" height="2.5" rx="1.25" transform="rotate(-90 10.625 9.26465)" />
-                                <path d="M11.25 8.49276L10.3125 9.65085C10.3052 9.65982 10.3016 9.66431 10.2987 9.66786C9.49846 10.6472 8.00154 10.6472 7.2013 9.66786C7.1984 9.66431 7.19476 9.65982 7.1875 9.65085V9.65085C7.18024 9.64188 7.1766 9.63739 7.1737 9.63384C6.37346 8.65452 4.87654 8.65452 4.0763 9.63384C4.0734 9.63739 4.06976 9.64188 4.0625 9.65085L3.125 10.8089" />
-                            </svg>
-                        </Link>
-                    </li>
-                    <li onMouseEnter={textEnter} onMouseLeave={textLeave} className={graphic ? "postinglinnk" : ""}>
-                        <Link href={"#"} onClick={changegrahics} >
-                            <p>
-                                Graphics Design
-                            </p>
-                            <svg width="22" height="22" className="uidesign" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2.5" y="10" width="10" height="2.5" rx="1.25" />
-                                <path d="M3.40949 7.61424L5 10H10L11.5905 7.61424C12.0259 6.96118 12.2436 6.63465 12.2083 6.27888C12.1731 5.92311 11.8956 5.64561 11.3406 5.09062L7.5 1.25L3.65938 5.09062C3.10439 5.64561 2.82689 5.92311 2.79166 6.27888C2.75643 6.63465 2.97412 6.96118 3.40949 7.61424Z" />
-                                <circle cx="7.5" cy="6.875" r="1.375" />
-                                <path d="M7.5 1.25V5.625" />
-                            </svg>
-                        </Link>
-                    </li>
-                </div>
-                {
-                    menus ?
-                        <div className="newPortlink">
-                            <li>
-                                <Link href={"#"} onClick={changesoftware} className={software ? "postinglinnk" : ""}>
-                                    software development
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"#"} onClick={changesUidesign} className={uidesigns ? "postinglinnk" : ""}>
-                                    UI / UX design
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={"#"} onClick={changegrahics} className={graphic ? "postinglinnk" : ""}>
-                                    Graphics design
-                                </Link>
-                            </li>
-                        </div> : ""
-                }
-            </motion.div>
-            <div className="mainPortArea">
-                <div className="backarea">
-                    <Image
-                        src={Pointingleft}
-                        alt="pointingleft"
-                        width={"50"}
-                    // height={'50'}
+            }
 
-                    />
 
-                    {
-                        software ?
-                            (<p className="portback">
-                                <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; <span> | &ensp;software development</span>
-                            </p>) : uidesigns ? (
-                                <p className="portback">
-                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; <span> | &ensp;ui/ux designs</span>
-                                </p>
-                            ) :
-                                <p className="portback">
-                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp;<span> | &ensp;graphics designs</span>
-                                </p>
-                    }
 
-                </div>
-
-                <div>
-                    {software && Softwaredev}
-                    {graphic && Graphics}
-                    {uidesigns && Uidesign}
-                </div>
-
-            </div>
+            {/* --------------------------------------------------- */}
             <Stuff />
             <Footer />
         </div>
     )
 }
-
