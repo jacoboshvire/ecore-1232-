@@ -1,0 +1,33 @@
+.loading {
+    width: 100%;
+    background-color: var(--background);
+}
+
+.navPath {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1187px;
+}
+
+.navPath li {
+    width: 20%;
+    height: 20px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+@keyframes changing {
+    0% {
+        background-color: var(--background);
+    }
+
+    50% {
+        background-color: var(--main);
+    }
+
+    100% {
+        background-color: var(--background);
+    }
+}

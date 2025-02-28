@@ -15,7 +15,7 @@ import Stuff from '../../../Stuff.js'
 import Pointingleft from '../../../image/PointingLeft.png'
 
 
-export default function page({ params }) {
+export default function softwareid({ params }) {
 
     // cursor animations using framer motion and js eventlistener
     const cursorSize = 20 / 2;
@@ -99,10 +99,10 @@ export default function page({ params }) {
 
     const { softId } = React.use(params)
     // variable for Portfiliopost()
-    let [portfilios, setPortfilios] = useState([]);
-    let [photo, setPhoto] = useState(null)
-    let [writeUp, setWriteUp] = useState([])
-    let [error, setError] = useState(false)
+    const [portfilios, setPortfilios] = useState([]);
+    const [writeUp, setWriteUp] = useState([])
+    const [error, setError] = useState(false)
+    const [newtools, setNewtools] = useState([])
 
     //fatch api
 
@@ -117,10 +117,27 @@ export default function page({ params }) {
 
         portfiliopost().then((data) => {
             setPortfilios(data.foundPortfilio);
-            console.log(data.foundPortfilio.tools)
 
-            setWriteUp(data.foundPortfilio.description)
-            setPhoto(data.foundPortfilio.image)
+            setNewtools(data.foundPortfilio.tools)
+            data.foundPortfilio.tools.map((toolss) => {
+                console.log(`${toolss} <br />`)
+            })
+            const changeLink = (url) => {
+
+                return `<a href=${url} target="_blank" rel="noopener noreferrer" className="textLink">${url}</a>`
+
+            }
+
+
+            const linkRegex = /(https?\:\/\/)?(www\.)?[^\s]+\.[^\s]+/g;
+
+            setWriteUp(data.foundPortfilio.description.replace(/[\t]/g, "&nbsp;" + "&nbsp;" + "&nbsp; ")
+                .replace(/[\n]/g, " &nbsp; <br /> &nbsp;")
+                .replace(linkRegex, changeLink)
+            )
+
+
+
 
         }).catch(e => {
             setError(true);
@@ -131,28 +148,11 @@ export default function page({ params }) {
     console.log(portfilios.tools)
 
 
+    let txt = writeUp
 
-    const changeLink = (url) => {
-        return `<a href=${url} target="_blank" rel="noopener noreferrer" className="textLink">${url}</a>`
-    }
+    let toolsText = newtools.length
 
-    const changeTab = () => {
-        return "<br />"
-    }
 
-    const tab = /[\n]/g
-
-    const linkRegex = /(https?\:\/\/)?(www\.)?[^\s]+\.[^\s]+/g;
-
-    let txt = JSON.stringify(writeUp).replace(/[\t]/g, "&nbsp;" + "&nbsp;" + "&nbsp; ")
-        .replace(tab, changeTab)
-        .replace(linkRegex, changeLink)
-
-    // let newTools = portfilios.tools.forEach(tool => {
-    //     return `<h1> ${tool[tool]} <h1/>`
-    // });
-
-    // let newTools = JSON.parse(portfilios.tools)
     return (
         <div className='softwaredev'>
             <motion.div className="cursor"
@@ -347,9 +347,9 @@ export default function page({ params }) {
                                 </div>
                                 <div className="softwareDate">
                                     <svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className='uidesign'>
-                                        <circle cx="15" cy="16.25" r="8.75" stroke="white" strokeWidth="3" />
-                                        <path d="M6.25 6.25L3.75 8.75" stroke="white" strokeWidth="3" strokeLinecap="round" />
-                                        <path d="M23.75 6.25L26.25 8.75" stroke="white" strokeWidth="3" strokeLinecap="round" />
+                                        <circle cx="15" cy="16.25" r="8.75" strokeWidth="3" />
+                                        <path d="M6.25 6.25L3.75 8.75" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M23.75 6.25L26.25 8.75" strokeWidth="3" strokeLinecap="round" />
                                         <path d="M11.25 13.75L14.8093 16.1229C14.9172 16.1948 15.0622 16.1723 15.1432 16.071L17.5 13.125" strokeWidth="3" strokeLinecap="round" />
                                     </svg>
 
@@ -359,7 +359,7 @@ export default function page({ params }) {
                                 </div>
                             </div>
                             <div className="softwareAboutTools">
-                                <div className="softwareAbout">
+                                <div className="softwareAbout" onMouseEnter={text2Enter} onMouseLeave={textLeave}>
                                     <div className="asTitle">
                                         <h2>
                                             About Project
@@ -391,26 +391,20 @@ export default function page({ params }) {
                                             Tools Use
                                         </h1>
                                     </div >
-                                    <div className="toolsList">
-                                        <p>
-                                            {portfilios.tools}
-                                        </p>
-                                        <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
-                                            <path d="M11 0L11 61.5" />
-                                            <circle cx="10.5" cy="66.5" r="6.5" />
-                                            <circle cx="10.5" cy="66.5" r="10" className='uidesign' />
-                                        </svg>
+                                    <div className="keyToolsList" key={toolsText}>
+                                        {newtools.map((newtoolss) => {
+                                            return <div className="toolsList" >
+                                                <p>{newtoolss}</p>
+                                                <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
+                                                    <path d="M11 0L11 61.5" />
+                                                    <circle cx="10.5" cy="66.5" r="6.5" />
+                                                    <circle cx="10.5" cy="66.5" r="10" className='uidesign' />
+                                                </svg>
+                                            </div>
+                                        })}
                                     </div>
-                                    <div className="toolsList">
-                                        <p>
-                                            {portfilios.tools}
-                                        </p>
-                                        <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
-                                            <path d="M11 0L11 61.5" />
-                                            <circle cx="10.5" cy="66.5" r="6.5" />
-                                            <circle cx="10.5" cy="66.5" r="10" className='uidesign' />
-                                        </svg>
-                                    </div>
+
+
                                 </div>
                             </div>
                         </div>

@@ -1,14 +1,14 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, React } from 'react'
 import * as React from 'react'
 
 
-export default function page({ params }) {
+export default function graphicsid({ params }) {
 
     const { id } = React.use(params)
     // variable for Portfiliopost()
-    let [portfilios, setPortfilios] = useState([]);
-    let [error, setError] = useState(false)
+    const [graphic, setGraphic] = useState([]);
+    const [error, setError] = useState(false)
 
     //fatch api
 
@@ -22,7 +22,7 @@ export default function page({ params }) {
     useEffect(() => {
 
         portfiliopost().then((data) => {
-            setPortfilios(data.foundgraphics);
+            setGraphic(data.foundgraphics);
             console.log(data.foundgraphics)
         }).catch(e => {
             setError(true);

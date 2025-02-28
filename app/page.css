@@ -421,12 +421,12 @@ body .main_container:hover .skills span .uidesign {
     stroke: var(--main);
 }
 
-.light .main_container:hover .skills span .uidesign {
+.dark .main_container:hover .skills span .uidesign {
     stroke: #ffffff;
     fill: none;
 }
 
-.dark .main_container:hover .skills span .uidesign {
+.light .main_container:hover .skills span .uidesign {
     stroke: #000;
     fill: none;
 }

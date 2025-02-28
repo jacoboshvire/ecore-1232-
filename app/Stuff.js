@@ -6,6 +6,7 @@ import "./page.css";
 function Stuff() {
     // const darkmode = window.matchMedia("(prefers-color-scheme: dark)").matches
     const [turnDark, setTurnDark] = useState(false)
+    const [newdark, setNewdark] = useState(false)
     // const [prefersDarkMode, setPrefersDarkMode] = useState(darkmode);
     const darkToggle = () => {
         setTurnDark((turnDark) => (!turnDark))
@@ -17,6 +18,15 @@ function Stuff() {
             document.body.classList.remove("dark")
         }
     }
+
+    useEffect(() => {
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setNewdark(true)
+        }
+        if (!window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            setNewdark(false)
+        }
+    })
 
 
 
@@ -38,6 +48,21 @@ function Stuff() {
             </div>
             {
                 turnDark ?
+                    // newdark ? <div className='darkbtn' onClick={darkToggle}>
+
+                    //     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    //         <circle cx="20" cy="20.0001" r="8.33334" fill="#FFD600" />
+                    //         <path d="M20 13.3334V6.66675" stroke="#FFD600" strokeWidth="2" />
+                    //         <path d="M20 33.3334V26.6667" stroke="#FFD600" strokeWidth="2" />
+                    //         <path d="M15.2859 15.2853L10.5719 10.5713" stroke="#FFD600" strokeWidth="2" />
+                    //         <path d="M29.428 29.4277L24.7139 24.7136" stroke="#FFD600" strokeWidth="2" />
+                    //         <path d="M26.6667 20L33.3334 20" stroke="#FFD600" strokeWidth="2" />
+                    //         <path d="M6.66665 20L13.3333 20" stroke="#FFD600" strokeWidth="2" />
+                    //         <path d="M24.7141 15.2853L29.4281 10.5713" stroke="#FFD600" strokeWidth="2" />
+                    //         <path d="M10.572 29.4277L15.2861 24.7136" stroke="#FFD600" strokeWidth="2" />
+                    //     </svg>
+                    // </div>
+                    //     :
                     <div className='lightbtn' onClick={darkToggle}>
 
                         <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">

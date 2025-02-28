@@ -73,6 +73,14 @@ body .linkInSoftware .Mainpage {
     cursor: not-allowed;
 }
 
+.light .linkInSoftware .Mainpage {
+    color: #000000;
+}
+
+.dark .linkInSoftware .Mainpage {
+    color: #ffffff;
+}
+
 body .softwareNameDate {
     display: flex;
     align-items: center;
@@ -86,10 +94,12 @@ body .softwareNameDate {
 
 .dark .softwareNameDate {
     background-color: #161616;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.178);
 }
 
 .light .softwareNameDate {
     background-color: #ffffff;
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
 }
 
 .softwareImage img {
@@ -135,12 +145,22 @@ body .softwareNameDate {
 }
 
 
-.softwareAbout {
+body .softwareAbout {
     width: 67%;
     padding: 5%;
     background-color: var(--main);
     border-radius: 30px;
     box-shadow: var(--shadow);
+}
+
+.light .softwareAbout {
+    background-color: #ffffff;
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
+}
+
+.dark .softwareAbout {
+    background-color: #161616;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.178);
 }
 
 .softwareAbout .asTitle {
@@ -159,6 +179,14 @@ body .web {
     fill: none;
 }
 
+.dark .web {
+    stroke: #222222;
+}
+
+.light .web {
+    stroke: #ffffff;
+}
+
 .softwareAbout .moreAbtLinksoftware {
     width: 100%;
     margin-top: 7%;
@@ -175,10 +203,28 @@ body .softwareAbout .moreAbtLinksoftware a {
     font-size: 15px;
 }
 
+.light .softwareAbout .moreAbtLinksoftware a {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dark .softwareAbout .moreAbtLinksoftware a {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 body .writesoftware a {
     font-size: 14px;
     font-weight: 600;
     color: var(--subhover);
+}
+
+.light .writesoftware a {
+    color: #2D313D;
+}
+
+.dark .writesoftware a {
+    color: #CCD2E3;
 }
 
 body .softwaretools {
@@ -194,11 +240,25 @@ body .softwaretools {
     border-radius: 30px;
 }
 
+.light .softwaretools {
+    background-color: #CCD2E3;
+}
+
+.dark .softwaretools {
+    background-color: #2D313D;
+}
+
 .softwaretools h1 {
     font-weight: 800;
     font-size: 20px;
     margin-bottom: 3%;
 
+}
+
+.softwaretools p {
+    font-weight: 500;
+    font-size: 18px;
+    /* margin-left: 4%; */
 }
 
 .softwaretools .toolsList {
@@ -210,5 +270,30 @@ body .softwaretools {
 body .toolSvg {
     fill: var(--foreground);
     stroke: var(--foreground);
-    margin-left: 3%;
+    margin-left: 7%;
+}
+
+.light .toolSvg {
+    fill: #161616;
+    stroke: #161616;
+}
+
+.dark .toolSvg {
+    fill: #ffffff;
+    stroke: #ffffff;
+}
+
+body .softwareDate .uidesign {
+    fill: none;
+    stroke: var(--foreground);
+}
+
+.dark .softwareDate .uidesign {
+    stroke: #ffffff;
+    fill: none;
+}
+
+.light .softwareDate .uidesign {
+    stroke: #000;
+    fill: none;
 }
