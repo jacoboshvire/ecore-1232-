@@ -1,6 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react'
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 import "./software.css"
 import "../../../page.css"
 import "../../../About/about.css"

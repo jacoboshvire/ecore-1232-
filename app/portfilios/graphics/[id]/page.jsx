@@ -1,6 +1,5 @@
 "use client"
-import { useState, useEffect, React } from 'react'
-import * as React from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 export default function graphicsid({ params }) {
