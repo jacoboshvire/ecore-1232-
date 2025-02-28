@@ -12,9 +12,10 @@ import Link from 'next/link';
 import Footer from '../../../Footer.js';
 import Stuff from '../../../Stuff.js'
 import Pointingleft from '../../../image/PointingLeft.png'
+import { useRouter, useSearchParams } from "next/navigation";
 
 
-export default function softwareid({ params }) {
+export default function softwaredev({ params }) {
 
     // cursor animations using framer motion and js eventlistener
     const cursorSize = 20 / 2;

@@ -1,10 +1,12 @@
 "use client"
 import React, { useState, useEffect } from 'react'
+import { useRouter, useSearchParams } from "next/navigation";
 
 
 export default function uidesignid({ params }) {
 
-    const { id } = React.use(params)
+    const router = useRouter();
+    const searchParams = useSearchParams();
     // variable for Portfiliopost()
     const [portfilios, setPortfilios] = useState([]);
     const [error, setError] = useState(false)
