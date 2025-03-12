@@ -215,6 +215,11 @@ body .uidesignti {
     font-weight: 400;
 }
 
+.portback span {
+    font-weight: 800;
+    cursor: not-allowed;
+}
+
 .mainPortArea .postArea {
     display: flex;
     flex-wrap: wrap;

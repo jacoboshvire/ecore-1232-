@@ -50,8 +50,13 @@ body {
   padding-bottom: 30px;
   scroll-behavior: smooth;
   overflow-x: hidden;
-
+  scrollbar-color: pink;
+  scrollbar-width: 1000px;
+  scrollbar-gutter: unset;
+  scroll-snap-type: proximity;
 }
+
+
 
 .light {
   color: #171717;

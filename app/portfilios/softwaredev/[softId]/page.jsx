@@ -13,6 +13,7 @@ import Footer from '../../../Footer.js';
 import Stuff from '../../../Stuff.js'
 import Pointingleft from '../../../image/PointingLeft.png'
 import { useRouter, useSearchParams } from "next/navigation";
+// import { json } from 'stream/consumers'
 
 
 export default function softwareid({ params }) {
@@ -27,18 +28,9 @@ export default function softwareid({ params }) {
     })
     const [varientsmouse, setVarientsmouse] = useState("default")
 
-    useEffect(() => {
-        const mouseMove = (e) => {
-            setMousePosition({
-                x: e.clientX,
-                y: e.clientY
+    // useEffect(() => {
 
-            })
-        }
-
-        window.addEventListener("mousemove", mouseMove)
-        return () => (window.removeEventListener("mousemove", mouseMove))
-    })
+    // })
 
     const variants = {
         default: {
@@ -114,14 +106,14 @@ export default function softwareid({ params }) {
     }
 
     useEffect(() => {
-
         portfiliopost().then((data) => {
-            setPortfilios(data.foundPortfilio);
+            setPortfilios(data.foundPortfilio)
 
             setNewtools(data.foundPortfilio.tools)
-            data.foundPortfilio.tools.map((toolss) => {
-                console.log(`${toolss} <br />`)
-            })
+            let newtools = data.foundPortfilio.tools[0]
+            // data.foundPortfilio.tools.map((toolss) => {
+            // console.log(jsonObject.newtools.tool)
+            // })
             const changeLink = (url) => {
 
                 return `<a href=${url} target="_blank" rel="noopener noreferrer" className="textLink">${url}</a>`
@@ -142,16 +134,35 @@ export default function softwareid({ params }) {
         }).catch(e => {
             setError(true);
         })
+        const mouseMove = (e) => {
+            setMousePosition({
+                x: e.clientX,
+                y: e.clientY
+
+            })
+        }
+
+        window.addEventListener("mousemove", mouseMove)
+        return () => (window.removeEventListener("mousemove", mouseMove))
     }, [])
     let date = new Date(portfilios.date);
     let dateMDY = `${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`;
-    console.log(portfilios.tools)
+    // console.log(portfilios.tools)
 
 
     let txt = writeUp
 
     let toolsText = newtools.length
+    console.log(((JSON.stringify(newtools).replace(/[},'"abcdefghijklmnopqrstuvwqyz{:]/g, ''))))
 
+
+    let s = newtools;
+    let c = /[},'"abcdefghijklmnopqrstuvwqyz{:]*/g;
+    let res = Array.from(s)
+        .filter(char => char !== c)
+        .join('');
+
+    console.log(res)
 
     return (
         <div className='softwaredev'>
@@ -391,10 +402,10 @@ export default function softwareid({ params }) {
                                             Tools Use
                                         </h1>
                                     </div >
-                                    <div className="keyToolsList" key={toolsText}>
-                                        {newtools.map((newtoolss) => {
-                                            return <div className="toolsList" >
-                                                <p>{newtoolss}</p>
+                                    <div className="keyToolsList" >
+                                        {newtools.map((newtoolss, index) => {
+                                            return <div className="toolsList" key={index}>
+                                                <p>{JSON.parse(JSON.stringify(newtoolss).replace("{'tool':", "").replace(/\d/g, "").replace("'id':", "").replace(/[},']/g, ""))}</p>
                                                 <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
                                                     <path d="M11 0L11 61.5" />
                                                     <circle cx="10.5" cy="66.5" r="6.5" />

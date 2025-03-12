@@ -252,9 +252,6 @@ export default function Layout({
 
             {/* the portifilio nav bar */}
             <motion.div className="portNav"
-                while={{
-                    position: "fixed"
-                }}
 
             >
                 {/* title */}
@@ -348,14 +345,14 @@ export default function Layout({
                     {
                         software ?
                             (<p className="portback">
-                                <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; <span> | &ensp;software development</span>
+                                <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; | <span>  &ensp;software development</span>
                             </p>) : uidesigns ? (
                                 <p className="portback">
-                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; <span> | &ensp;ui/ux designs</span>
+                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; | <span>  &ensp;ui/ux designs</span>
                                 </p>
                             ) :
                                 <p className="portback">
-                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp;<span> | &ensp;graphics designs</span>
+                                    <Link href={"/"} onMouseEnter={textEnter} onMouseLeave={textLeave}>Home</Link> &ensp; | <span>  &ensp;graphics designs</span>
                                 </p>
                     }
 

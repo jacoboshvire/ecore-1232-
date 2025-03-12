@@ -142,7 +142,11 @@ export default function About() {
     }
 
     const toggleDetails = () => {
-        setDetails((details) => (!details))
+        setDetails(true)
+    }
+
+    const removeDetails = () => {
+        setDetails(false)
     }
 
     // next navigation function
@@ -326,7 +330,10 @@ export default function About() {
                 </div>
             </div>
             <div className={details ? "detailsAbout" : "removeDetailsAbout detailsAbout"}>
-
+                <div className="cancelDetails" onClick={removeDetails}>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
             <div className='mainframe_1st'>
                 <motion.div className='about_1st'>
@@ -379,7 +386,7 @@ export default function About() {
                                         // width={'100%'}
                                         // height={'100%'}
                                         src={images.src}
-                                        alt={images.alts}
+                                        alt={images.alt}
                                     />
 
                                 </SwiperSlide>
@@ -437,7 +444,7 @@ export default function About() {
                                                     width={'20px'}
                                                     height={'20px'}
                                                     src={svgimages.src}
-                                                    alt={svgimages.alt}
+                                                    alt={svgimages.atls}
 
                                                 />
                                             </div>

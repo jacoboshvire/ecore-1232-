@@ -751,7 +751,7 @@ body .listen {
     }
 
     .main_container .image {
-        margin-bottom: 32px;
+        margin-bottom: 10%;
     }
 
     .main_container .image img {
@@ -820,15 +820,14 @@ body .listen {
 
 
     .nav2 {
-        /* max-width: 310px; */
-        padding-left: 3%;
-        padding-right: 3%;
+        width: 90%;
     }
 
     .main_container {
-        box-shadow: none;
-        border-radius: 0px;
-        background: none;
+        /* box-shadow: none; */
+        width: 90%;
+        /* border-radius: 0px; */
+        /* background: none; */
     }
 
     footer {
@@ -837,6 +836,14 @@ body .listen {
     }
 
     .main_container .skills span {
+        width: 100%;
+    }
+
+    .main_container .skills span:nth-child(1) {
+        margin-right: 0;
+    }
+
+    .text_writeup {
         width: 100%;
     }
 }
