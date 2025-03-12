@@ -17,6 +17,8 @@ export default async function loadingSoftware() {
 
                 </li>
             </div>
+
+
         </div>
     )
 }
