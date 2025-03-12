@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 
 
-export default function graphicsid({ params }) {
+export default function Graphicsid({ params }) {
 
     const { id } = React.use(params)
     // variable for Portfiliopost()

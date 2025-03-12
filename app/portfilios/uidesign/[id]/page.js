@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 // import { useRouter, useSearchParams } from "next/navigation";
 
 
-export default function uidesignid({ params }) {
+export default function Uidesignid({ params }) {
 
     // const router = useRouter();
     // const searchParams = useSearchParams();

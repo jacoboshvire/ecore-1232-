@@ -16,7 +16,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 // import { json } from 'stream/consumers'
 
 
-export default function softwareid({ params }) {
+export default function Softwareid({ params }) {
 
     // cursor animations using framer motion and js eventlistener
     const cursorSize = 20 / 2;
