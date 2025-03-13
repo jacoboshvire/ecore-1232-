@@ -1,7 +1,7 @@
 import "./loading.css"
 import wait from 'wait'
 
-export default async function loadingSoftware() {
+export default async function LoadingSoftware() {
     await wait(5000);
     return (
 
@@ -18,6 +18,33 @@ export default async function loadingSoftware() {
                 </li>
             </div>
 
+            <div className="titleloadings">
+                <div />
+            </div>
+
+            <div className="outsideLink">
+                <div className="linksloading">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div className="loadingImages">
+            </div>
+
+            <div className="Loadingsdates">
+
+            </div>
+
+            <div className="loadingAbouts">
+                <div className="loadingMainabout">
+
+                </div>
+                <div className="loadingsTools">
+
+                </div>
+            </div>
 
         </div>
     )

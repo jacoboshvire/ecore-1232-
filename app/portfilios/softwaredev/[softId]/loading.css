@@ -1,7 +1,9 @@
 .loading {
     width: 100%;
     background-color: var(--background);
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .navPath {
@@ -10,11 +12,94 @@
     align-items: center;
     width: 100%;
     max-width: 1187px;
+    margin-top: 5%;
+
 }
 
 .navPath li {
     width: 20%;
     height: 20px;
+    border-radius: 50px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+.titleloadings {
+    width: 100%;
+    max-width: 1187px;
+    margin-top: 3%;
+}
+
+.titleloadings div {
+    width: 20%;
+    height: 30px;
+    border-radius: 50px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+.outsideLink {
+    max-width: 1187px;
+    width: 100%;
+}
+
+.linksloading {
+    width: 30%;
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.linksloading span {
+    width: 31.33%;
+    height: 20px;
+    border-radius: 50px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+.loadingImages {
+    width: 100%;
+    max-width: 1187px;
+    margin-top: 3%;
+    height: 50vh;
+    border-radius: 30px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+.Loadingsdates {
+    width: 100%;
+    max-width: 1187px;
+    margin-top: 3%;
+    height: 10vh;
+    border-radius: 30px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+
+.loadingAbouts {
+    display: flex;
+    width: 100%;
+    max-width: 1187px;
+    margin-top: 3%;
+}
+
+.loadingMainabout {
+    width: 60%;
+    height: 50vh;
+    margin-right: 3%;
+    border-radius: 30px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+.loadingsTools {
+    width: 37%;
+    height: 25vh;
+    border-radius: 30px;
     background-color: var(--main);
     animation: changing 1s ease-in-out infinite;
 }
