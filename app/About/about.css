@@ -480,6 +480,31 @@ body .profilePic img {
     margin-right: 15px;
 }
 
+.educationAbt {
+    margin-top: 5%;
+}
+
+.educationAbt .eduAdtTitle {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 3%;
+}
+
+.educationAbt .insideEduAbt {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.educationAbt .eduAbtCos {
+    font-weight: 700;
+}
+
+.educationAbt .insideEduAbt svg {
+    margin-right: 12px;
+}
+
 .detailsAbout {
     width: 60%;
     max-width: 1187px;

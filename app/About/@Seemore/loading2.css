@@ -1,0 +1,48 @@
+.imageAbt {
+    width: 100px;
+    height: 100px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+    border-radius: 10px;
+}
+
+.profilePic1 {
+    margin-right: 5%;
+}
+
+.profilePic1 p {
+    width: 70px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+    margin-top: 10%;
+
+}
+
+.writeupAbtsm1 {
+    width: 100%;
+}
+
+
+.insidewriteupAbt .stTitleAbt1 {
+    width: 100%;
+    height: 20px;
+    border-radius: 10px;
+    background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+@keyframes changing {
+    0% {
+        background-color: var(--background);
+    }
+
+    50% {
+        background-color: var(--main);
+    }
+
+    100% {
+        background-color: var(--background);
+    }
+}
