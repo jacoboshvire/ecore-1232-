@@ -1,6 +1,6 @@
 "use client"
 
-export default function error() {
+export default function Error() {
     return (
         <div className="error">
             <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">

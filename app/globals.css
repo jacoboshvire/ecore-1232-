@@ -19,6 +19,22 @@
   --img: #313131;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background: none;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: var(--main);
+}
+
+
+
 ::selection {
   background-color: var(--foreground);
   color: var(--background);

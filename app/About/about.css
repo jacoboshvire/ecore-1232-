@@ -426,6 +426,59 @@ body .skillsvg {
     stroke-width: 1px;
 }
 
+.aboutNav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5%;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 8%;
+    margin-top: 10px;
+}
+
+.aboutNav .aboutTitle {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.seemore {
+    display: flex;
+}
+
+.profilePic {
+    width: 55%;
+    margin-right: 5%;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+body .profilePic img {
+    box-shadow: var(--shadow);
+    margin-bottom: 10%;
+}
+
+.stTitleAbt {
+    font-weight: 800;
+}
+
+.socialmediaAbt {
+    margin-top: 5%;
+}
+
+.titleSMAbt {
+    font-weight: 700;
+    font-size: 19px;
+    margin-bottom: 5%;
+}
+
+.theLogeAbt {
+    display: flex;
+}
+
+.theLogeAbt svg {
+    margin-right: 15px;
+}
 
 .detailsAbout {
     width: 60%;
@@ -439,7 +492,8 @@ body .skillsvg {
     transform-origin: center;
     transform: scale(1);
     scroll-behavior: smooth;
-    padding: 3%;
+    overflow-y: scroll;
+    padding: 3% 5% 5% 5%;
 }
 
 .detailsAbout .cancelDetails {
@@ -449,6 +503,7 @@ body .skillsvg {
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    cursor: pointer;
 }
 
 body .detailsAbout .cancelDetails div {
