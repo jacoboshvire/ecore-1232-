@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+* {
+  transition: 500ms;
+}
+
 
 :root {
   --background: #f3f2f2;
