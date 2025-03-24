@@ -146,7 +146,7 @@ export default function Softwareid({ params }) {
         return () => (window.removeEventListener("mousemove", mouseMove))
     }, [])
     let date = new Date(portfilios.date);
-    let dateMDY = `${date.getDate()} / ${date.getMonth() + 1} / ${date.getFullYear()}`;
+    let dateMDY = `${date.getDate()} - ${date.getMonth() + 1} - ${date.getFullYear()}`;
     // console.log(portfilios.tools)
 
 

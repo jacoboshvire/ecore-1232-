@@ -569,7 +569,6 @@ body .main_container:hover .about a {
 .listen {
     /* width: 50px; */
     height: 50px;
-
     border-radius: 50px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -586,13 +585,13 @@ body .listen {
     box-shadow: var(--shadow);
 }
 
-.light .listen {
+.dark .listen {
     color: #000;
     background-color: #F5F5F5;
     box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
 }
 
-.dark .listen {
+.light .listen {
     color: #ffffff;
     background-color: #171717;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.329);

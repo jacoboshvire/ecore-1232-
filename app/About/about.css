@@ -426,7 +426,7 @@ body .skillsvg {
     stroke-width: 1px;
 }
 
-.aboutNav {
+body .aboutNav {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -435,6 +435,14 @@ body .skillsvg {
     border-bottom: 1px solid var(--border);
     margin-bottom: 8%;
     margin-top: 10px;
+}
+
+.light .aboutNav {
+    border-bottom: 1px solid #E6E6E6;
+}
+
+.dark .aboutNav {
+    border-bottom: 1px solid #3636369a;
 }
 
 .aboutNav .aboutTitle {
@@ -456,6 +464,14 @@ body .skillsvg {
 body .profilePic img {
     box-shadow: var(--shadow);
     margin-bottom: 10%;
+}
+
+.light .profilePic img {
+    box-shadow: 0 0 50px rgba(151, 151, 151, 0.329);
+}
+
+.dark .profilePic img {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.178);
 }
 
 .stTitleAbt {
@@ -539,6 +555,18 @@ body .detailsAbout .cancelDetails div {
     position: absolute;
 }
 
+.detailsAbout .cancelDetails:hover div {
+    position: relative;
+}
+
+.light .detailsAbout .cancelDetails div {
+    background-color: #0a0a0a;
+}
+
+.dark .detailsAbout .cancelDetails div {
+    background-color: #ffffff;
+}
+
 .detailsAbout .cancelDetails div:nth-child(1) {
     transform: rotate(45deg);
     transform-origin: center;
@@ -547,6 +575,14 @@ body .detailsAbout .cancelDetails div {
 .detailsAbout .cancelDetails div:nth-child(2) {
     transform: rotate(-45deg);
     transform-origin: center;
+}
+
+.detailsAbout .cancelDetails:hover div:nth-child(1) {
+    transform: rotate(0deg);
+}
+
+.detailsAbout .cancelDetails:hover div:nth-child(2) {
+    transform: rotate(0deg);
 }
 
 body .detailsAbout {
@@ -675,6 +711,14 @@ body .googleMaps {
 
 
 @media (max-width: 1187px) {
+    .detailsAbout {
+        width: 100%;
+        max-width: 700px;
+        align-self: center;
+        left: auto;
+        /* right: ; */
+    }
+
     .mainframe_2nd {
         display: block;
         width: 100%;

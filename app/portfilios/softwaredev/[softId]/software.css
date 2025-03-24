@@ -297,3 +297,75 @@ body .softwareDate .uidesign {
     stroke: #000;
     fill: none;
 }
+
+@media (max-width: 1187px) {
+    .softwaredev {
+        max-width: 700px;
+    }
+
+    .softwareAbout .moreAbtPro {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .softwaredev {
+        width: 90%;
+    }
+
+    .softwareImage img {
+        border-radius: 15px;
+    }
+
+    body .softwareNameDate {
+        padding: 5% 10% 5% 10%;
+        margin-top: 6%;
+        flex-direction: column;
+        align-items: self-start;
+        border-radius: 15px;
+    }
+
+    .softwareName {
+        margin-bottom: 5%;
+    }
+
+    .softwareAboutTools {
+        margin: 6% 0 6% 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    body .softwareAbout {
+        width: 100%;
+        padding: 10%;
+        border-radius: 15px;
+    }
+
+    body .softwareAbout .moreAbtLinksoftware a {
+        border-radius: 5px;
+        padding: 4% 10% 4% 10%;
+    }
+
+    body .softwaretools {
+        padding: 10% 10%;
+        width: 100%;
+        text-align: left;
+        flex-direction: column;
+        justify-content: left;
+        align-items: left;
+        margin-top: 6%;
+    }
+
+    .softwaretools .toolsList {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+    }
+
+    body .toolSvg {
+        margin-left: 0;
+        margin-right: 7%;
+    }
+}

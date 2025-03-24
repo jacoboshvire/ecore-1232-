@@ -1,9 +1,17 @@
-.loading {
+body .loading {
     width: 100%;
     background-color: var(--background);
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.light .loading {
+    background-color: #ffffff;
+}
+
+.dark .loading {
+    background-color: #222222;
 }
 
 .navPath {
@@ -16,12 +24,22 @@
 
 }
 
-.navPath li {
+body .navPath li {
     width: 20%;
     height: 20px;
     border-radius: 50px;
     background-color: var(--main);
     animation: changing 1s ease-in-out infinite;
+}
+
+.light .navPath li {
+    background-color: #ffffff;
+    animation: changing1 1s ease-in-out infinite;
+}
+
+.dark .navPath li {
+    background-color: #161616;
+    animation: changing2 1s ease-in-out infinite;
 }
 
 .titleloadings {
@@ -30,12 +48,22 @@
     margin-top: 3%;
 }
 
-.titleloadings div {
+body .titleloadings div {
     width: 20%;
     height: 30px;
     border-radius: 50px;
     background-color: var(--main);
     animation: changing 1s ease-in-out infinite;
+}
+
+.light .titleloadings div {
+    background-color: #ffffff;
+    animation: changing1 1s ease-in-out infinite;
+}
+
+.dark .titleloadings div {
+    background-color: #161616;
+    animation: changing2 1s ease-in-out infinite;
 }
 
 .outsideLink {
@@ -51,7 +79,7 @@
     justify-content: space-between;
 }
 
-.linksloading span {
+body .linksloading span {
     width: 31.33%;
     height: 20px;
     border-radius: 50px;
@@ -59,7 +87,17 @@
     animation: changing 1s ease-in-out infinite;
 }
 
-.loadingImages {
+.light .linksloading span {
+    background-color: #ffffff;
+    animation: changing1 1s ease-in-out infinite;
+}
+
+.dark .linksloading span {
+    background-color: #161616;
+    animation: changing2 1s ease-in-out infinite;
+}
+
+body .loadingImages {
     width: 100%;
     max-width: 1187px;
     margin-top: 3%;
@@ -69,7 +107,17 @@
     animation: changing 1s ease-in-out infinite;
 }
 
-.Loadingsdates {
+.light .loadingImages {
+    background-color: #ffffff;
+    animation: changing1 1s ease-in-out infinite;
+}
+
+.dark .loadingImages {
+    background-color: #161616;
+    animation: changing2 1s ease-in-out infinite;
+}
+
+body .Loadingsdates {
     width: 100%;
     max-width: 1187px;
     margin-top: 3%;
@@ -77,6 +125,16 @@
     border-radius: 30px;
     background-color: var(--main);
     animation: changing 1s ease-in-out infinite;
+}
+
+.light .Loadingsdates {
+    background-color: #ffffff;
+    animation: changing1 1s ease-in-out infinite;
+}
+
+.dark .Loadingsdates {
+    background-color: #161616;
+    animation: changing2 1s ease-in-out infinite;
 }
 
 
@@ -88,7 +146,7 @@
     margin-bottom: 3%;
 }
 
-.loadingMainabout {
+body .loadingMainabout {
     width: 60%;
     height: 50vh;
     margin-right: 3%;
@@ -97,11 +155,31 @@
     animation: changing 1s ease-in-out infinite;
 }
 
-.loadingsTools {
+.light .loadingMainabout {
+    background-color: #ffffff;
+    animation: changing1 1s ease-in-out infinite;
+}
+
+.dark .loadingMainabout {
+    background-color: #161616;
+    animation: changing2 1s ease-in-out infinite;
+}
+
+body .loadingsTools {
     width: 37%;
     height: 25vh;
     border-radius: 30px;
     background-color: var(--main);
+    animation: changing 1s ease-in-out infinite;
+}
+
+.light .loadingsTools {
+    background-color: #ffffff;
+    animation: changing2 1s ease-in-out infinite;
+}
+
+.dark .loadingsTools {
+    background-color: #161616;
     animation: changing 1s ease-in-out infinite;
 }
 
@@ -116,5 +194,33 @@
 
     100% {
         background-color: var(--background);
+    }
+}
+
+@keyframes changing1 {
+    0% {
+        background-color: #f3f2f2;
+    }
+
+    50% {
+        background-color: #ffffff;
+    }
+
+    100% {
+        background-color: #f3f2f2;
+    }
+}
+
+@keyframes changing2 {
+    0% {
+        background-color: #222222;
+    }
+
+    50% {
+        background-color: #161616;
+    }
+
+    100% {
+        background-color: #222222;
     }
 }
