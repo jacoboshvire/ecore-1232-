@@ -394,7 +394,7 @@ export default function Softwareid({ params }) {
 
                                         </p>
                                     </div>
-                                    <div className="moreAbtLinksoftware">
+                                    <motion.div className="moreAbtLinksoftware">
                                         <Link href={`${portfilios.Link}`}>
                                             <p>visit site &ensp; </p>
                                             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className='web'>
@@ -406,9 +406,31 @@ export default function Softwareid({ params }) {
                                             </svg>
 
                                         </Link>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                                <div className="softwaretools">
+                                <motion.div className="softwaretools"
+                                    initial={{
+                                        scale: 0
+                                    }}
+
+                                    whileInView={{
+                                        scale: 1
+                                    }}
+
+                                    transition={{
+                                        type: "spring"
+                                    }}
+
+                                    whileHover={{
+                                        rotate: "4deg",
+                                        scale: 1.1
+                                    }}
+
+                                    viewport={{
+                                        amount: "all",
+                                        once: true
+                                    }}
+                                >
                                     <div className="toolsTitle">
                                         <h1>
                                             Tools Use
@@ -416,19 +438,80 @@ export default function Softwareid({ params }) {
                                     </div >
                                     <div className="keyToolsList" >
                                         {newtools.map((newtoolss, index) => {
-                                            return <div className="toolsList" key={index}>
-                                                <p>{JSON.parse(JSON.stringify(newtoolss).replace("{'tool':", "").replace(/\d/g, "").replace("'id':", "").replace(/[},']/g, ""))}</p>
+                                            return <motion.div className="toolsList" key={index} >
+                                                <motion.p
+                                                    initial={{
+                                                        scaleY: 0
+                                                    }}
+
+                                                    transition={{
+                                                        type: "spring"
+                                                    }}
+
+                                                    whileInView={{
+                                                        scaleY: 1
+                                                    }}
+
+                                                    viewport={{
+                                                        amount: "all",
+                                                        once: true
+                                                    }}
+                                                >{JSON.parse(JSON.stringify(newtoolss).replace("{'tool':", "").replace(/\d/g, "").replace("'id':", "").replace(/[},']/g, ""))}</motion.p>
                                                 <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
-                                                    <path d="M11 0L11 61.5" />
-                                                    <circle cx="10.5" cy="66.5" r="6.5" />
-                                                    <circle cx="10.5" cy="66.5" r="10" className='uidesign' />
+                                                    <motion.path d="M11 0L11 61.5"
+                                                        initial={{
+                                                            scaleY: 0
+                                                        }}
+
+                                                        whileInView={{
+                                                            scaleY: 1
+                                                        }}
+
+                                                        viewport={{
+                                                            amount: "all",
+                                                            once: true
+                                                        }}
+                                                    />
+                                                    <motion.circle cx="10.5" cy="66.5" r="6.5"
+                                                        initial={{
+                                                            transformOrigin: "center",
+                                                            scale: 0
+                                                        }}
+
+                                                        whileInView={{
+                                                            scale: 1
+                                                        }}
+
+                                                        transition={{
+                                                            type: "spring"
+                                                        }}
+
+                                                        viewport={{
+                                                            amount: "all",
+                                                            once: true
+                                                        }}
+                                                    />
+                                                    <motion.circle cx="10.5" cy="66.5" r="10" className='uidesign'
+                                                        initial={{
+                                                            opacity: 0
+                                                        }}
+
+                                                        whileInView={{
+                                                            opacity: 1
+                                                        }}
+
+                                                        viewport={{
+                                                            amount: "all",
+                                                            once: true
+                                                        }}
+                                                    />
                                                 </svg>
-                                            </div>
+                                            </motion.div>
                                         })}
                                     </div>
 
 
-                                </div>
+                                </motion.div>
                             </div>
                         </div>
                     </div>
