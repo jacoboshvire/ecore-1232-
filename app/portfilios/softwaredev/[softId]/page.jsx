@@ -5,7 +5,7 @@ import "../../../page.css"
 import "../../../About/about.css"
 import Wave from '../../../image/Wave.png'
 //import for the animation "i'm using framer motion for all my animation"
-import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useVelocity, useAnimate, useScroll, useInView, useMotionValueEvent, useTransform } from 'framer-motion'
 import Image from 'next/image';
 //this are for next js link and navigation
 import Link from 'next/link';
@@ -164,12 +164,23 @@ export default function Softwareid({ params }) {
 
     console.log(res)
 
+    const { scrollYProgress, scrollX, scrollXProgress, scrollY } = useScroll()
+
     return (
         <div className='softwaredev'>
             <motion.div className="cursor"
                 variants={variants}
                 animate={varientsmouse}
             />
+            {/* <div className="ontopLoadingDiv"> */}
+            <motion.div className="loadingdiv"
+                style={{
+                    scaleX: scrollYProgress,
+                    // x: "-0%",
+                    width: "100%"
+                }}
+            />
+            {/* </div> */}
             <nav>
                 <li>
                     <a href="tel:+2348127187633" onMouseEnter={textEnter} onMouseLeave={textLeave}>
@@ -243,12 +254,13 @@ export default function Softwareid({ params }) {
             </div>
             <div className={menu ? "main_container" : "main_null"}>
                 <div className="inside_container">
-                    <div className="writeUp">
+                    <div className="writeUp" >
                         <Image className={menu ? "wave newwave" : "wave"}
                             src={Wave}
                             alt="wave"
                             width={menu ? 500 : 60}
                             height={menu ? 500 : 60}
+
                         />
                         <div className={menu ? "removeMenu" : "removeMenu menubox"} onMouseEnter={Change} onMouseLeave={textLeave}>
                             <div className="menuTitle">
@@ -339,7 +351,7 @@ export default function Softwareid({ params }) {
 
                                 </div>
                             </div>
-                            <div className="softwareImage">
+                            <div className="softwareImage" onMouseEnter={Change} onMouseLeave={textLeave}>
                                 {
                                     !portfilios.image ? "" :
                                         <Image

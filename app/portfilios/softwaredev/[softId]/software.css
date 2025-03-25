@@ -106,6 +106,9 @@ body .softwareNameDate {
     width: 100%;
     height: auto;
     border-radius: 30px;
+    background-color: var(--main);
+    border: 5% solid var(--main);
+    padding: 5%;
 }
 
 .softwareName {
@@ -377,6 +380,29 @@ body .softwareDate .uidesign {
     .linkInSoftware span {
         font-size: 15px;
     }
+}
+
+/* .ontopLoadingDiv {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+    max-width: 3000px;
+} */
+
+body .loadingdiv {
+    width: 100%;
+    max-width: auto;
+    display: flex;
+    height: 20px;
+    border-radius: 100px;
+    background-color: var(--subcolour);
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 2%;
+    z-index: 10;
 }
 
 @media (max-width: 400px) {
