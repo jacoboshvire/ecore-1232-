@@ -728,6 +728,11 @@ body .main_container:hover .homeLink .homeLinkName svg {
     fill: var(--foreground);
 }
 
+.main_container .image2 img {
+    transition: 1s;
+    transform-origin: center;
+}
+
 
 @media (orientation: portrait) {
     .cursor {
