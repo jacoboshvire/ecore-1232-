@@ -170,7 +170,7 @@ export default function Custom404() {
             </div>
             {/* the main path  */}
             <div className="main_container">
-                <div className="inside_container">
+                <div className="inside_container2">
                     <div className="writeUps">
                         <Image className={menu ? "waves newwaves" : "waves"}
                             src={Wave}
@@ -238,7 +238,7 @@ export default function Custom404() {
                                         <p>about me</p>
                                         :
                                         <div className="homeLinkName">
-                                            <svg width="30px" height="30px" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <svg width="24px" height="24px" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M8.79069 16.877C8.33325 17.8715 8.33325 19.003 8.33325 21.2659V28.3332C8.33325 31.4759 8.33325 33.0473 9.30956 34.0236C10.2685 34.9825 11.8014 34.9996 14.8333 34.9999V26.6667C14.8333 25.1939 16.0272 24 17.4999 24H22.4999C23.9727 24 25.1666 25.1939 25.1666 26.6667V34.9999C28.1985 34.9996 29.7314 34.9825 30.6903 34.0236C31.6666 33.0473 31.6666 31.4759 31.6666 28.3332V21.2659C31.6666 19.003 31.6666 17.8715 31.2092 16.877C30.7517 15.8824 29.8926 15.146 28.1745 13.6733L26.5078 12.2448C23.4023 9.58289 21.8495 8.25195 19.9999 8.25195C18.1503 8.25195 16.5975 9.58289 13.492 12.2448L11.8253 13.6733C10.1072 15.146 9.24812 15.8824 8.79069 16.877ZM23.1666 34.9999V26.6667C23.1666 26.2985 22.8681 26 22.4999 26H17.4999C17.1317 26 16.8333 26.2985 16.8333 26.6667V34.9999H23.1666Z" />
                                             </svg>
 
@@ -250,7 +250,7 @@ export default function Custom404() {
                             </Link>
                         </motion.div>
                     </div>
-                    <div className={!menu ? "image" : "image removeImg"}>
+                    <div className={!menu ? "image2" : "image2 removeImg"}>
                         <Image
 
                             src={ThumbsDown}

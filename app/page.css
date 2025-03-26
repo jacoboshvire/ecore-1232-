@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+
 .cursor {
     height: 40px;
     width: 40px;
@@ -233,6 +235,12 @@ body .main_container:hover .skills span {
 .inside_container {
     display: flex;
     justify-content: space-between;
+}
+
+
+.inside_container2 {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -314,6 +322,10 @@ body .skills span {
     transform-origin: top 100%, left 50%;
 }
 
+.main_container:hover .image2 img {
+    transform: rotate(-180deg);
+}
+
 .waves {
     display: none;
 }
@@ -367,6 +379,11 @@ footer .links a {
     transform-origin: center;
 }
 
+.image2 {
+    transform: scale(1);
+    transform-origin: center;
+}
+
 .removeImg {
     transform: scale(0);
 }
@@ -399,7 +416,7 @@ footer .links a {
 }
 
 body .main_container:hover svg {
-    fill: whe
+    fill: var(--foreground);
 }
 
 .dark .main_container:hover svg {
@@ -676,13 +693,19 @@ body .listen {
 }
 
 body .homeLink a {
-    padding: 7% 7% 7% 7%;
-    background-color: var(--foreground);
-    color: var(--main);
+    margin-top: 25px;
+    font-size: .85em;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
+    width: 181px;
+    height: 42px;
+    border-radius: 10px;
+    transform-origin: center;
+    transform: scale(1);
+    transition: 500ms;
+    background-color: var(--foreground);
+    color: var(--main);
 }
 
 body .main_container:hover .homeLink a {
@@ -692,7 +715,7 @@ body .main_container:hover .homeLink a {
 
 .homeLinkName {
     display: flex;
-    align-items: self-end;
+    align-items: flex-end;
     justify-content: center;
 }
 
@@ -736,9 +759,18 @@ body .main_container:hover .homeLink .homeLinkName svg {
         flex-direction: column-reverse;
     }
 
+    .inside_container2 {
+        flex-direction: column-reverse;
+    }
+
     .inside_container .writeUp {
         width: 100%;
     }
+
+    .inside_container2 .writeUps {
+        width: 100%;
+    }
+
 
     footer {
         max-width: 700px;
@@ -824,9 +856,25 @@ body .main_container:hover .homeLink .homeLinkName svg {
         margin-bottom: 10%;
     }
 
+    .main_container .image2 {
+        margin-bottom: 10%;
+    }
+
+
     .main_container .image img {
         width: 100px;
         height: 100px;
+    }
+
+    .main_container .image2 img {
+        width: 100px;
+        height: auto;
+        transition: 1s;
+        transform-origin: center;
+    }
+
+    .main_container .image2 {
+        width: 100%;
     }
 
     .main_container .wave {
