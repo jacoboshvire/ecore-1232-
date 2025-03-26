@@ -178,6 +178,7 @@ body .menu div {
     border-radius: 30px;
     transform-origin: center;
     transform: scale(1);
+    transition: 500ms;
 }
 
 body .main_container {
@@ -232,6 +233,7 @@ body .main_container:hover .skills span {
 .inside_container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .text_writeup {
@@ -307,6 +309,15 @@ body .skills span {
     transform-origin: top 100%, left 50%;
 }
 
+.main_container:hover .waves {
+    animation: wave 500ms infinite ease-in-out;
+    transform-origin: top 100%, left 50%;
+}
+
+.waves {
+    display: none;
+}
+
 footer {
     display: flex;
     align-items: center;
@@ -339,6 +350,17 @@ footer .links a {
     bottom: -30%;
     right: -5%;
 }
+
+.newwaves {
+    position: absolute;
+    z-index: 5;
+    bottom: -30%;
+    right: -5%;
+    display: inline;
+}
+
+
+
 
 .image {
     transform: scale(1);
@@ -634,6 +656,55 @@ body .listen {
     margin-left: 50px;
     /* padding: 30px; */
 }
+
+.removemainTitle {
+    display: none;
+}
+
+.mainTitle {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 3%;
+}
+
+.removeMainWriteUp {
+    display: none;
+}
+
+.mainWriteUp {
+    margin-bottom: 6%;
+}
+
+body .homeLink a {
+    padding: 7% 7% 7% 7%;
+    background-color: var(--foreground);
+    color: var(--main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+body .main_container:hover .homeLink a {
+    background-color: var(--main);
+    color: var(--foreground);
+}
+
+.homeLinkName {
+    display: flex;
+    align-items: self-end;
+    justify-content: center;
+}
+
+.homeLinkName svg {
+    margin-right: 20px;
+    fill: var(--main);
+}
+
+body .main_container:hover .homeLink .homeLinkName svg {
+    fill: var(--foreground);
+}
+
 
 @media (orientation: portrait) {
     .cursor {

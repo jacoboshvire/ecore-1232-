@@ -5,7 +5,7 @@ import "../../../page.css"
 import "../../../About/about.css"
 import Wave from '../../../image/Wave.png'
 //import for the animation "i'm using framer motion for all my animation"
-import { motion, useMotionValue, useSpring, useVelocity, useAnimate, useScroll, useInView, useMotionValueEvent, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useVelocity, useAnimate, useScroll, useInView, useMotionValueEvent, useTransform, spring } from 'framer-motion'
 import Image from 'next/image';
 //this are for next js link and navigation
 import Link from 'next/link';
@@ -351,7 +351,16 @@ export default function Softwareid({ params }) {
 
                                 </div>
                             </div>
-                            <div className="softwareImage" onMouseEnter={Change} onMouseLeave={textLeave}>
+                            <motion.div className="softwareImage" onMouseEnter={text2Enter} onMouseLeave={textLeave}
+                                initial={{
+                                    scale: 1,
+                                    transformOrigin: "center"
+                                }}
+
+                                whileHover={{
+                                    scale: 1.1,
+                                }}
+                            >
                                 {
                                     !portfilios.image ? "" :
                                         <Image
@@ -361,8 +370,18 @@ export default function Softwareid({ params }) {
                                             width={portfilios.imagewidth}
                                         />
                                 }
-                            </div>
-                            <div className="softwareNameDate">
+                            </motion.div>
+                            <motion.div className="softwareNameDate"
+                                initial={{
+                                    scale: 1,
+                                    transformOrigin: "center"
+                                }}
+
+                                whileHover={{
+                                    scale: 1.04,
+                                    rotate: "-1deg",
+                                }}
+                            >
                                 <div className="softwareName">
                                     <h1>
                                         {portfilios.name}
@@ -380,9 +399,19 @@ export default function Softwareid({ params }) {
                                         <b>posted</b> <span>&ensp;|&ensp;</span>  {dateMDY}
                                     </p>
                                 </div>
-                            </div>
+                            </motion.div>
                             <div className="softwareAboutTools">
-                                <div className="softwareAbout" onMouseEnter={text2Enter} onMouseLeave={textLeave}>
+                                <motion.div className="softwareAbout" onMouseEnter={Change} onMouseLeave={textLeave}
+                                    initial={{
+                                        scale: 1,
+                                        transformOrigin: "center"
+                                    }}
+
+                                    whileHover={{
+                                        scale: 1.04,
+                                        rotate: "-1deg"
+                                    }}
+                                >
                                     <div className="asTitle">
                                         <h2>
                                             About Project
@@ -394,7 +423,18 @@ export default function Softwareid({ params }) {
 
                                         </p>
                                     </div>
-                                    <motion.div className="moreAbtLinksoftware">
+                                    <motion.div className="moreAbtLinksoftware"
+                                        initial={{
+                                            scale: 1,
+                                            transformOrigin: "center"
+                                        }}
+                                        whileHover={{
+                                            scale: 1.2,
+                                            rotate: "4deg",
+                                            transition: { duration: 1, type: spring },
+                                        }}
+                                        whileTap={{ scale: 0.9 }}
+                                    >
                                         <Link href={`${portfilios.Link}`}>
                                             <p>visit site &ensp; </p>
                                             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className='web'>
@@ -407,7 +447,7 @@ export default function Softwareid({ params }) {
 
                                         </Link>
                                     </motion.div>
-                                </div>
+                                </motion.div>
                                 <motion.div className="softwaretools"
                                     initial={{
                                         scale: 0
@@ -456,6 +496,11 @@ export default function Softwareid({ params }) {
                                                         amount: "all",
                                                         once: true
                                                     }}
+
+                                                    transitions={{
+                                                        type: "spring", duration: 1
+                                                    }}
+
                                                 >{JSON.parse(JSON.stringify(newtoolss).replace("{'tool':", "").replace(/\d/g, "").replace("'id':", "").replace(/[},']/g, ""))}</motion.p>
                                                 <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
                                                     <motion.path d="M11 0L11 61.5"
@@ -468,8 +513,11 @@ export default function Softwareid({ params }) {
                                                         }}
 
                                                         viewport={{
-                                                            amount: "all",
-                                                            once: true
+                                                            amount: .9
+                                                        }}
+
+                                                        transition={{
+                                                            duration: 1
                                                         }}
                                                     />
                                                     <motion.circle cx="10.5" cy="66.5" r="6.5"
@@ -483,12 +531,11 @@ export default function Softwareid({ params }) {
                                                         }}
 
                                                         transition={{
-                                                            type: "spring"
+                                                            type: "spring", duration: 1
                                                         }}
 
                                                         viewport={{
-                                                            amount: "all",
-                                                            once: true
+                                                            amount: .9
                                                         }}
                                                     />
                                                     <motion.circle cx="10.5" cy="66.5" r="10" className='uidesign'
@@ -501,8 +548,11 @@ export default function Softwareid({ params }) {
                                                         }}
 
                                                         viewport={{
-                                                            amount: "all",
-                                                            once: true
+                                                            amount: .9
+                                                        }}
+
+                                                        transition={{
+                                                            duration: 1
                                                         }}
                                                     />
                                                 </svg>
