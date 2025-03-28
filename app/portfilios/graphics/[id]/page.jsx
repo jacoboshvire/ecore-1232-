@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 
 export default function Graphicsid({ params }) {
 
-    const { id } = React.use(params)
+    const { uiId } = React.use(params)
     // variable for Portfiliopost()
     const [graphic, setGraphic] = useState([]);
     const [error, setError] = useState(false)
@@ -12,7 +12,7 @@ export default function Graphicsid({ params }) {
     //fatch api
 
     async function portfiliopost() {
-        let url = `https://jacob-shevy-api.onrender.com/api/graphics/${id}`
+        let url = `https://jacob-shevy-api.onrender.com/api/graphics/${uiId}`
         let response = await fetch(url)
         let data = await response.json();
         return data;
@@ -30,7 +30,7 @@ export default function Graphicsid({ params }) {
     return (
 
         <div>
-            me {id}
+            me {graphic.tools}
         </div>
     )
 }
