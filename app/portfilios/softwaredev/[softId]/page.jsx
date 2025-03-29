@@ -95,10 +95,6 @@ export default function Softwareid({ params }) {
         setMenu((menu) => (!menu))
     }
 
-    const toggleDetails = () => {
-        setDetails((details) => (!details))
-    }
-
 
     const { softId } = React.use(params)
     // variable for Portfiliopost()

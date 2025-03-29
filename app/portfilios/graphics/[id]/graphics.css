@@ -1,0 +1,122 @@
+.mainGraphics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.softwareLinks2 {
+    width: 100%;
+    max-width: 1187px;
+}
+
+.softwareTitle {
+    margin-top: 3%;
+}
+
+.graphicContent {
+    display: flex;
+    width: 100%;
+    max-width: 1187px;
+}
+
+body .graphicImgName {
+    width: 30%;
+    padding: 3%;
+    padding-bottom: 5%;
+    border-radius: 30px;
+    background-color: var(--main);
+    height: max-content;
+}
+
+.graphicImg img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    background-color: var(--foreground);
+}
+
+.graphicsName {
+    margin-top: 10%;
+}
+
+.graphicsName h1 {
+    font-weight: 900;
+    font-size: 28px;
+}
+
+.graphicsName .graphicDates {
+    display: flex;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.graphicsName .graphicDates svg {
+    margin-right: 15px;
+}
+
+.graphicAbtTool {
+    margin-left: 3%;
+    width: 77%;
+}
+
+body .graphicAbt {
+    padding: 6%;
+    background-color: var(--main);
+    border-radius: 30px;
+}
+
+.graphicAbt .graphicAbtTitle {
+    margin-bottom: 5%;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+
+body .softwaretools1 {
+    background-color: var(--subcolour);
+    padding: 5% 3%;
+    width: 50%;
+    margin-top: 3%;
+    box-shadow: var(--shadow);
+    justify-content: left;
+    height: max-content;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: right; */
+    /* align-items: left; */
+    border-radius: 30px;
+}
+
+.light .softwaretools1 {
+    background-color: #CCD2E3;
+}
+
+.dark .softwaretools1 {
+    background-color: #2D313D;
+}
+
+.softwaretools1 h1 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 3%;
+
+}
+
+.softwaretools1 p {
+    font-weight: 500;
+    font-size: 18px;
+    /* margin-left: 4%; */
+}
+
+.softwaretools1 .toolsList {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: flex-end;
+}
+
+.softwaretools1 .toolsList svg {
+    margin-left: 0;
+    margin-right: 6%;
+}
