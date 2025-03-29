@@ -850,6 +850,7 @@ body .main_container:hover .homeLink .homeLinkName svg {
         margin-top: 5%;
         padding-right: 19px;
         padding-left: 19px;
+        border-radius: 15px;
     }
 
     .main_container .writeUp {

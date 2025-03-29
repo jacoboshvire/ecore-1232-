@@ -637,6 +637,18 @@ body .googleMaps {
     animation: strake 1s forwards ease-in-out;
 }
 
+.loadingdiv {
+    position: fixed;
+    top: 1%;
+    right: 0;
+    display: flex;
+    align-self: center;
+    background-color: var(--subcolour);
+    height: 10px;
+    width: 100%;
+    border-radius: 50px;
+}
+
 @keyframes strake {
     0% {
         transform: rotate(2deg) scale(1.1);
@@ -779,6 +791,27 @@ body .googleMaps {
 }
 
 @media (max-width:700px) {
+
+    .about_1st {
+        border-radius: 15px;
+    }
+
+    .graph_2nd {
+        border-radius: 15px;
+    }
+
+    .graph_2nd .graph {
+        border-radius: 7.5px;
+    }
+
+    .mainGraph {
+        border-radius: 7.5px;
+    }
+
+    .tools_2nd .ListOfSkill {
+        border-radius: 15px;
+    }
+
     .mainframe_1st {
         display: block;
         align-items: center;
@@ -817,6 +850,30 @@ body .googleMaps {
 
     .googleMaps {
         max-width: 400px;
+        border-radius: 15px;
+    }
+
+    .googleMaps .mapsMap .mainMap iframe {
+        border-radius: 7.5px;
+    }
+
+    .detailsAbout {
+        border-radius: 15px;
+        height: 100vh;
+        top: 0;
+    }
+
+    .seemore {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profilePic {
+        margin-bottom: 10%;
+    }
+
+    body .aboutNav {
+        margin-top: 10%;
     }
 }
 

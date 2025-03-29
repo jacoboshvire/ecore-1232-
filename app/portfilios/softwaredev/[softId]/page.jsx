@@ -5,7 +5,18 @@ import "../../../page.css"
 import "../../../About/about.css"
 import Wave from '../../../image/Wave.png'
 //import for the animation "i'm using framer motion for all my animation"
-import { motion, useMotionValue, useSpring, useVelocity, useAnimate, useScroll, useInView, useMotionValueEvent, useTransform, spring } from 'framer-motion'
+import {
+    motion,
+    useMotionValue,
+    useSpring,
+    useVelocity,
+    useAnimate,
+    useScroll,
+    useInView,
+    useMotionValueEvent,
+    useTransform,
+    spring
+} from 'framer-motion'
 import Image from 'next/image';
 //this are for next js link and navigation
 import Link from 'next/link';

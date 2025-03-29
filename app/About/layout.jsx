@@ -16,7 +16,18 @@ import Graphics from '../image/illustrator-plain.png'
 
 import { useState, useEffect, useRef } from 'react';
 //import for the animation "i'm using framer motion for all my animation"
-import { motion, useMotionValue, useSpring, useVelocity } from 'framer-motion'
+import {
+    motion,
+    useMotionValue,
+    useSpring,
+    useVelocity,
+    useAnimate,
+    useScroll,
+    useInView,
+    useMotionValueEvent,
+    useTransform,
+    spring
+} from 'framer-motion'
 // Import Swiper React components
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import SwiperNavButtons from '../../components/swiper.js';
@@ -187,7 +198,11 @@ export default function Aboutlayout({
 
     }
 
-
+    const {
+        scrollYProgress,
+        scrollX,
+        scrollXProgress,
+        scrollY } = useScroll()
 
     return (
         <div className="aboutpage">

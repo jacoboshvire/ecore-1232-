@@ -168,7 +168,11 @@ export default function Uidesignid({ params }) {
 
     console.log(res)
 
-    const { scrollYProgress, scrollX, scrollXProgress, scrollY } = useScroll()
+    const {
+        scrollYProgress,
+        scrollX,
+        scrollXProgress,
+        scrollY } = useScroll()
 
     return (
         <div className='softwaredev'>
