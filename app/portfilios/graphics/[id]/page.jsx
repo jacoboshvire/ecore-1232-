@@ -152,11 +152,20 @@ export default function Graphicsid({ params }) {
 
     let txt = writeUp
 
+    const { scrollYProgress, scrollX, scrollXProgress, scrollY } = useScroll()
+
     return (
         <div className="mainGraphics">
             <motion.div className="cursor"
                 variants={variants}
                 animate={varientsmouse}
+            />
+            <motion.div className="loadingdiv"
+                style={{
+                    scaleX: scrollYProgress,
+                    // x: "-0%",
+                    width: "100%"
+                }}
             />
             <nav>
                 <li>
@@ -305,178 +314,245 @@ export default function Graphicsid({ params }) {
 
             {/* the main part of the veiw page */}
             {/* ================================================================== */}
-            <div className="graphicContent">
-                <div className="graphicImgName">
-                    <div className="graphicImg">
-                        {
-                            graphic.image ?
-                                <Image
-                                    src={graphic.image}
-                                    alt={graphic.name}
-                                    width={graphic.imagewidth}
-                                    height={graphic.imageheight}
-                                    className='graphicImage'
-                                />
-                                : ""
-                        }
+            {
+                error ?
 
+                    <div className="error">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40 0L40.9156 26.03L45.221 0.342205L42.7313 26.269L50.3528 1.36297L44.5002 26.743L55.3073 3.04482L46.192 27.4438L60 5.35898L47.778 28.3594L64.3505 8.26587L49.2308 29.4742L68.2843 11.7157L50.5258 30.7692L71.7341 15.6495L51.6406 32.222L74.641 20L52.5562 33.808L76.9552 24.6927L53.257 35.4998L78.637 29.6472L53.731 37.2687L79.6578 34.779L53.97 39.0844L80 40L53.97 40.9156L79.6578 45.221L53.731 42.7313L78.637 50.3528L53.257 44.5002L76.9552 55.3073L52.5562 46.192L74.641 60L51.6406 47.778L71.7341 64.3505L50.5258 49.2308L68.2843 68.2843L49.2308 50.5258L64.3505 71.7341L47.778 51.6406L60 74.641L46.192 52.5562L55.3073 76.9552L44.5002 53.257L50.3528 78.637L42.7313 53.731L45.221 79.6578L40.9156 53.97L40 80L39.0844 53.97L34.779 79.6578L37.2687 53.731L29.6472 78.637L35.4998 53.257L24.6927 76.9552L33.808 52.5562L20 74.641L32.222 51.6406L15.6495 71.7341L30.7692 50.5258L11.7157 68.2843L29.4742 49.2308L8.26587 64.3505L28.3594 47.778L5.35898 60L27.4438 46.192L3.04482 55.3073L26.743 44.5002L1.36297 50.3528L26.269 42.7313L0.342205 45.221L26.03 40.9156L0 40L26.03 39.0844L0.342205 34.779L26.269 37.2687L1.36297 29.6472L26.743 35.4998L3.04482 24.6927L27.4438 33.808L5.35898 20L28.3594 32.222L8.26587 15.6495L29.4742 30.7692L11.7157 11.7157L30.7692 29.4742L15.6495 8.26587L32.222 28.3594L20 5.35898L33.808 27.4438L24.6927 3.04482L35.4998 26.743L29.6472 1.36297L37.2687 26.269L34.779 0.342205L39.0844 26.03L40 0Z" />
+                            <defs>
+                                <radialGradient id="paint0_radial_500_6090" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(40 38.5) rotate(81.3843) scale(50.065)">
+                                    <stop stopColor="white" />
+                                    <stop offset="1" stopColor="#FFF9F9" stopOpacity="0" />
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                        <h2>
+                            You are offline or you have bad network connection
+                            Please check your connection or change your location.
+                        </h2>
                     </div>
-                    <div className="graphicsName">
-                        <h1>
-                            {graphic.name}
-                        </h1>
+                    :
+                    <div className="graphicContent">
+                        <motion.div className="graphicImgName" onMouseEnter={Change} onMouseLeave={textLeave}
+                            initial={{
+                                scale: 0,
+                                rotate: "45deg"
+                            }}
 
-                        <div className="graphicDates">
-                            <svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className='uidesign'>
-                                <circle cx="15" cy="16.25" r="8.75" strokeWidth="3" />
-                                <path d="M6.25 6.25L3.75 8.75" strokeWidth="3" strokeLinecap="round" />
-                                <path d="M23.75 6.25L26.25 8.75" strokeWidth="3" strokeLinecap="round" />
-                                <path d="M11.25 13.75L14.8093 16.1229C14.9172 16.1948 15.0622 16.1723 15.1432 16.071L17.5 13.125" strokeWidth="3" strokeLinecap="round" />
-                            </svg>
-                            <p>
-                                <b>
-                                    <b>posted</b> <span>&ensp;|&ensp;</span>
-                                </b>
-                                {dateMDY}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="graphicAbtTool">
-                    <div className="graphicAbt">
-                        <div className="graphicAbtTitle">
-                            <h1>
-                                About {graphic.name}
-                            </h1>
-                        </div>
+                            whileInView={{
+                                scale: 1,
+                                rotate: "0"
+                            }}
 
-                        <div className="graphicsAbtWriteup">
-                            <p dangerouslySetInnerHTML={{ __html: txt }}>
+                            transition={{
+                                type: "spring"
+                            }}
 
-                            </p>
-                        </div>
-                    </div>
-                    <motion.div className="softwaretools1"
-                        initial={{
-                            scale: 0
-                        }}
+                            whileHover={{
+                                rotate: "-2deg",
+                                scale: 1.03
+                            }}
 
-                        whileInView={{
-                            scale: 1
-                        }}
-
-                        transition={{
-                            type: "spring"
-                        }}
-
-                        whileHover={{
-                            rotate: "4deg",
-                            scale: 1.1
-                        }}
-
-                        viewport={{
-                            amount: "all",
-                            once: true
-                        }}
-                    >
-                        <div className="toolsTitle">
-                            <h1>
-                                Tools Use
-                            </h1>
-                        </div >
-                        <div className="keyToolsList" >
-                            {newtools.map((newtool, index) => {
-                                return <motion.div className="toolsList" key={index} >
-                                    <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
-                                        <motion.path d="M11 0L11 61.5"
-                                            initial={{
-                                                scaleY: 0
-                                            }}
-
-                                            whileInView={{
-                                                scaleY: 1
-                                            }}
-
-                                            viewport={{
-                                                amount: .9
-                                            }}
-
-                                            transition={{
-                                                duration: 1
-                                            }}
+                            viewport={{
+                                amount: "all",
+                                once: true
+                            }}
+                        >
+                            <div className="graphicImg">
+                                {
+                                    graphic.image ?
+                                        <Image
+                                            src={graphic.image}
+                                            alt={graphic.name}
+                                            width={graphic.imagewidth}
+                                            height={graphic.imageheight}
+                                            className='graphicImage'
                                         />
-                                        <motion.circle cx="10.5" cy="66.5" r="6.5"
-                                            initial={{
-                                                transformOrigin: "center",
-                                                scale: 0
-                                            }}
+                                        : ""
+                                }
 
-                                            whileInView={{
-                                                scale: 1
-                                            }}
+                            </div>
+                            <div className="graphicsName">
+                                <h1>
+                                    {graphic.name}
+                                </h1>
 
-                                            transition={{
-                                                type: "spring", duration: 1
-                                            }}
-
-                                            viewport={{
-                                                amount: .9
-                                            }}
-                                        />
-                                        <motion.circle cx="10.5" cy="66.5" r="10" className='uidesign'
-                                            initial={{
-                                                opacity: 0
-                                            }}
-
-                                            whileInView={{
-                                                opacity: 1
-                                            }}
-
-                                            viewport={{
-                                                amount: .9
-                                            }}
-
-                                            transition={{
-                                                duration: 1
-                                            }}
-                                        />
+                                <div className="graphicDates">
+                                    <svg width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" className='uidesign'>
+                                        <circle cx="15" cy="16.25" r="8.75" strokeWidth="3" />
+                                        <path d="M6.25 6.25L3.75 8.75" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M23.75 6.25L26.25 8.75" strokeWidth="3" strokeLinecap="round" />
+                                        <path d="M11.25 13.75L14.8093 16.1229C14.9172 16.1948 15.0622 16.1723 15.1432 16.071L17.5 13.125" strokeWidth="3" strokeLinecap="round" />
                                     </svg>
-                                    <motion.p
-                                        initial={{
-                                            scaleY: 0
-                                        }}
+                                    <p>
+                                        <b>
+                                            <b>posted</b> <span>&ensp;|&ensp;</span>
+                                        </b>
+                                        {dateMDY}
+                                    </p>
+                                </div>
+                            </div>
+                        </motion.div>
+                        <div className="graphicAbtTool" >
+                            <motion.div className="graphicAbt" onMouseEnter={Change} onMouseLeave={textLeave}
+                                initial={{
+                                    scale: 0
+                                }}
 
-                                        transition={{
-                                            type: "spring"
-                                        }}
+                                whileInView={{
+                                    scale: 1
+                                }}
 
-                                        whileInView={{
-                                            scaleY: 1
-                                        }}
+                                transition={{
+                                    type: "spring"
+                                }}
 
-                                        viewport={{
-                                            amount: "all",
-                                            once: true
-                                        }}
+                                whileHover={{
+                                    rotate: "-2deg",
+                                    scale: 1.03
+                                }}
 
-                                        transitions={{
-                                            type: "spring", duration: 1
-                                        }}
+                                viewport={{
+                                    amount: "all",
+                                    once: true
+                                }}
+                            >
+                                <div className="graphicAbtTitle">
+                                    <h1>
+                                        About {graphic.name}
+                                    </h1>
+                                </div>
 
-                                    >{newtool}</motion.p>
+                                <div className="graphicsAbtWriteup">
+                                    <p dangerouslySetInnerHTML={{ __html: txt }}>
 
-                                </motion.div>
-                            })}
+                                    </p>
+                                </div>
+                            </motion.div>
+                            <motion.div className="softwaretools1"
+                                initial={{
+                                    scale: 0
+                                }}
+
+                                whileInView={{
+                                    scale: 1
+                                }}
+
+                                transition={{
+                                    type: "spring"
+                                }}
+
+                                whileHover={{
+                                    rotate: "4deg",
+                                    scale: 1.1
+                                }}
+
+                                viewport={{
+                                    amount: "all",
+                                    once: true
+                                }}
+                            >
+                                <div className="toolsTitle">
+                                    <h1>
+                                        Tools Use
+                                    </h1>
+                                </div >
+                                <div className="keyToolsList" >
+                                    {newtools.map((newtool, index) => {
+                                        return <motion.div className="toolsList" key={index} >
+                                            <svg width="21" height="77" viewBox="0 0 21 77" fill="none" xmlns="http://www.w3.org/2000/svg" className='toolSvg'>
+                                                <motion.path d="M11 0L11 61.5"
+                                                    initial={{
+                                                        scaleY: 0
+                                                    }}
+
+                                                    whileInView={{
+                                                        scaleY: 1
+                                                    }}
+
+                                                    viewport={{
+                                                        amount: .9
+                                                    }}
+
+                                                    transition={{
+                                                        duration: 1
+                                                    }}
+                                                />
+                                                <motion.circle cx="10.5" cy="66.5" r="6.5"
+                                                    initial={{
+                                                        transformOrigin: "center",
+                                                        scale: 0
+                                                    }}
+
+                                                    whileInView={{
+                                                        scale: 1
+                                                    }}
+
+                                                    transition={{
+                                                        type: "spring", duration: 1
+                                                    }}
+
+                                                    viewport={{
+                                                        amount: .9
+                                                    }}
+                                                />
+                                                <motion.circle cx="10.5" cy="66.5" r="10" className='uidesign'
+                                                    initial={{
+                                                        opacity: 0
+                                                    }}
+
+                                                    whileInView={{
+                                                        opacity: 1
+                                                    }}
+
+                                                    viewport={{
+                                                        amount: .9
+                                                    }}
+
+                                                    transition={{
+                                                        duration: 1
+                                                    }}
+                                                />
+                                            </svg>
+                                            <motion.p
+                                                initial={{
+                                                    scaleY: 0
+                                                }}
+
+                                                transition={{
+                                                    type: "spring"
+                                                }}
+
+                                                whileInView={{
+                                                    scaleY: 1
+                                                }}
+
+                                                viewport={{
+                                                    amount: "all",
+                                                    once: true
+                                                }}
+
+                                                transitions={{
+                                                    type: "spring", duration: 1
+                                                }}
+
+                                            >{newtool}</motion.p>
+
+                                        </motion.div>
+                                    })}
+                                </div>
+
+
+                            </motion.div>
                         </div>
 
+                    </div>
+            }
 
-                    </motion.div>
-                </div>
-
-            </div>
             {/* =================================================================== */}
             <Stuff />
             <Footer />
-        </div>
+        </div >
     )
 }

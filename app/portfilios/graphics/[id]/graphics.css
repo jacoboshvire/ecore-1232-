@@ -63,6 +63,7 @@ body .graphicImgName {
 body .graphicAbt {
     padding: 6%;
     background-color: var(--main);
+    box-shadow: var(--shadow);
     border-radius: 30px;
 }
 
@@ -119,4 +120,64 @@ body .softwaretools1 {
 .softwaretools1 .toolsList svg {
     margin-left: 0;
     margin-right: 6%;
+}
+
+
+
+@media (max-width: 1187px) {
+    .graphicContent {
+        flex-direction: column;
+        max-width: 700px;
+    }
+
+    .graphicAbtTool {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    body .graphicImgName {
+        width: 50%;
+        margin-bottom: 5%;
+    }
+
+    body .softwaretools1 {
+        margin-top: 5%;
+        width: 70%;
+    }
+
+    .softwareLinks2 {
+        max-width: 700px;
+    }
+
+    .softwareTitle {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 700px) {
+    .graphicContent {
+        width: 90%;
+    }
+
+    body .graphicImgName {
+        width: 100%;
+        padding: 10%;
+    }
+
+    body .graphicAbt {
+        padding: 10%;
+    }
+
+    body .softwaretools1 {
+        width: 100%;
+        padding: 10%;
+    }
+
+    .softwareTitle {
+        width: 90%;
+    }
+
+    .softwareLinks2 {
+        width: 90%;
+    }
 }
