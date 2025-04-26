@@ -358,7 +358,7 @@ export default function Aboutlayout({
                         </p>
                         <div className='link_1st'>
                             <div className="abouts_1st" >
-                                <a target='https://docs.google.com/document/d/1xRp6xnmd1RGaKRJ6Us6GmRzhHorFvShi9pRjW_j8hnE/edit?tab=t.0' href={"https://docs.google.com/document/d/1LRZ72amUUFnivvfqFE2HajmY1x71rVNKmgIZ6MVu2Jo/edit?usp=drive_link"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
+                                <a target='https://docs.google.com/document/d/1xRp6xnmd1RGaKRJ6Us6GmRzhHorFvShi9pRjW_j8hnE' href={"https://docs.google.com/document/d/1LRZ72amUUFnivvfqFE2HajmY1x71rVNKmgIZ6MVu2Jo/edit?usp=drive_link"} onMouseEnter={textEnter} onMouseLeave={textLeave}>
                                     resume
                                 </a>
                             </div>
