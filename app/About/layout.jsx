@@ -523,15 +523,7 @@ export default function Aboutlayout({
             </div>
             <div className="googleMaps">
                 <div className="mapsMap">
-    <div className="mainMap">
-        <iframe
-            frameBorder="0"
-            scrolling="no"
-            marginHeight="0"
-            marginWidth="0"
-            src="https://maps.google.com/maps?width=900&amp;height=400&amp;hl=en&amp;q=Stoke-on-Trent,%20UK+(jacobShevy)&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-        ></iframe>
-    </div>
+<div className="mapsMap"> <div className='mainMap'><iframe frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=900&amp;height=400&amp;hl=en&amp;q=Lagos,%20Nigeria+(jacobShevy)&amp;t=p&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div> </div>
 </div>
                 <div className="details">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
